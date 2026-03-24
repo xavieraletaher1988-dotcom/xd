@@ -787,3 +787,38 @@ h2 {
   .contact-form-wrap { padding: 28px 20px; }
   .colombia-strip { grid-template-columns: 1fr 1fr; }
 }
+
+
+/* ─── PHOTO OVERRIDES: repo main assets ─── */
+.hero-photo {
+  object-position: center 42%;
+  filter: saturate(1.05) contrast(1.02);
+}
+.showcase-product {
+  max-height: 440px;
+  max-width: 250px;
+}
+.about-photo-main { object-position: center center; }
+.about-photo-secondary { object-position: center center; background: #fff; }
+.benefits-photo { object-position: center center; }
+.process-photo { object-position: center 38%; }
+
+.prod-photo {
+  max-height: 242px;
+  max-width: 172px;
+  image-rendering: auto;
+}
+.prod-bottle-garrafa.prod-photo {
+  max-height: 226px;
+  max-width: 240px;
+}
+.prod-header {
+  background-size: cover;
+  background-position: center;
+}
+@media (max-width: 768px) {
+  .showcase-product {
+    max-height: 360px;
+    max-width: 220px;
+  }
+}
