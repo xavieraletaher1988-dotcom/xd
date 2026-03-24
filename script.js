@@ -10,9 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Navbar scroll
     const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
+    const handleScroll = () => {
         navbar.classList.toggle('scrolled', window.scrollY > 50);
-    });
+    };
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
 
     // Mobile nav
     const toggle = document.getElementById('navToggle');
@@ -67,14 +69,37 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.innerHTML = '<span>Enviado</span>';
             btn.style.background = '#2d5a27';
             btn.style.color = '#fff';
+            btn.disabled = true;
             setTimeout(() => {
                 btn.innerHTML = '<span>Enviar Mensaje</span>';
                 btn.style.background = '';
                 btn.style.color = '';
+                btn.disabled = false;
                 form.reset();
             }, 3000);
         });
     }
+
+    // Active nav highlight
+    const sections = document.querySelectorAll('section[id]');
+    const navItems = document.querySelectorAll('.nav-links a[href^="#"]');
+    const highlightNav = () => {
+        const scrollPos = window.scrollY + 100;
+        sections.forEach(section => {
+            const top = section.offsetTop;
+            const height = section.offsetHeight;
+            const id = section.getAttribute('id');
+            if (scrollPos >= top && scrollPos < top + height) {
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.getAttribute('href') === `#${id}`) {
+                        item.classList.add('active');
+                    }
+                });
+            }
+        });
+    };
+    window.addEventListener('scroll', highlightNav);
 
     // Parallax on hero
     window.addEventListener('scroll', () => {
