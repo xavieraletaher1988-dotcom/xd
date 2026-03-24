@@ -1,10 +1,14 @@
-// ============================================
-// BERAHASS SAS - JavaScript
-// ============================================
-
+// BERA HASS - JavaScript
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Navbar scroll effect ---
+    // Preloader
+    const preloader = document.getElementById('preloader');
+    window.addEventListener('load', () => {
+        setTimeout(() => preloader.classList.add('hidden'), 1800);
+    });
+    setTimeout(() => preloader.classList.add('hidden'), 3000);
+
+    // Navbar scroll
     const navbar = document.getElementById('navbar');
     const handleScroll = () => {
         navbar.classList.toggle('scrolled', window.scrollY > 50);
@@ -12,89 +16,79 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', handleScroll);
     handleScroll();
 
-    // --- Mobile menu toggle ---
-    const navToggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
-
-    navToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        navToggle.classList.toggle('active');
+    // Mobile nav
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+        toggle.classList.toggle('active');
+        links.classList.toggle('active');
     });
-
-    // Close mobile menu on link click
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            navToggle.classList.remove('active');
+    links.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+            toggle.classList.remove('active');
+            links.classList.remove('active');
         });
     });
 
-    // --- Smooth scroll for anchor links ---
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', (e) => {
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
             e.preventDefault();
-            const target = document.querySelector(anchor.getAttribute('href'));
+            const target = document.querySelector(a.getAttribute('href'));
             if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
     });
 
-    // --- Fade-in on scroll (Intersection Observer) ---
-    const fadeElements = document.querySelectorAll(
-        '.about-grid, .product-card, .benefit-card, .process-step, .contact-card, .contact-form, .instagram-content, .section-header'
-    );
-
-    fadeElements.forEach(el => el.classList.add('fade-in'));
-
-    const observer = new IntersectionObserver((entries) => {
+    // Scroll reveal
+    const revealElements = document.querySelectorAll('.section-tag, .about-grid, .products-grid, .benefits-layout, .process-steps, .nutri-grid, .cta-content, .contact-layout, .ben-card, .prod-card, .p-step, .stat-item');
+    const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
             }
         });
-    }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    revealElements.forEach((el, i) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = `all 0.6s cubic-bezier(0.25,0.46,0.45,0.94) ${i % 4 * 0.1}s`;
+        revealObserver.observe(el);
     });
 
-    fadeElements.forEach(el => observer.observe(el));
-
-    // --- Contact form handler ---
+    // Contact form
     const form = document.getElementById('contactForm');
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
+    if (form) {
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const btn = form.querySelector('button[type="submit"]');
+            btn.innerHTML = '<span>Enviado</span>';
+            btn.style.background = '#2d5a27';
+            btn.style.color = '#fff';
+            btn.disabled = true;
+            setTimeout(() => {
+                btn.innerHTML = '<span>Enviar Mensaje</span>';
+                btn.style.background = '';
+                btn.style.color = '';
+                btn.disabled = false;
+                form.reset();
+            }, 3000);
+        });
+    }
 
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData);
-
-        // Show success message
-        const btn = form.querySelector('button[type="submit"]');
-        const originalText = btn.textContent;
-        btn.textContent = '¡Mensaje Enviado!';
-        btn.style.background = '#52b788';
-        btn.disabled = true;
-
-        setTimeout(() => {
-            btn.textContent = originalText;
-            btn.style.background = '';
-            btn.disabled = false;
-            form.reset();
-        }, 3000);
-    });
-
-    // --- Active nav link highlight ---
+    // Active nav highlight
     const sections = document.querySelectorAll('section[id]');
     const navItems = document.querySelectorAll('.nav-links a[href^="#"]');
-
     const highlightNav = () => {
         const scrollPos = window.scrollY + 100;
         sections.forEach(section => {
             const top = section.offsetTop;
             const height = section.offsetHeight;
             const id = section.getAttribute('id');
-
             if (scrollPos >= top && scrollPos < top + height) {
                 navItems.forEach(item => {
                     item.classList.remove('active');
@@ -105,6 +99,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     };
-
     window.addEventListener('scroll', highlightNav);
+
+    // Parallax on hero
+    window.addEventListener('scroll', () => {
+        const heroImg = document.querySelector('.hero-bg-img');
+        if (heroImg && window.scrollY < window.innerHeight) {
+            heroImg.style.transform = `scale(1.1) translateY(${window.scrollY * 0.3}px)`;
+        }
+    });
 });
