@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 340" width="280" height="340">
+  <defs>
+    <linearGradient id="jug-body" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1a2a1a"/>
+      <stop offset="25%" stop-color="#2d3d2a"/>
+      <stop offset="50%" stop-color="#3a4a35"/>
+      <stop offset="75%" stop-color="#2d3d2a"/>
+      <stop offset="100%" stop-color="#1a2a1a"/>
+    </linearGradient>
+    <linearGradient id="cap-green" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a8a3a"/>
+      <stop offset="100%" stop-color="#2a6a2a"/>
+    </linearGradient>
+    <filter id="shadow3"><feDropShadow dx="4" dy="6" stdDeviation="8" flood-opacity="0.3"/></filter>
+  </defs>
+  <g filter="url(#shadow3)">
+    <!-- Main body -->
+    <rect x="30" y="80" width="220" height="230" rx="12" fill="url(#jug-body)"/>
+    <!-- Top flat -->
+    <rect x="30" y="72" width="220" height="16" rx="4" fill="#2a3a28"/>
+    <!-- Neck -->
+    <rect x="50" y="28" width="40" height="48" rx="6" fill="url(#jug-body)"/>
+    <!-- Cap -->
+    <rect x="46" y="10" width="48" height="24" rx="6" fill="url(#cap-green)"/>
+    <rect x="50" y="6" width="40" height="8" rx="4" fill="#4a9a4a"/>
+    <!-- Handle -->
+    <path d="M140 30 Q140 20 155 20 L185 20 Q210 20 210 45 L210 72" fill="none" stroke="#2d3d2a" stroke-width="14" stroke-linecap="round"/>
+    <path d="M140 30 Q140 20 155 20 L185 20 Q210 20 210 45 L210 72" fill="none" stroke="#3a4a35" stroke-width="10" stroke-linecap="round"/>
+    <!-- Handle hole -->
+    <ellipse cx="180" cy="42" rx="16" ry="12" fill="#f0f0f0" opacity="0.15"/>
+    <!-- Base -->
+    <rect x="26" y="305" width="228" height="12" rx="4" fill="#1a2a1a"/>
+  </g>
+  <!-- Label area -->
+  <rect x="50" y="120" width="180" height="170" rx="4" fill="#fff" stroke="#ddd" stroke-width="0.5"/>
+  <!-- Label title -->
+  <text x="140" y="142" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" font-weight="bold" fill="#333">Informacion Nutricional</text>
+  <line x1="58" y1="148" x2="222" y2="148" stroke="#ddd" stroke-width="0.5"/>
+  <text x="60" y="160" font-family="Arial,sans-serif" font-size="6" fill="#666">Tamano de porcion: 2 cucharaditas (10 ml)</text>
+  <text x="60" y="170" font-family="Arial,sans-serif" font-size="6" fill="#666">Numero de porciones por envase: 500</text>
+  <line x1="58" y1="175" x2="222" y2="175" stroke="#ddd" stroke-width="0.5"/>
+  <!-- Table header -->
+  <text x="60" y="187" font-family="Arial,sans-serif" font-size="7" font-weight="bold" fill="#1a1a1a">Calorias (kcal)</text>
+  <text x="155" y="187" text-anchor="middle" font-family="Arial,sans-serif" font-size="6" font-weight="bold" fill="#666">Por 100 g</text>
+  <text x="205" y="187" text-anchor="middle" font-family="Arial,sans-serif" font-size="6" font-weight="bold" fill="#666">Por porcion</text>
+  <line x1="58" y1="191" x2="222" y2="191" stroke="#ddd" stroke-width="0.5"/>
+  <!-- Data rows -->
+  <text x="60" y="203" font-family="Arial,sans-serif" font-size="7" fill="#333"></text>
+  <text x="155" y="203" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" font-weight="bold" fill="#1a1a1a">891</text>
+  <text x="205" y="203" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" font-weight="bold" fill="#1a1a1a">89</text>
+  <line x1="58" y1="208" x2="222" y2="208" stroke="#eee" stroke-width="0.5"/>
+  <text x="60" y="220" font-family="Arial,sans-serif" font-size="7" fill="#333">Grasa total</text>
+  <text x="155" y="220" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" font-weight="bold" fill="#1a1a1a">99 g</text>
+  <text x="205" y="220" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#333">9.9 g</text>
+  <line x1="58" y1="225" x2="222" y2="225" stroke="#eee" stroke-width="0.5"/>
+  <text x="60" y="237" font-family="Arial,sans-serif" font-size="7" font-weight="bold" fill="#333">Grasa saturada</text>
+  <text x="155" y="237" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" font-weight="bold" fill="#1a1a1a">13 g</text>
+  <text x="205" y="237" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" font-weight="bold" fill="#1a1a1a">1.3 g</text>
+  <line x1="58" y1="242" x2="222" y2="242" stroke="#eee" stroke-width="0.5"/>
+  <text x="60" y="254" font-family="Arial,sans-serif" font-size="7" fill="#333">Calcio</text>
+  <text x="155" y="254" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#333">490 mg</text>
+  <text x="205" y="254" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#333">152 mg</text>
+  <line x1="58" y1="259" x2="222" y2="259" stroke="#eee" stroke-width="0.5"/>
+  <text x="60" y="271" font-family="Arial,sans-serif" font-size="7" fill="#333">Zinc</text>
+  <text x="155" y="271" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#333">13 mg</text>
+  <text x="205" y="271" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#333">1.3 mg</text>
+</svg>

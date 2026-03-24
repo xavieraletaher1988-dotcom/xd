@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 480" width="200" height="480">
+  <defs>
+    <linearGradient id="bottle-clear" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#c8ccc8"/>
+      <stop offset="20%" stop-color="#e8ece8"/>
+      <stop offset="40%" stop-color="#f5f8f5"/>
+      <stop offset="60%" stop-color="#e8ece8"/>
+      <stop offset="80%" stop-color="#d5d8d5"/>
+      <stop offset="100%" stop-color="#c0c4c0"/>
+    </linearGradient>
+    <linearGradient id="oil-ev" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(200,210,180,0.4)"/>
+      <stop offset="100%" stop-color="rgba(180,195,160,0.5)"/>
+    </linearGradient>
+    <linearGradient id="cap-white" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff"/>
+      <stop offset="100%" stop-color="#ddd"/>
+    </linearGradient>
+    <filter id="shadow2"><feDropShadow dx="3" dy="6" stdDeviation="8" flood-opacity="0.25"/></filter>
+  </defs>
+  <g filter="url(#shadow2)">
+    <!-- Bottle body - transparent/clear plastic -->
+    <rect x="60" y="80" width="80" height="350" rx="12" fill="url(#bottle-clear)"/>
+    <!-- Oil inside -->
+    <rect x="64" y="120" width="72" height="300" rx="8" fill="url(#oil-ev)" opacity="0.5"/>
+    <!-- Neck -->
+    <rect x="80" y="20" width="40" height="65" rx="6" fill="url(#bottle-clear)"/>
+    <!-- Cap -->
+    <rect x="76" y="4" width="48" height="24" rx="8" fill="url(#cap-white)" stroke="#ccc" stroke-width="1"/>
+    <!-- Shoulder curve -->
+    <path d="M80 80 Q80 80 60 95" fill="none" stroke="#bbb" stroke-width="1"/>
+    <path d="M120 80 Q120 80 140 95" fill="none" stroke="#bbb" stroke-width="1"/>
+    <!-- Base -->
+    <rect x="56" y="425" width="88" height="10" rx="5" fill="#bbb"/>
+  </g>
+  <!-- Label -->
+  <rect x="62" y="140" width="76" height="250" rx="3" fill="#fff" stroke="#eee" stroke-width="0.5"/>
+  <!-- Colombian flag stripe at top of label -->
+  <rect x="62" y="140" width="25" height="4" fill="#f5c518"/>
+  <rect x="87" y="140" width="26" height="4" fill="#0033a0"/>
+  <rect x="113" y="140" width="25" height="4" fill="#ce1126"/>
+  <!-- Label text -->
+  <text x="100" y="165" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="bold" fill="#1a1a1a">Aceite de</text>
+  <text x="100" y="178" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="bold" fill="#1a1a1a">Aguacate Hass</text>
+  <!-- EXTRA-VIRGEN -->
+  <text x="100" y="198" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="bold" fill="#0033a0" letter-spacing="1">EXTRA-VIRGEN</text>
+  <text x="100" y="212" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#666">100% puro</text>
+  <!-- Avocado icon -->
+  <g transform="translate(80,220) scale(0.35)">
+    <path d="M50 0 C20 0 0 30 0 60 C0 90 20 100 50 100 C80 100 100 90 100 60 C100 30 80 0 50 0Z" fill="#1a1a1a"/>
+    <circle cx="50" cy="55" r="15" fill="#333"/>
+    <path d="M40 20 C30 30 25 50 35 70 Q45 80 55 60 Q60 40 50 25Z" fill="#1a1a1a" stroke="#333" stroke-width="2"/>
+  </g>
+  <!-- Contiene -->
+  <rect x="72" y="268" width="56" height="14" rx="7" fill="#1a1a1a"/>
+  <text x="100" y="278" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#fff">Contiene:</text>
+  <!-- Nutrients -->
+  <text x="100" y="296" text-anchor="middle" font-family="Arial,sans-serif" font-size="6" font-weight="bold" fill="#2d5a27">Vitamina A, B1, B2, D y E</text>
+  <text x="100" y="308" text-anchor="middle" font-family="Arial,sans-serif" font-size="6" font-weight="bold" fill="#2d5a27">Fitoesteroles</text>
+  <text x="100" y="320" text-anchor="middle" font-family="Arial,sans-serif" font-size="6" font-weight="bold" fill="#2d5a27">Magnesio</text>
+  <text x="100" y="332" text-anchor="middle" font-family="Arial,sans-serif" font-size="6" font-weight="bold" fill="#2d5a27">Fosforo / Potasio</text>
+  <text x="100" y="344" text-anchor="middle" font-family="Arial,sans-serif" font-size="6" font-weight="bold" fill="#2d5a27">Calcio</text>
+  <!-- Bera logo -->
+  <g transform="translate(72,352)">
+    <text x="0" y="12" font-family="Georgia,serif" font-size="9" font-weight="bold"><tspan fill="#1a1a1a">B</tspan><tspan fill="#f5c518">e</tspan></text>
+    <text x="0" y="22" font-family="Georgia,serif" font-size="9" font-weight="bold"><tspan fill="#0033a0">r</tspan><tspan fill="#ce1126">a</tspan></text>
+    <text x="20" y="22" font-family="Arial,sans-serif" font-size="4.5" fill="#888" letter-spacing="1">HASS</text>
+  </g>
+  <!-- 250 ML badge -->
+  <rect x="72" y="378" width="56" height="14" rx="3" fill="#1a1a1a"/>
+  <text x="100" y="389" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" font-weight="bold" fill="#fff">250 ML</text>
+</svg>
