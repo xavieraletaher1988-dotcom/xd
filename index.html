@@ -1,409 +1,580 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bera Hass | Aceite de Aguacate Hass Premium - Colombia</title>
-    <meta name="description" content="Bera Hass - Aceite de aguacate Hass 100% puro de Colombia. Refinado y Extra-Virgen. Rico en Omega 3-6-9, Vitamina E y antioxidantes naturales.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bera Hass | Aceite de Aguacate Hass Premium — Colombia</title>
+  <meta name="description" content="Bera Hass: Aceite de Aguacate Hass 100% colombiano. Extra Virgen, Refinado y Garrafa Industrial. Del campo colombiano a tu mesa."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
 
-    <!-- Preloader -->
-    <div class="preloader" id="preloader">
-        <div class="preloader-inner">
-            <div class="preloader-logo">Bera<span>Hass</span></div>
-            <div class="preloader-bar"><div class="preloader-fill"></div></div>
-        </div>
+<!-- PRELOADER -->
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-avocado">
+      <svg viewBox="0 0 80 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="40" cy="55" rx="30" ry="42" fill="#2d5a27"/>
+        <ellipse cx="40" cy="58" rx="22" ry="32" fill="#8bc34a"/>
+        <ellipse cx="40" cy="62" rx="11" ry="15" fill="#8d6e4a"/>
+      </svg>
     </div>
+    <div class="preloader-logo">Bera<span>HASS</span></div>
+    <div class="preloader-bar"><div class="preloader-fill"></div></div>
+    <p class="preloader-text">Del Campo Colombiano a Tu Mesa</p>
+  </div>
+</div>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="container nav-container">
-            <a href="#inicio" class="logo">
-                <div class="logo-mark">
-                    <span class="logo-b">B</span><span class="logo-e">e</span><span class="logo-r">r</span><span class="logo-a">a</span>
-                </div>
-                <span class="logo-hass">HASS</span>
-            </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#productos">Productos</a></li>
-                <li><a href="#beneficios">Beneficios</a></li>
-                <li><a href="#proceso">Proceso</a></li>
-                <li><a href="#contacto" class="btn-nav">Contacto</a></li>
-            </ul>
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container nav-container">
+    <a href="#inicio" class="logo">
+      <div class="logo-avo-wrap">
+        <svg class="logo-avo" viewBox="0 0 40 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="20" cy="28" rx="15" ry="21" fill="#2d5a27"/>
+          <ellipse cx="20" cy="30" rx="11" ry="16" fill="#8bc34a"/>
+          <ellipse cx="20" cy="33" rx="5.5" ry="7.5" fill="#8d6e4a"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <div class="logo-mark">
+          <span class="logo-b">B</span><span class="logo-e">e</span><span class="logo-r">r</span><span class="logo-a">a</span>
         </div>
-    </nav>
+        <div class="logo-hass">HASS</div>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="#beneficios">Beneficios</a></li>
+      <li><a href="#proceso">Proceso</a></li>
+      <li><a href="#contacto" class="btn-nav">Cotizar</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="inicio">
-        <div class="hero-overlay"></div>
-        <div class="hero-avocado-deco"></div>
-        <div class="container hero-content">
-            <div class="hero-text">
-                <div class="hero-badge animate-up">
-                    <span class="badge-dot"></span>
-                    100% Puro &bull; Prensado en Frio &bull; Hecho en Colombia
-                </div>
-                <h1 class="animate-up d1">
-                    El Oro Verde<br>
-                    <span class="hero-accent">del Aguacate Hass</span>
-                </h1>
-                <p class="hero-subtitle animate-up d2">
-                    Descubre el poder natural del aceite de aguacate Hass colombiano.
-                    Rico en Omega 3-6-9, Vitamina E y antioxidantes que transforman tu salud.
-                </p>
-                <div class="hero-buttons animate-up d3">
-                    <a href="#productos" class="btn btn-gold">
-                        <span>Ver Productos</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </a>
-                    <a href="#nosotros" class="btn btn-glass">Nuestra Historia</a>
-                </div>
-                <div class="hero-trust animate-up d4">
-                    <div class="trust-item">
-                        <strong>250ml</strong><span>Refinado</span>
-                    </div>
-                    <div class="trust-divider"></div>
-                    <div class="trust-item">
-                        <strong>250ml</strong><span>Extra Virgen</span>
-                    </div>
-                    <div class="trust-divider"></div>
-                    <div class="trust-item">
-                        <strong>Garrafa</strong><span>Industrial</span>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-visual animate-up d2">
-                <div class="hero-emoji">&#129361;</div>
-            </div>
-        </div>
-        <div class="hero-scroll">
-            <div class="mouse"><div class="wheel"></div></div>
-            <span>Desliza</span>
-        </div>
-    </section>
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-bg">
+    <img class="hero-bg-img" src="https://images.unsplash.com/photo-1601926638232-6c42e589e8d8?w=1600&q=85&fit=crop" alt="Campo de aguacates Colombia" loading="eager"/>
+    <div class="hero-overlay"></div>
+    <div class="hero-particles" id="heroParticles"></div>
+  </div>
 
-    <!-- Stats Banner -->
-    <section class="stats-banner">
-        <div class="container stats-grid">
-            <div class="stat-item">
-                <span class="stat-num">100%</span>
-                <span class="stat-label">Natural y Puro</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-num">250&#176;C</span>
-                <span class="stat-label">Punto de Humo</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-num">Omega</span>
-                <span class="stat-label">3-6-9 Completo</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-num">Colombia</span>
-                <span class="stat-label">Origen Premium</span>
-            </div>
-        </div>
-    </section>
+  <div class="hero-flag-stripe"></div>
 
-    <!-- About Section -->
-    <section class="section about" id="nosotros">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-images">
-                    <div class="about-img-main">
-                        <div class="about-visual">
-                            <div class="avocado-illustration">
-                                <div class="avo-outer"></div>
-                                <div class="avo-inner"></div>
-                                <div class="avo-seed"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="about-float">
-                        <div class="float-emoji">&#129361;</div>
-                        <div><strong>100% Colombiano</strong><span>Produccion responsable</span></div>
-                    </div>
-                </div>
-                <div class="about-content">
-                    <span class="section-tag">Nuestra Esencia</span>
-                    <h2>Tradicion Colombiana,<br><span class="text-gradient">Calidad Mundial</span></h2>
-                    <p class="about-lead">Somos <strong>Bera Hass</strong>, una empresa colombiana dedicada a la produccion de aceite de aguacate Hass de la mas alta calidad.</p>
-                    <p>Desde las fertiles tierras de Colombia, seleccionamos los mejores aguacates Hass para transformarlos en un aceite excepcional. Nuestro proceso de extraccion preserva todos los nutrientes, vitaminas y acidos grasos esenciales.</p>
-                    <div class="about-features">
-                        <div class="about-feat">
-                            <div class="feat-icon yellow">&#9733;</div>
-                            <div><h4>Calidad Premium</h4><p>Seleccion rigurosa de materia prima</p></div>
-                        </div>
-                        <div class="about-feat">
-                            <div class="feat-icon blue">&#127793;</div>
-                            <div><h4>100% Natural</h4><p>Sin aditivos ni conservantes</p></div>
-                        </div>
-                        <div class="about-feat">
-                            <div class="feat-icon red">&#127758;</div>
-                            <div><h4>Alcance Nacional</h4><p>Distribucion en toda Colombia</p></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <div class="container hero-content">
+    <div class="hero-text">
+      <div class="hero-badge animate-up d1">
+        <span class="badge-dot"></span>
+        🇨🇴 &nbsp;Hecho en Colombia · 100% Natural
+      </div>
+      <h1 class="animate-up d2">
+        El <span class="hero-accent">Oro Verde</span><br/>del Aguacate Hass
+      </h1>
+      <p class="hero-subtitle animate-up d3">
+        Desde las fértiles tierras colombianas, prensamos el mejor aceite de aguacate Hass. Puro, nutritivo y lleno del sabor del campo.
+      </p>
+      <div class="hero-buttons animate-up d4">
+        <a href="#productos" class="btn btn-gold btn-lg">
+          <span>Ver Productos</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contacto" class="btn btn-glass btn-lg">Solicitar Cotización</a>
+      </div>
+      <div class="hero-trust animate-up d4">
+        <div class="trust-item">
+          <strong>100%</strong>
+          <span>Hass Puro</span>
         </div>
-    </section>
-
-    <!-- Products Section -->
-    <section class="section products" id="productos">
-        <div class="products-overlay"></div>
-        <div class="container products-inner">
-            <div class="section-header light">
-                <span class="section-tag light">Nuestros Productos</span>
-                <h2>Tres Presentaciones,<br><span class="text-gold">Una Sola Calidad</span></h2>
-                <p>Cada gota de aceite Bera Hass es sinonimo de pureza, nutricion y sabor excepcional.</p>
-            </div>
-            <div class="products-grid">
-                <!-- Refinado -->
-                <div class="prod-card">
-                    <div class="prod-header refinado-bg">
-                        <div class="prod-emoji">&#129361;</div>
-                        <div class="prod-badge">250 ml</div>
-                        <span class="prod-tag">Cocina</span>
-                    </div>
-                    <div class="prod-info">
-                        <h3>Aceite Refinado</h3>
-                        <p class="prod-sub">El aliado perfecto en tu cocina</p>
-                        <p>Aceite de aguacate Hass refinado 100% puro. Sabor neutro y alto punto de humo, perfecto para freir, saltear y hornear.</p>
-                        <div class="prod-nutrients">
-                            <span>Vitamina E</span><span>Fitosteroles</span><span>Acido Oleico</span><span>Omega 3-6-9</span>
-                        </div>
-                        <a href="#contacto" class="btn btn-prod">Solicitar Cotizacion</a>
-                    </div>
-                </div>
-                <!-- Extra Virgen -->
-                <div class="prod-card featured">
-                    <div class="featured-badge">&#11088; Estrella</div>
-                    <div class="prod-header extravirgen-bg">
-                        <div class="prod-emoji">&#129379;</div>
-                        <div class="prod-badge gold">250 ml</div>
-                        <span class="prod-tag gold">Premium</span>
-                    </div>
-                    <div class="prod-info">
-                        <h3>Aceite Extra Virgen</h3>
-                        <p class="prod-sub">Pureza en su maxima expresion</p>
-                        <p>Primera extraccion en frio. Conserva todas las vitaminas y el sabor autentico del aguacate. Ideal para aderezos y consumo directo.</p>
-                        <div class="prod-nutrients">
-                            <span>Vitamina A, B1, B2, D, E</span><span>Fitoesteroles</span><span>Magnesio</span><span>Fosforo</span><span>Potasio</span><span>Calcio</span>
-                        </div>
-                        <a href="#contacto" class="btn btn-prod btn-prod-gold">Solicitar Cotizacion</a>
-                    </div>
-                </div>
-                <!-- Industrial -->
-                <div class="prod-card">
-                    <div class="prod-header industrial-bg">
-                        <div class="prod-emoji">&#127981;</div>
-                        <div class="prod-badge">Garrafa</div>
-                        <span class="prod-tag">Mayorista</span>
-                    </div>
-                    <div class="prod-info">
-                        <h3>Garrafa Industrial</h3>
-                        <p class="prod-sub">Para grandes volumenes</p>
-                        <p>Presentacion para restaurantes, hoteles, industria alimenticia y distribuidores. La misma calidad en formato de alto rendimiento.</p>
-                        <div class="prod-nutrients">
-                            <span>891 kcal/100g</span><span>Calcio 490mg</span><span>Zinc 13mg</span>
-                        </div>
-                        <a href="#contacto" class="btn btn-prod">Solicitar Cotizacion</a>
-                    </div>
-                </div>
-            </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <strong>3</strong>
+          <span>Presentaciones</span>
         </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section class="section benefits" id="beneficios">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Beneficios</span>
-                <h2>&#191;Por que elegir <span class="text-gradient">Aceite de Aguacate?</span></h2>
-                <p>Reconocido mundialmente como uno de los aceites mas saludables y versatiles.</p>
-            </div>
-            <div class="benefits-grid">
-                <div class="ben-card"><div class="ben-icon">&#10084;&#65039;</div><h3>Salud Cardiovascular</h3><p>Rico en acidos grasos monoinsaturados (Omega 9) que reducen el colesterol LDL y protegen tu corazon.</p></div>
-                <div class="ben-card"><div class="ben-icon">&#9889;</div><h3>Potente Antioxidante</h3><p>La Vitamina E y los fitosteroles combaten el envejecimiento celular y fortalecen el sistema inmunologico.</p></div>
-                <div class="ben-card"><div class="ben-icon">&#128293;</div><h3>Alto Punto de Humo</h3><p>250&#176;C - Ideal para cocinar a altas temperaturas sin generar sustancias toxicas.</p></div>
-                <div class="ben-card"><div class="ben-icon">&#129361;</div><h3>Absorcion de Nutrientes</h3><p>Mejora la absorcion de vitaminas liposolubles A, D, E y K de otros alimentos.</p></div>
-                <div class="ben-card"><div class="ben-icon">&#128170;</div><h3>Rico en Minerales</h3><p>Aporta calcio, magnesio, fosforo, potasio y zinc esenciales para tu cuerpo.</p></div>
-                <div class="ben-card"><div class="ben-icon">&#10024;</div><h3>Piel y Cabello</h3><p>Hidrata, nutre y regenera la piel. Fortalece y da brillo al cabello de forma natural.</p></div>
-            </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <strong>250°C</strong>
+          <span>Punto de humo</span>
         </div>
-    </section>
-
-    <!-- Process Section -->
-    <section class="section process" id="proceso">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Nuestro Proceso</span>
-                <h2>Del Arbol a <span class="text-gradient">Tu Mesa</span></h2>
-                <p>Un proceso cuidadoso que preserva cada nutriente del aguacate Hass colombiano.</p>
-            </div>
-            <div class="process-steps">
-                <div class="process-line"></div>
-                <div class="p-step">
-                    <div class="p-icon-wrap">
-                        <div class="p-icon">&#127795;</div>
-                        <span class="p-num">01</span>
-                    </div>
-                    <h3>Seleccion</h3>
-                    <p>Los mejores aguacates Hass en su punto optimo de maduracion.</p>
-                </div>
-                <div class="p-step">
-                    <div class="p-icon-wrap">
-                        <div class="p-icon">&#129361;</div>
-                        <span class="p-num">02</span>
-                    </div>
-                    <h3>Extraccion</h3>
-                    <p>Prensado en frio a temperatura controlada preservando nutrientes.</p>
-                </div>
-                <div class="p-step">
-                    <div class="p-icon-wrap">
-                        <div class="p-icon">&#128167;</div>
-                        <span class="p-num">03</span>
-                    </div>
-                    <h3>Purificacion</h3>
-                    <p>Filtrado natural que garantiza pureza sin alterar propiedades.</p>
-                </div>
-                <div class="p-step">
-                    <div class="p-icon-wrap">
-                        <div class="p-icon">&#129346;</div>
-                        <span class="p-num">04</span>
-                    </div>
-                    <h3>Envasado</h3>
-                    <p>Envasado hermetico en tres presentaciones, garantizando frescura.</p>
-                </div>
-            </div>
+      </div>
+    </div>
+    <div class="hero-visual animate-up d3">
+      <div class="hero-product-showcase">
+        <div class="showcase-glow"></div>
+        <img class="showcase-bottle" src="https://xavieraletaher1988-dotcom.github.io/xd/refinado.jpg" alt="Aceite de Aguacate Bera Hass" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400&q=80&fit=crop'"/>
+        <div class="hero-float-card">
+          <span class="float-avo">🥑</span>
+          <div>
+            <strong>Prensado en Frío</strong>
+            <span>Máximos nutrientes</span>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
 
-    <!-- Nutritional Section -->
-    <section class="section nutrition">
-        <div class="container">
-            <div class="nutri-grid">
-                <div class="nutri-content">
-                    <span class="section-tag">Informacion Nutricional</span>
-                    <h2>Nutricion que<br><span class="text-gradient">Habla por Si Sola</span></h2>
-                    <p>Nuestro aceite de aguacate Hass es un concentrado de nutrientes esenciales para tu salud.</p>
-                </div>
-                <div class="nutri-table-wrap">
-                    <table class="nutri-table">
-                        <thead>
-                            <tr><th>Nutriente</th><th>Por 100g</th><th>Por Porcion (10ml)</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Calorias</td><td><strong>891 kcal</strong></td><td>89 kcal</td></tr>
-                            <tr><td>Grasa Total</td><td><strong>99 g</strong></td><td>9.9 g</td></tr>
-                            <tr><td>Grasa Saturada</td><td><strong>13 g</strong></td><td>1.3 g</td></tr>
-                            <tr><td>Calcio</td><td><strong>490 mg</strong></td><td>152 mg</td></tr>
-                            <tr><td>Zinc</td><td><strong>13 mg</strong></td><td>1.3 mg</td></tr>
-                        </tbody>
-                    </table>
-                    <p class="nutri-note">Tamano de porcion: 2 cucharaditas (10 ml)</p>
-                </div>
+  <div class="hero-scroll">
+    <div class="mouse"><div class="wheel"></div></div>
+    <span>Descubre más</span>
+  </div>
+</section>
+
+<!-- STATS BANNER -->
+<div class="stats-banner">
+  <div class="container stats-grid">
+    <div class="stat-item">
+      <span class="stat-num">100%</span>
+      <span class="stat-label">Aguacate Hass Colombiano</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">3</span>
+      <span class="stat-label">Presentaciones Disponibles</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">250°C</span>
+      <span class="stat-label">Punto de Humo</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">0</span>
+      <span class="stat-label">Aditivos ni Conservantes</span>
+    </div>
+  </div>
+</div>
+
+<!-- COLOMBIA STRIP -->
+<div class="colombia-strip">
+  <div class="col-img-wrap">
+    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&fit=crop" alt="Aguacate Hass" loading="lazy"/>
+    <div class="col-img-label">Aguacate Hass</div>
+  </div>
+  <div class="col-img-wrap">
+    <img src="https://images.unsplash.com/photo-1601926638232-6c42e589e8d8?w=800&q=80&fit=crop" alt="Campos de Colombia" loading="lazy"/>
+    <div class="col-img-label">Campos Colombianos</div>
+  </div>
+  <div class="col-img-wrap">
+    <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=800&q=80&fit=crop" alt="Proceso de extracción" loading="lazy"/>
+    <div class="col-img-label">Extracción en Frío</div>
+  </div>
+  <div class="col-img-wrap">
+    <img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=800&q=80&fit=crop" alt="Naturaleza colombiana" loading="lazy"/>
+    <div class="col-img-label">Tierra Fértil</div>
+  </div>
+</div>
+
+<!-- NOSOTROS -->
+<section class="section about" id="nosotros">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-images">
+        <div class="about-img-stack">
+          <img class="about-img-main" src="https://images.unsplash.com/photo-1601926638232-6c42e589e8d8?w=700&q=85&fit=crop" alt="Cultivo de aguacate Hass en Colombia" loading="lazy"/>
+          <img class="about-img-secondary" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80&fit=crop" alt="Aguacate Hass fresco" loading="lazy"/>
+          <div class="about-float-card">
+            <span>🏔️</span>
+            <div>
+              <strong>Eje Cafetero</strong>
+              <span>Origen garantizado</span>
             </div>
+          </div>
         </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="section cta-section">
-        <div class="cta-overlay"></div>
-        <div class="container cta-content">
-            <h2>&#191;Listo para descubrir el<br><span class="text-gold">mejor aceite de aguacate</span><br>de Colombia?</h2>
-            <p>Unete a quienes ya confian en Bera Hass para su alimentacion y bienestar.</p>
-            <div class="cta-buttons">
-                <a href="#contacto" class="btn btn-gold btn-lg">Solicitar Cotizacion</a>
-                <a href="https://www.instagram.com/berahass_sas/" target="_blank" rel="noopener noreferrer" class="btn btn-glass btn-lg">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                    @berahass_sas
-                </a>
+      </div>
+      <div class="about-content">
+        <span class="section-tag">Nuestra Historia</span>
+        <h2>Tradición Colombiana,<br/><span class="text-gradient">Calidad Mundial</span></h2>
+        <p class="about-lead">Somos Bera Hass, una empresa colombiana apasionada por transformar el mejor aguacate Hass en aceite de altísima calidad.</p>
+        <p>Desde las fértiles tierras colombianas, seleccionamos los mejores aguacates Hass en su punto óptimo de maduración. Nuestro proceso de extracción preserva todos los nutrientes, vitaminas y ácidos grasos esenciales.</p>
+        <div class="about-features">
+          <div class="about-feat">
+            <div class="feat-icon yellow">🏆</div>
+            <div>
+              <h4>Calidad Premium</h4>
+              <p>Selección rigurosa de materia prima, sin compromisos.</p>
             </div>
+          </div>
+          <div class="about-feat">
+            <div class="feat-icon blue">🌿</div>
+            <div>
+              <h4>100% Natural</h4>
+              <p>Sin aditivos, conservantes ni mezclas. Solo aguacate Hass.</p>
+            </div>
+          </div>
+          <div class="about-feat">
+            <div class="feat-icon red">🚚</div>
+            <div>
+              <h4>Alcance Nacional</h4>
+              <p>Distribuimos en toda Colombia con envíos a tiempo.</p>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Contact Section -->
-    <section class="section contact" id="contacto">
-        <div class="container">
-            <div class="contact-layout">
-                <div class="contact-left">
-                    <span class="section-tag">Contacto</span>
-                    <h2>Hablemos de<br><span class="text-gradient">Tu Pedido</span></h2>
-                    <p>&#191;Interesado en distribuir o comprar nuestro aceite de aguacate? Escribenos.</p>
-                    <div class="contact-cards">
-                        <div class="c-card"><div class="c-icon">&#128205;</div><div><strong>Ubicacion</strong><span>Colombia</span></div></div>
-                        <div class="c-card"><div class="c-icon">&#128231;</div><div><strong>Email</strong><span>contacto@berahass.com</span></div></div>
-                        <div class="c-card"><a href="https://www.instagram.com/berahass_sas/" target="_blank" rel="noopener noreferrer" class="c-link"><div class="c-icon">&#128247;</div><div><strong>Instagram</strong><span>@berahass_sas</span></div></a></div>
-                    </div>
-                </div>
-                <div class="contact-right">
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-row">
-                            <div class="form-group"><label for="nombre">Nombre</label><input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required></div>
-                            <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="tu@email.com" required></div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group"><label for="telefono">Telefono</label><input type="tel" id="telefono" name="telefono" placeholder="+57 300 000 0000"></div>
-                            <div class="form-group">
-                                <label for="asunto">Interes</label>
-                                <select id="asunto" name="asunto" required>
-                                    <option value="" disabled selected>Selecciona</option>
-                                    <option value="refinado">Aceite Refinado 250ml</option>
-                                    <option value="extravirgen">Aceite Extra Virgen 250ml</option>
-                                    <option value="industrial">Garrafa Industrial</option>
-                                    <option value="distribucion">Distribucion</option>
-                                    <option value="exportacion">Exportacion</option>
-                                    <option value="otro">Otro</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group"><label for="mensaje">Mensaje</label><textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuentanos que necesitas..." required></textarea></div>
-                        <button type="submit" class="btn btn-gold btn-lg btn-full">
-                            <span>Enviar Mensaje</span>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-                        </button>
-                    </form>
-                </div>
-            </div>
+<!-- PRODUCTOS -->
+<section class="section products" id="productos">
+  <div class="products-overlay"></div>
+  <div class="products-inner container">
+    <div class="section-header light">
+      <span class="section-tag light">Nuestros Productos</span>
+      <h2>Tres Presentaciones,<br/><span class="text-gold">Una Sola Calidad</span></h2>
+      <p>Cada gota de aceite Bera Hass es sinónimo de pureza, nutrición y sabor excepcional del campo colombiano.</p>
+    </div>
+    <div class="products-grid">
+
+      <!-- EXTRAVIRGEN (destacado) -->
+      <div class="prod-card featured">
+        <div class="featured-badge">⭐ Más Popular</div>
+        <div class="prod-header extravirgen-bg">
+          <div class="prod-tag gold">Extra Virgen</div>
+          <img class="prod-bottle" src="https://xavieraletaher1988-dotcom.github.io/xd/extravirgen.jpg" alt="Aceite Extra Virgen Bera Hass 250ml"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-bottle-fallback" style="display:none">🥑</div>
+          <div class="prod-shine"></div>
+          <span class="prod-badge gold">250 ml</span>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-top">
-                <div class="footer-brand">
-                    <a href="#inicio" class="logo footer-logo">
-                        <div class="logo-mark"><span class="logo-b">B</span><span class="logo-e">e</span><span class="logo-r">r</span><span class="logo-a">a</span></div>
-                        <span class="logo-hass">HASS</span>
-                    </a>
-                    <p>Aceite de aguacate Hass 100% puro, del corazon de Colombia para el mundo.</p>
-                    <div class="footer-social">
-                        <a href="https://www.instagram.com/berahass_sas/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="footer-nav"><h4>Navegacion</h4><ul><li><a href="#inicio">Inicio</a></li><li><a href="#nosotros">Nosotros</a></li><li><a href="#productos">Productos</a></li><li><a href="#beneficios">Beneficios</a></li><li><a href="#contacto">Contacto</a></li></ul></div>
-                <div class="footer-nav"><h4>Productos</h4><ul><li><a href="#productos">Aceite Refinado 250ml</a></li><li><a href="#productos">Aceite Extra Virgen 250ml</a></li><li><a href="#productos">Garrafa Industrial</a></li></ul></div>
-                <div class="footer-nav"><h4>Contacto</h4><ul><li>Colombia</li><li>contacto@berahass.com</li><li><a href="https://www.instagram.com/berahass_sas/" target="_blank" rel="noopener noreferrer">@berahass_sas</a></li></ul></div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Bera Hass - Berahass SAS. Todos los derechos reservados. Colombia</p>
-            </div>
+        <div class="prod-info">
+          <h3>Aceite Extra Virgen</h3>
+          <p class="prod-sub">Pureza en su máxima expresión</p>
+          <p>Primera extracción en frío. Conserva todas las vitaminas y el sabor auténtico del aguacate. Ideal para aderezos y consumo directo.</p>
+          <div class="prod-nutrients">
+            <span>Vit. A, B1, B2, D y E</span>
+            <span>Fitosteroles</span>
+            <span>Magnesio</span>
+            <span>Fósforo</span>
+            <span>Potasio</span>
+            <span>Calcio</span>
+          </div>
+          <a href="#contacto" class="btn-prod btn-prod-gold">
+            <span>Solicitar Cotización</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
-    </footer>
+      </div>
 
-    <script src="script.js"></script>
+      <!-- REFINADO -->
+      <div class="prod-card">
+        <div class="prod-header refinado-bg">
+          <div class="prod-tag">Refinado</div>
+          <img class="prod-bottle" src="https://xavieraletaher1988-dotcom.github.io/xd/refinado.jpg" alt="Aceite Refinado Bera Hass 250ml"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-bottle-fallback" style="display:none">🫙</div>
+          <div class="prod-shine"></div>
+          <span class="prod-badge">250 ml</span>
+        </div>
+        <div class="prod-info">
+          <h3>Aceite Refinado</h3>
+          <p class="prod-sub">El aliado perfecto en tu cocina</p>
+          <p>Aceite de aguacate Hass refinado 100% puro. Sabor neutro y alto punto de humo, perfecto para freír, saltear y hornear.</p>
+          <div class="prod-nutrients">
+            <span>Vitamina E</span>
+            <span>Fitosteroles</span>
+            <span>Ácido Oleico</span>
+            <span>Omega 3-6-9</span>
+          </div>
+          <a href="#contacto" class="btn-prod">
+            <span>Solicitar Cotización</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- GARRAFA -->
+      <div class="prod-card">
+        <div class="prod-header industrial-bg">
+          <div class="prod-tag">Industrial</div>
+          <img class="prod-bottle prod-bottle-garrafa" src="https://xavieraletaher1988-dotcom.github.io/xd/garrafa.jpg" alt="Garrafa Industrial Bera Hass"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="prod-bottle-fallback" style="display:none">🏭</div>
+          <div class="prod-shine"></div>
+          <span class="prod-badge">5 Litros</span>
+        </div>
+        <div class="prod-info">
+          <h3>Garrafa Industrial</h3>
+          <p class="prod-sub">Para grandes volúmenes</p>
+          <p>Para restaurantes, hoteles, industria alimenticia y distribuidores. La misma calidad en formato de alto rendimiento.</p>
+          <div class="prod-nutrients">
+            <span>500 porciones</span>
+            <span>Calcio 490mg</span>
+            <span>Zinc 13mg</span>
+            <span>Alta eficiencia</span>
+          </div>
+          <a href="#contacto" class="btn-prod">
+            <span>Solicitar Cotización</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section class="section benefits" id="beneficios">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">¿Por qué elegirnos?</span>
+      <h2>Beneficios que <span class="text-gradient">Hablan por Sí Solos</span></h2>
+      <p>Reconocido mundialmente como uno de los aceites más saludables y versátiles del mercado.</p>
+    </div>
+    <div class="benefits-layout">
+      <div class="benefits-img-col">
+        <img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=700&q=85&fit=crop" alt="Naturaleza y salud" loading="lazy" class="benefits-img"/>
+        <div class="benefits-overlay-card">
+          <div class="oc-icon">💚</div>
+          <div>
+            <strong>Fuente de Bienestar</strong>
+            <span>Omega 3 · 6 · 9</span>
+          </div>
+        </div>
+      </div>
+      <div class="benefits-grid">
+        <div class="ben-card">
+          <div class="ben-icon">❤️</div>
+          <h3>Salud Cardiovascular</h3>
+          <p>Rico en ácidos grasos monoinsaturados (Omega 9) que reducen el colesterol LDL y protegen tu corazón.</p>
+        </div>
+        <div class="ben-card">
+          <div class="ben-icon">✨</div>
+          <h3>Potente Antioxidante</h3>
+          <p>La Vitamina E y los fitosteroles combaten el envejecimiento celular y fortalecen el sistema inmune.</p>
+        </div>
+        <div class="ben-card">
+          <div class="ben-icon">🔥</div>
+          <h3>Alto Punto de Humo</h3>
+          <p>250°C — Ideal para cocinar a altas temperaturas sin generar sustancias tóxicas.</p>
+        </div>
+        <div class="ben-card">
+          <div class="ben-icon">💊</div>
+          <h3>Absorción de Nutrientes</h3>
+          <p>Mejora la absorción de vitaminas liposolubles A, D, E y K de otros alimentos.</p>
+        </div>
+        <div class="ben-card">
+          <div class="ben-icon">⚡</div>
+          <h3>Rico en Minerales</h3>
+          <p>Aporta calcio, magnesio, fósforo, potasio y zinc esenciales para tu cuerpo.</p>
+        </div>
+        <div class="ben-card">
+          <div class="ben-icon">🌸</div>
+          <h3>Piel y Cabello</h3>
+          <p>Hidrata, nutre y regenera la piel. Fortalece y da brillo al cabello de forma natural.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="section process" id="proceso">
+  <div class="process-bg">
+    <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=1600&q=80&fit=crop" alt="Proceso de aceite" loading="lazy"/>
+    <div class="process-bg-overlay"></div>
+  </div>
+  <div class="container process-inner">
+    <div class="section-header light">
+      <span class="section-tag light">Nuestro Proceso</span>
+      <h2>Del Árbol a Tu <span class="text-gold">Mesa</span></h2>
+      <p>Un proceso cuidadoso que preserva cada nutriente del aguacate Hass colombiano.</p>
+    </div>
+    <div class="process-steps">
+      <div class="p-step">
+        <div class="p-icon-wrap">
+          <div class="p-icon">🌳</div>
+          <span class="p-num">01</span>
+        </div>
+        <h3>Selección</h3>
+        <p>Los mejores aguacates Hass en su punto óptimo de maduración, desde nuestros campos.</p>
+      </div>
+      <div class="p-step">
+        <div class="p-icon-wrap">
+          <div class="p-icon">❄️</div>
+          <span class="p-num">02</span>
+        </div>
+        <h3>Extracción</h3>
+        <p>Prensado en frío a temperatura controlada, preservando todos los nutrientes.</p>
+      </div>
+      <div class="p-step">
+        <div class="p-icon-wrap">
+          <div class="p-icon">💧</div>
+          <span class="p-num">03</span>
+        </div>
+        <h3>Purificación</h3>
+        <p>Filtrado natural que garantiza pureza sin alterar propiedades ni sabor.</p>
+      </div>
+      <div class="p-step">
+        <div class="p-icon-wrap">
+          <div class="p-icon">📦</div>
+          <span class="p-num">04</span>
+        </div>
+        <h3>Envasado</h3>
+        <p>Envasado hermético en tres presentaciones, garantizando frescura y calidad.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-overlay"></div>
+  <div class="container">
+    <div class="cta-content">
+      <div class="cta-avo-deco">🥑</div>
+      <h2>¿Listo para descubrir el mejor aceite de aguacate de Colombia?</h2>
+      <p>Únete a quienes ya confían en Bera Hass para su alimentación y bienestar. Calidad colombiana en cada gota.</p>
+      <div class="cta-buttons">
+        <a href="#contacto" class="btn btn-gold btn-lg">Solicitar Cotización</a>
+        <a href="https://www.instagram.com/berahass_sas/" target="_blank" class="btn btn-glass btn-lg">
+          📷 @berahass_sas
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="section contact" id="contacto">
+  <div class="container">
+    <div class="contact-layout">
+      <div class="contact-left">
+        <span class="section-tag">Contáctenos</span>
+        <h2>Hablemos de <span class="text-gradient">Tu Pedido</span></h2>
+        <p>¿Interesado en distribuir o comprar nuestro aceite de aguacate? Escríbenos.</p>
+        <div class="contact-cards">
+          <a href="https://www.instagram.com/berahass_sas/" target="_blank" class="c-card">
+            <span class="c-icon">📷</span>
+            <div>
+              <strong>Instagram</strong>
+              <span>@berahass_sas</span>
+            </div>
+          </a>
+          <div class="c-card">
+            <span class="c-icon">📍</span>
+            <div>
+              <strong>Ubicación</strong>
+              <span>Colombia</span>
+            </div>
+          </div>
+          <div class="c-card">
+            <span class="c-icon">🌿</span>
+            <div>
+              <strong>Distribución</strong>
+              <span>Nacional e Internacional</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-wrap">
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required/>
+            </div>
+            <div class="form-group">
+              <label for="empresa">Empresa (opcional)</label>
+              <input type="text" id="empresa" name="empresa" placeholder="Tu empresa"/>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Correo Electrónico</label>
+              <input type="email" id="email" name="email" placeholder="tu@correo.com" required/>
+            </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="+57 300 000 0000"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="producto">Producto de Interés</label>
+            <select id="producto" name="producto">
+              <option value="">Selecciona un producto</option>
+              <option>Aceite Extra Virgen 250ml</option>
+              <option>Aceite Refinado 250ml</option>
+              <option>Garrafa Industrial 5L</option>
+              <option>Todos los productos</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos tu necesidad o volumen de pedido..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold btn-full">
+            <span>Enviar Mensaje</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-top">
+    <div class="footer-brand">
+      <div class="logo">
+        <div class="logo-avo-wrap small">
+          <svg class="logo-avo" viewBox="0 0 40 50" fill="none">
+            <ellipse cx="20" cy="28" rx="15" ry="21" fill="#2d5a27"/>
+            <ellipse cx="20" cy="30" rx="11" ry="16" fill="#8bc34a"/>
+            <ellipse cx="20" cy="33" rx="5.5" ry="7.5" fill="#8d6e4a"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <div class="logo-mark footer-logo-mark">
+            <span class="logo-b">B</span><span class="logo-e">e</span><span class="logo-r">r</span><span class="logo-a">a</span>
+          </div>
+          <div class="logo-hass">HASS</div>
+        </div>
+      </div>
+      <p>Aceite de aguacate Hass 100% puro, del corazón de Colombia para el mundo.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/berahass_sas/" target="_blank" title="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-nav">
+      <h4>Navegación</h4>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#beneficios">Beneficios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-nav">
+      <h4>Productos</h4>
+      <ul>
+        <li><a href="#productos">Aceite Extra Virgen 250ml</a></li>
+        <li><a href="#productos">Aceite Refinado 250ml</a></li>
+        <li><a href="#productos">Garrafa Industrial 5L</a></li>
+      </ul>
+    </div>
+    <div class="footer-nav">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="https://www.instagram.com/berahass_sas/">@berahass_sas</a></li>
+        <li>Colombia 🇨🇴</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Bera Hass — Berahass SAS. Todos los derechos reservados. Hecho con 💚 en Colombia.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
