@@ -24,6 +24,14 @@
     --font-body: 'Inter', -apple-system, sans-serif;
 }
 
+/* Bera colored letters */
+.l-b { color: inherit; }
+.l-e { color: #f5d900; }
+.l-r { color: #e60012; }
+.l-a { color: #0033a0; }
+.preloader-name .l-b { color: #ffffff; }
+.footer .l-b { color: #ffffff; }
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
