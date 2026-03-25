@@ -60,12 +60,39 @@ button, input, select, textarea { font: inherit; }
     pointer-events: none;
 }
 .preloader-inner { text-align: center; }
-.preloader-logo-img {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
+.preloader-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
     margin-bottom: 1.5rem;
-    filter: brightness(0) invert(1);
+}
+.preloader-avo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 14px;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+}
+.preloader-brand {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    text-align: left;
+}
+.preloader-name {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: white;
+    letter-spacing: -0.02em;
+}
+.preloader-hass {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    color: var(--gold-light);
+    text-transform: uppercase;
 }
 .preloader-bar {
     width: 180px;
@@ -115,11 +142,16 @@ button, input, select, textarea { font: inherit; }
     gap: 0.6rem;
     z-index: 10;
 }
-.logo-img {
-    width: 44px;
-    height: 44px;
+.logo-avo {
+    width: 42px;
+    height: 42px;
     object-fit: contain;
-    border-radius: 8px;
+    border-radius: 10px;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.15));
+    transition: transform 0.3s ease;
+}
+.logo:hover .logo-avo {
+    transform: rotate(-8deg) scale(1.05);
 }
 .logo-text-group {
     display: flex;
@@ -1061,8 +1093,8 @@ button, input, select, textarea { font: inherit; }
 .footer-logo {
     margin-bottom: 1rem;
 }
-.footer-logo .logo-img {
-    filter: brightness(0) invert(1);
+.footer-logo .logo-avo {
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
 }
 .footer-logo .logo-name,
 .footer-logo .logo-hass {
