@@ -759,7 +759,9 @@ button, input, select, textarea { font: inherit; }
     transform: scale(1.05) translateY(-4px);
 }
 .prod-img-garrafa {
-    max-height: 240px;
+    max-height: 260px;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 24px rgba(0,0,0,0.3));
 }
 .prod-badge {
     position: absolute;
