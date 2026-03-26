@@ -81,6 +81,7 @@
     object-fit: contain;
     filter: drop-shadow(0 15px 40px rgba(0,0,0,0.3));
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    mix-blend-mode: multiply;
 }
 .prod-gallery-main:hover .prod-gallery-img {
     transform: scale(1.05) translateY(-8px);
