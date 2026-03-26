@@ -25,12 +25,13 @@
 }
 
 /* Bera colored letters */
-.l-b { color: inherit; }
+.l-b { color: #1a1a1a; }
 .l-e { color: #f5d900; }
-.l-r { color: #e60012; }
-.l-a { color: #0033a0; }
+.l-r { color: #0033a0; }
+.l-a { color: #e60012; }
 .preloader-name .l-b { color: #ffffff; }
 .footer .l-b { color: #ffffff; }
+.hero .l-b { color: #ffffff; }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
