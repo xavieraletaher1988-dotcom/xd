@@ -16,7 +16,19 @@
     <!-- Preloader -->
     <div class="preloader" id="preloader">
         <div class="preloader-inner">
-            <img src="logo-berahass.png" alt="Bera Hass" class="preloader-logo-img">
+            <div class="preloader-logo">
+                <div class="avo-3d">
+                    <div class="avo-3d-body">
+                        <div class="avo-3d-inner">
+                            <div class="avo-3d-seed"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="preloader-brand">
+                    <span class="preloader-name"><span class="l-b">B</span><span class="l-e">e</span><span class="l-r">r</span><span class="l-a">a</span></span>
+                    <span class="preloader-hass">HASS</span>
+                </div>
+            </div>
             <div class="preloader-bar"><div class="preloader-fill"></div></div>
         </div>
     </div>
@@ -25,9 +37,15 @@
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="#inicio" class="logo">
-                <img src="logo-berahass.png" alt="Bera Hass" class="logo-img" width="44" height="44">
+                <div class="avo-3d avo-3d-sm">
+                    <div class="avo-3d-body">
+                        <div class="avo-3d-inner">
+                            <div class="avo-3d-seed"></div>
+                        </div>
+                    </div>
+                </div>
                 <div class="logo-text-group">
-                    <span class="logo-name">Bera</span>
+                    <span class="logo-name"><span class="l-b">B</span><span class="l-e">e</span><span class="l-r">r</span><span class="l-a">a</span></span>
                     <span class="logo-hass">HASS</span>
                 </div>
             </a>
@@ -42,56 +60,56 @@
                 <li><a href="#proceso">Proceso</a></li>
                 <li><a href="#contacto" class="btn-nav">Contáctanos</a></li>
             </ul>
+            <a href="#" class="nav-cart-btn" aria-label="Ver carrito">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                <span class="cart-badge">0</span>
+            </a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="inicio">
         <div class="hero-bg">
-            <img src="Imagen4-1.png" alt="Aguacates Hass frescos" class="hero-bg-img">
+            <img src="Captura de pantalla 2026-03-26 153256.png" alt="Aguacates Hass frescos colgando del árbol" class="hero-bg-img">
         </div>
         <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <div class="hero-text">
-                <div class="hero-badge">
-                    <span class="badge-dot"></span>
-                    100% Puro &bull; Prensado en Frío &bull; Hecho en Colombia
-                </div>
-                <h1>
-                    Del Campo Colombiano<br>
-                    <span class="hero-accent">a Tu Mesa</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Aceite de aguacate Hass 100% puro, extraído de las fértiles tierras de Colombia.
-                    Rico en Omega 3-6-9, Vitamina E y antioxidantes naturales.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#productos" class="btn btn-gold">
-                        <span>Ver Productos</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </a>
-                    <a href="#nosotros" class="btn btn-glass">Nuestra Historia</a>
-                </div>
-                <div class="hero-trust">
-                    <div class="trust-item">
-                        <strong>250ml</strong><span>Refinado</span>
+        <div class="container hero-split">
+            <!-- Left: Text + Floating Products -->
+            <div class="hero-left">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        100% Puro &bull; Prensado en Frío &bull; Registro INVIMA &bull; Negocios Verdes
                     </div>
-                    <div class="trust-divider"></div>
-                    <div class="trust-item">
-                        <strong>250ml</strong><span>Extra Virgen</span>
-                    </div>
-                    <div class="trust-divider"></div>
-                    <div class="trust-item">
-                        <strong>Garrafa</strong><span>Industrial</span>
+                    <h1>
+                        El Oro Líquido<br>
+                        <span class="hero-accent">de Colombia</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Aceite de aguacate Hass 100% puro, prensado en frío desde las fértiles tierras colombianas.
+                        La riqueza del campo en cada gota.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#productos" class="btn btn-gold btn-lg">
+                            <span>Ver Productos</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="#nosotros" class="btn btn-glass btn-lg">Nuestra Historia</a>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="hero-bottom-fade"></div>
         <div class="hero-scroll">
             <div class="mouse"><div class="wheel"></div></div>
             <span>Desliza</span>
         </div>
     </section>
+
+    <!-- Divider: Hero → Stats -->
+    <div class="divider-wave divider-dark">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0,40 C360,100 720,0 1080,60 C1260,80 1380,40 1440,50 L1440,100 L0,100 Z" fill="currentColor"/></svg>
+    </div>
 
     <!-- Stats Banner -->
     <section class="stats-banner">
@@ -109,51 +127,143 @@
                 <span class="stat-label">3-6-9 Completo</span>
             </div>
             <div class="stat-item">
-                <span class="stat-num">Colombia</span>
-                <span class="stat-label">Origen Premium</span>
+                <span class="stat-num">Vitamina E</span>
+                <span class="stat-label">Antioxidante Natural</span>
             </div>
         </div>
     </section>
 
+    <!-- Divider: Stats → About -->
+    <div class="divider-wave divider-to-light">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,0 C480,80 960,0 1440,60 L1440,80 L0,80 Z" fill="currentColor"/></svg>
+    </div>
+
     <!-- About Section -->
-    <section class="section about" id="nosotros">
+    <section class="about-v2" id="nosotros">
+        <!-- Panoramic Hero -->
+        <div class="about-panorama">
+            <img src="campo-cultivo.jpg" alt="Plantación de aguacate Hass en Colombia" class="about-panorama-img">
+            <div class="about-panorama-overlay"></div>
+            <div class="container about-panorama-content">
+                <span class="section-tag light">Nuestra Esencia</span>
+                <h2>Tradición Colombiana,<br><span class="text-gold">Calidad Mundial</span></h2>
+            </div>
+            <!-- Floating Counters -->
+            <div class="about-counters">
+                <div class="about-counter">
+                    <span class="counter-num">100%</span>
+                    <span class="counter-label">Puro y Natural</span>
+                </div>
+                <div class="about-counter-divider"></div>
+                <div class="about-counter">
+                    <span class="counter-num">3</span>
+                    <span class="counter-label">Presentaciones</span>
+                </div>
+                <div class="about-counter-divider"></div>
+                <div class="about-counter">
+                    <span class="counter-num">Colombia</span>
+                    <span class="counter-label">Origen Premium</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Block -->
         <div class="container">
-            <div class="about-grid">
-                <div class="about-images">
-                    <div class="about-img-main">
-                        <img src="QQY8oFEP-Corpohass_Aguacate_Hass_Cultivo_1-1-1030x685.jpg" alt="Cultivo de aguacate Hass en Colombia">
-                    </div>
-                    <div class="about-img-secondary">
-                        <img src="agucate-hass.jpg" alt="Aguacate Hass cortado">
-                    </div>
-                    <div class="about-float">
-                        <div class="float-icon">&#127793;</div>
-                        <div><strong>Sostenible</strong><span>Producción responsable</span></div>
+            <div class="about-story">
+                <div class="about-story-text">
+                    <span class="about-eyebrow">Quienes Somos</span>
+                    <h3 class="about-headline">Somos <strong><span class="l-b">B</span><span class="l-e">e</span><span class="l-r">r</span><span class="l-a">a</span> Hass</strong>, el aceite de aguacate que Colombia le da al mundo.</h3>
+                    <p class="about-body">Desde las fértiles tierras colombianas, seleccionamos los mejores aguacates Hass para transformarlos en un aceite excepcional. Nuestro proceso de extracción preserva todos los nutrientes, vitaminas y ácidos grasos esenciales que hacen del aguacate un superalimento reconocido mundialmente.</p>
+                    <div class="about-highlights">
+                        <div class="about-hl">
+                            <div class="about-hl-icon about-hl-green">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                            </div>
+                            <div>
+                                <strong>Registro INVIMA</strong>
+                                <span>RSA-0026118-2023</span>
+                            </div>
+                        </div>
+                        <div class="about-hl">
+                            <div class="about-hl-icon about-hl-gold">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                            </div>
+                            <div>
+                                <strong>Negocios Verdes</strong>
+                                <span>Insignia Certificada</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="about-content">
-                    <span class="section-tag">Nuestra Esencia</span>
-                    <h2>Tradición Colombiana,<br><span class="text-gradient">Calidad Mundial</span></h2>
-                    <p class="about-lead">Somos <strong>Bera Hass</strong>, una empresa colombiana dedicada a la producción de aceite de aguacate Hass de la más alta calidad.</p>
-                    <p>Desde las fértiles tierras de Colombia, seleccionamos los mejores aguacates Hass para transformarlos en un aceite excepcional. Nuestro proceso de extracción preserva todos los nutrientes, vitaminas y ácidos grasos esenciales que hacen del aguacate un superalimento reconocido mundialmente.</p>
-                    <div class="about-features">
-                        <div class="about-feat">
-                            <div class="feat-icon yellow">&#9733;</div>
-                            <div><h4>Calidad Premium</h4><p>Selección rigurosa de materia prima</p></div>
+                <div class="about-mosaic">
+                    <div class="mosaic-item mosaic-tall">
+                        <img src="istockphoto-521202112-612x612.jpg" alt="Aguacates Hass en el árbol">
+                        <div class="mosaic-label">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                            Cultivo Sostenible
                         </div>
-                        <div class="about-feat">
-                            <div class="feat-icon green">&#127793;</div>
-                            <div><h4>100% Natural</h4><p>Sin aditivos ni conservantes</p></div>
+                    </div>
+                    <div class="mosaic-item mosaic-wide">
+                        <img src="istockphoto-2234750139-612x612.jpg" alt="Aguacates Hass premium">
+                        <div class="mosaic-label">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                            Calidad Premium
                         </div>
-                        <div class="about-feat">
-                            <div class="feat-icon blue">&#127758;</div>
-                            <div><h4>Alcance Nacional</h4><p>Distribución en toda Colombia</p></div>
+                    </div>
+                    <div class="mosaic-item">
+                        <img src="istockphoto-174946444-612x612.jpg" alt="Aguacate Hass cortado">
+                        <div class="mosaic-label">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            100% Natural
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Feature Cards -->
+            <div class="about-features-v2">
+                <div class="about-feat-card feat-card-1">
+                    <div class="feat-card-stripe"></div>
+                    <div class="feat-card-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h4>Calidad Premium</h4>
+                    <p>Selección rigurosa de materia prima en su punto óptimo de maduración.</p>
+                    <div class="feat-card-num">01</div>
+                </div>
+                <div class="about-feat-card feat-card-2">
+                    <div class="feat-card-stripe"></div>
+                    <div class="feat-card-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg>
+                    </div>
+                    <h4>100% Natural</h4>
+                    <p>Sin aditivos, conservantes ni químicos. Pureza absoluta del campo a tu mesa.</p>
+                    <div class="feat-card-num">02</div>
+                </div>
+                <div class="about-feat-card feat-card-3">
+                    <div class="feat-card-stripe"></div>
+                    <div class="feat-card-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
+                    <h4>Alcance Global</h4>
+                    <p>Distribución nacional con proyección de exportación a mercados internacionales.</p>
+                    <div class="feat-card-num">03</div>
+                </div>
+                <div class="about-feat-card feat-card-4">
+                    <div class="feat-card-stripe"></div>
+                    <div class="feat-card-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                    </div>
+                    <h4>Certificaciones</h4>
+                    <p>Insignia de Negocios Verdes y Registro INVIMA. Calidad verificada por Colombia.</p>
+                    <div class="feat-card-num">04</div>
+                </div>
+            </div>
         </div>
     </section>
+
+    <!-- Divider: About → Products (diagonal) -->
+    <div class="divider-diagonal divider-to-dark"></div>
 
     <!-- Products Section -->
     <section class="section products" id="productos">
@@ -161,7 +271,17 @@
             <div class="section-header light">
                 <span class="section-tag light">Nuestros Productos</span>
                 <h2>Tres Presentaciones,<br><span class="text-gold">Una Sola Calidad</span></h2>
-                <p>Cada gota de aceite Bera Hass es sinónimo de pureza, nutrición y sabor excepcional.</p>
+                <p>Cada gota de aceite <span class="l-b">B</span><span class="l-e">e</span><span class="l-r">r</span><span class="l-a">a</span> Hass es sinónimo de pureza, nutrición y sabor excepcional.</p>
+                <div class="trust-badges">
+                    <div class="trust-badge-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                        <span>Registro INVIMA: RSA-0026118-2023</span>
+                    </div>
+                    <div class="trust-badge-item trust-badge-green">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg>
+                        <span>Insignia Negocios Verdes</span>
+                    </div>
+                </div>
             </div>
             <div class="products-grid">
                 <!-- Refinado -->
@@ -178,14 +298,25 @@
                         <div class="prod-nutrients">
                             <span>Vitamina E</span><span>Fitosteroles</span><span>Ácido Oleico</span><span>Omega 3-6-9</span>
                         </div>
-                        <a href="#contacto" class="btn btn-prod">Solicitar Cotización</a>
+                        <div class="prod-price-row">
+                            <div class="prod-price">
+                                <span class="price-currency">$</span>
+                                <span class="price-amount">25.000</span>
+                                <span class="price-unit">COP</span>
+                            </div>
+                        </div>
+                        <div class="prod-actions">
+                            <a href="producto-refinado.html" class="btn btn-prod">Ver Producto</a>
+                            <button class="btn-prod-cart btn-add-cart" data-product="refinado-250" title="Agregar al carrito">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <!-- Extra Virgen -->
                 <div class="prod-card featured">
-                    <div class="featured-badge">&#11088; ESTRELLA</div>
                     <div class="prod-header extravirgen-bg">
-                        <img src="refinado-clean.png" alt="Aceite de Aguacate Hass Extra Virgen 250ml" class="prod-img">
+                        <img src="extravirgen.png" alt="Aceite de Aguacate Hass Extra Virgen 250ml" class="prod-img">
                         <div class="prod-badge gold">250 ml</div>
                         <span class="prod-tag gold">Premium</span>
                     </div>
@@ -196,89 +327,131 @@
                         <div class="prod-nutrients">
                             <span>Vitamina A, B1, B2, D, E</span><span>Fitoesteroles</span><span>Magnesio</span><span>Fósforo</span><span>Potasio</span><span>Calcio</span>
                         </div>
-                        <a href="#contacto" class="btn btn-prod btn-prod-gold">Solicitar Cotización</a>
+                        <div class="prod-price-row">
+                            <div class="prod-price prod-price-gold">
+                                <span class="price-currency">$</span>
+                                <span class="price-amount">30.000</span>
+                                <span class="price-unit">COP</span>
+                            </div>
+                        </div>
+                        <div class="prod-actions">
+                            <a href="producto-extravirgen.html" class="btn btn-prod btn-prod-gold">Ver Producto</a>
+                            <button class="btn-prod-cart btn-prod-cart-gold btn-add-cart" data-product="extravirgen-250" title="Agregar al carrito">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <!-- Industrial -->
                 <div class="prod-card">
                     <div class="prod-header industrial-bg">
-                        <img src="garrafa-clean.png" alt="Garrafa Industrial Aceite de Aguacate Hass" class="prod-img prod-img-garrafa">
-                        <div class="prod-badge">Garrafa</div>
+                        <img src="garrafa.png" alt="Garrafa Industrial 5L Aceite de Aguacate Hass" class="prod-img prod-img-garrafa">
+                        <div class="prod-badge">5 Litros</div>
                         <span class="prod-tag">Mayorista</span>
                     </div>
                     <div class="prod-info">
                         <h3>Garrafa Industrial</h3>
-                        <p class="prod-sub">Para grandes volúmenes</p>
+                        <p class="prod-sub">5L &mdash; 500 porciones por envase</p>
                         <p>Presentación para restaurantes, hoteles, industria alimenticia y distribuidores. La misma calidad en formato de alto rendimiento.</p>
                         <div class="prod-nutrients">
-                            <span>891 kcal/100g</span><span>Calcio 490mg</span><span>Zinc 13mg</span>
+                            <span>891 kcal/100g</span><span>Calcio 490mg</span><span>Zinc 13mg</span><span>Grasa Sat. 13g</span>
                         </div>
-                        <a href="#contacto" class="btn btn-prod">Solicitar Cotización</a>
+                        <div class="prod-price-row">
+                            <div class="prod-price">
+                                <span class="price-currency">$</span>
+                                <span class="price-amount">500.000</span>
+                                <span class="price-unit">COP</span>
+                            </div>
+                        </div>
+                        <div class="prod-actions">
+                            <a href="producto-industrial.html" class="btn btn-prod">Ver Producto</a>
+                            <button class="btn-prod-cart btn-add-cart" data-product="industrial-5l" title="Agregar al carrito">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Divider: Products → Benefits (wave mountain) -->
+    <div class="divider-wave divider-products-ben">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,60 C240,120 480,0 720,80 C960,160 1200,20 1440,80 L1440,120 L0,120 Z" fill="currentColor"/></svg>
+    </div>
+
     <!-- Benefits Section -->
     <section class="section benefits" id="beneficios">
+        <div class="benefits-hero-bg">
+            <img src="istockphoto-154208158-612x612.jpg" alt="Aguacates Hass" class="benefits-hero-img">
+            <div class="benefits-hero-overlay"></div>
+            <div class="container benefits-hero-content">
+                <span class="section-tag light">Beneficios</span>
+                <h2>¿Por qué elegir<br><span class="text-gold">Aceite de Aguacate?</span></h2>
+                <p>Reconocido mundialmente como uno de los aceites más saludables y versátiles para tu salud.</p>
+            </div>
+        </div>
         <div class="container">
-            <div class="benefits-layout">
-                <div class="benefits-left">
-                    <span class="section-tag">Beneficios</span>
-                    <h2>¿Por qué elegir <span class="text-gradient">Aceite de Aguacate?</span></h2>
-                    <p>Reconocido mundialmente como uno de los aceites más saludables y versátiles.</p>
-                    <div class="benefits-image">
-                        <img src="aguacate-hass-2.jpg" alt="Aguacates Hass frescos de Colombia">
+            <div class="ben-grid">
+                <div class="ben-card-v2">
+                    <div class="ben-icon-wrap ben-coral">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                     </div>
+                    <h3>Salud Cardiovascular</h3>
+                    <p>Rico en ácidos grasos monoinsaturados (Omega 9) que reducen el colesterol LDL y protegen tu corazón.</p>
+                    <div class="ben-stat"><strong>70%</strong> ácido oleico</div>
                 </div>
-                <div class="benefits-right">
-                    <div class="ben-card">
-                        <div class="ben-icon">&#10084;&#65039;</div>
-                        <div>
-                            <h3>Salud Cardiovascular</h3>
-                            <p>Rico en ácidos grasos monoinsaturados (Omega 9) que reducen el colesterol LDL y protegen tu corazón.</p>
-                        </div>
+                <div class="ben-card-v2">
+                    <div class="ben-icon-wrap ben-amber">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                     </div>
-                    <div class="ben-card">
-                        <div class="ben-icon">&#9889;</div>
-                        <div>
-                            <h3>Potente Antioxidante</h3>
-                            <p>La Vitamina E y los fitosteroles combaten el envejecimiento celular y fortalecen el sistema inmunológico.</p>
-                        </div>
+                    <h3>Potente Antioxidante</h3>
+                    <p>La Vitamina E y los fitosteroles combaten el envejecimiento celular y fortalecen el sistema inmunológico.</p>
+                    <div class="ben-stat"><strong>Vitamina E</strong> natural</div>
+                </div>
+                <div class="ben-card-v2">
+                    <div class="ben-icon-wrap ben-red">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c0 0-8 9.27-8 13a8 8 0 0 0 16 0c0-3.73-8-13-8-13z"/><path d="M12 15v3M10 17h4"/></svg>
                     </div>
-                    <div class="ben-card">
-                        <div class="ben-icon">&#128293;</div>
-                        <div>
-                            <h3>Alto Punto de Humo</h3>
-                            <p>250°C - Ideal para cocinar a altas temperaturas sin generar sustancias tóxicas.</p>
-                        </div>
+                    <h3>Alto Punto de Humo</h3>
+                    <p>Ideal para cocinar a altas temperaturas sin generar sustancias tóxicas ni perder nutrientes.</p>
+                    <div class="ben-stat"><strong>250°C</strong> punto de humo</div>
+                </div>
+                <div class="ben-card-v2">
+                    <div class="ben-icon-wrap ben-green">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
                     </div>
-                    <div class="ben-card">
-                        <div class="ben-icon">&#129361;</div>
-                        <div>
-                            <h3>Absorción de Nutrientes</h3>
-                            <p>Mejora la absorción de vitaminas liposolubles A, D, E y K de otros alimentos.</p>
-                        </div>
+                    <h3>Absorción de Nutrientes</h3>
+                    <p>Mejora la absorción de vitaminas liposolubles A, D, E y K de otros alimentos que consumes.</p>
+                    <div class="ben-stat"><strong>+300%</strong> absorción</div>
+                </div>
+                <div class="ben-card-v2">
+                    <div class="ben-icon-wrap ben-teal">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
                     </div>
-                    <div class="ben-card">
-                        <div class="ben-icon">&#128170;</div>
-                        <div>
-                            <h3>Rico en Minerales</h3>
-                            <p>Aporta calcio, magnesio, fósforo, potasio y zinc esenciales para tu cuerpo.</p>
-                        </div>
+                    <h3>Rico en Minerales</h3>
+                    <p>Aporta calcio, magnesio, fósforo, potasio y zinc esenciales para el funcionamiento de tu cuerpo.</p>
+                    <div class="ben-stat"><strong>490mg</strong> calcio/100g</div>
+                </div>
+                <div class="ben-card-v2">
+                    <div class="ben-icon-wrap ben-purple">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
                     </div>
-                    <div class="ben-card">
-                        <div class="ben-icon">&#10024;</div>
-                        <div>
-                            <h3>Piel y Cabello</h3>
-                            <p>Hidrata, nutre y regenera la piel. Fortalece y da brillo al cabello de forma natural.</p>
-                        </div>
-                    </div>
+                    <h3>Piel y Cabello</h3>
+                    <p>Hidrata, nutre y regenera la piel. Fortalece y da brillo al cabello de forma natural.</p>
+                    <div class="ben-stat"><strong>100%</strong> natural</div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Divider: Benefits → Process (leaves pattern) -->
+    <div class="divider-wave divider-ben-process">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path d="M0,50 Q360,0 720,50 T1440,50 L1440,100 L0,100 Z" fill="var(--bg)" opacity="0.5"/>
+            <path d="M0,70 Q360,20 720,70 T1440,70 L1440,100 L0,100 Z" fill="var(--bg)"/>
+        </svg>
+    </div>
 
     <!-- Process Section -->
     <section class="section process" id="proceso">
@@ -289,31 +462,58 @@
                 <p>Un proceso cuidadoso que preserva cada nutriente del aguacate Hass colombiano.</p>
             </div>
             <div class="process-visual">
-                <img src="Aguacate-EEUU.JPG" alt="Árboles de aguacate Hass" class="process-bg-img">
+                <img src="istockphoto-2102650180-640x640.jpg" alt="Aguacates Hass creciendo en el árbol" class="process-bg-img">
                 <div class="process-overlay"></div>
             </div>
             <div class="process-steps">
                 <div class="p-step">
                     <div class="p-num">01</div>
-                    <div class="p-icon">&#127795;</div>
+                    <div class="p-icon-svg">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 20h10"/>
+                            <path d="M10 20c5.5-2.5.8-6.4 3-10"/>
+                            <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/>
+                            <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/>
+                        </svg>
+                    </div>
                     <h3>Selección</h3>
                     <p>Seleccionamos los mejores aguacates Hass en su punto óptimo de maduración.</p>
+                    <div class="p-connector"></div>
                 </div>
                 <div class="p-step">
                     <div class="p-num">02</div>
-                    <div class="p-icon">&#129361;</div>
+                    <div class="p-icon-svg">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2c0 0-8 9.27-8 13a8 8 0 0 0 16 0c0-3.73-8-13-8-13z"/>
+                            <path d="M8 17s1.5-2 4-2 4 2 4 2"/>
+                        </svg>
+                    </div>
                     <h3>Extracción</h3>
                     <p>Prensado en frío a temperatura controlada para preservar todos los nutrientes.</p>
+                    <div class="p-connector"></div>
                 </div>
                 <div class="p-step">
                     <div class="p-num">03</div>
-                    <div class="p-icon">&#128167;</div>
+                    <div class="p-icon-svg">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                    </div>
                     <h3>Purificación</h3>
                     <p>Filtrado natural que garantiza pureza sin alterar las propiedades del aceite.</p>
+                    <div class="p-connector"></div>
                 </div>
                 <div class="p-step">
                     <div class="p-num">04</div>
-                    <div class="p-icon">&#129346;</div>
+                    <div class="p-icon-svg">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M8 2h8l2 6H6l2-6z"/>
+                            <rect x="6" y="8" width="12" height="12" rx="1"/>
+                            <path d="M10 12v4"/>
+                            <path d="M14 12v4"/>
+                            <path d="M6 15h12"/>
+                        </svg>
+                    </div>
                     <h3>Envasado</h3>
                     <p>Envasado hermético en nuestras tres presentaciones, garantizando frescura y calidad.</p>
                 </div>
@@ -321,43 +521,145 @@
         </div>
     </section>
 
+    <!-- Divider: Process → Nutrition (dramatic angle) -->
+    <div class="divider-angle divider-to-nutri"></div>
+
     <!-- Nutritional Section -->
-    <section class="section nutrition">
+    <section class="nutri-v2">
         <div class="container">
-            <div class="nutri-grid">
-                <div class="nutri-content">
-                    <span class="section-tag">Información Nutricional</span>
-                    <h2>Nutrición que<br><span class="text-gradient">Habla por Sí Sola</span></h2>
-                    <p>Nuestro aceite de aguacate Hass es un concentrado de nutrientes esenciales para tu salud.</p>
+            <!-- Header -->
+            <div class="nutri-v2-header">
+                <div class="nutri-v2-title">
+                    <span class="section-tag light">Información Nutricional</span>
+                    <h2>Nutrición que<br><span class="text-gold">Habla por Sí Sola</span></h2>
                 </div>
-                <div class="nutri-table-wrap">
-                    <table class="nutri-table">
-                        <thead>
-                            <tr><th>Nutriente</th><th>Por 100g</th><th>Por Porción (10ml)</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Calorías</td><td><strong>891 kcal</strong></td><td>89 kcal</td></tr>
-                            <tr><td>Grasa Total</td><td><strong>99 g</strong></td><td>9.9 g</td></tr>
-                            <tr><td>Grasa Saturada</td><td><strong>13 g</strong></td><td>1.3 g</td></tr>
-                            <tr><td>Calcio</td><td><strong>490 mg</strong></td><td>152 mg</td></tr>
-                            <tr><td>Zinc</td><td><strong>13 mg</strong></td><td>1.3 mg</td></tr>
-                        </tbody>
-                    </table>
-                    <p class="nutri-note">Tamaño de porción: 2 cucharaditas (10 ml)</p>
+                <p class="nutri-v2-sub">Cada porción de 10ml de nuestro aceite concentra los nutrientes esenciales del aguacate Hass colombiano.</p>
+            </div>
+
+            <!-- Main Grid: Visual Cards + Table -->
+            <div class="nutri-v2-layout">
+                <!-- Highlight Cards -->
+                <div class="nutri-highlights">
+                    <div class="nutri-card nutri-card-hero">
+                        <div class="nutri-card-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c0 0-8 9.27-8 13a8 8 0 0 0 16 0c0-3.73-8-13-8-13z"/></svg>
+                        </div>
+                        <div class="nutri-card-data">
+                            <span class="nutri-card-value">891</span>
+                            <span class="nutri-card-unit">kcal / 100g</span>
+                        </div>
+                        <span class="nutri-card-label">Calorías</span>
+                        <div class="nutri-bar"><div class="nutri-bar-fill" style="width:100%"></div></div>
+                    </div>
+                    <div class="nutri-card">
+                        <div class="nutri-card-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
+                        </div>
+                        <div class="nutri-card-data">
+                            <span class="nutri-card-value">99g</span>
+                            <span class="nutri-card-unit">/ 100g</span>
+                        </div>
+                        <span class="nutri-card-label">Grasa Total</span>
+                        <div class="nutri-bar"><div class="nutri-bar-fill" style="width:99%"></div></div>
+                    </div>
+                    <div class="nutri-card">
+                        <div class="nutri-card-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+                        </div>
+                        <div class="nutri-card-data">
+                            <span class="nutri-card-value">13g</span>
+                            <span class="nutri-card-unit">/ 100g</span>
+                        </div>
+                        <span class="nutri-card-label">Grasa Saturada</span>
+                        <div class="nutri-bar"><div class="nutri-bar-fill nutri-bar-low" style="width:13%"></div></div>
+                    </div>
+                    <div class="nutri-card">
+                        <div class="nutri-card-icon nutri-icon-gold">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/></svg>
+                        </div>
+                        <div class="nutri-card-data">
+                            <span class="nutri-card-value">490mg</span>
+                            <span class="nutri-card-unit">/ 100g</span>
+                        </div>
+                        <span class="nutri-card-label">Calcio</span>
+                        <div class="nutri-bar"><div class="nutri-bar-fill nutri-bar-gold" style="width:65%"></div></div>
+                    </div>
+                    <div class="nutri-card">
+                        <div class="nutri-card-icon nutri-icon-gold">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        </div>
+                        <div class="nutri-card-data">
+                            <span class="nutri-card-value">13mg</span>
+                            <span class="nutri-card-unit">/ 100g</span>
+                        </div>
+                        <span class="nutri-card-label">Zinc</span>
+                        <div class="nutri-bar"><div class="nutri-bar-fill nutri-bar-gold" style="width:45%"></div></div>
+                    </div>
                 </div>
+
+                <!-- Right Side: Table + Serving Info -->
+                <div class="nutri-detail">
+                    <div class="nutri-detail-table">
+                        <div class="nutri-detail-head">
+                            <span>Nutriente</span>
+                            <span>Por 100g</span>
+                            <span>Por Porción</span>
+                        </div>
+                        <div class="nutri-detail-row">
+                            <span>Calorías</span>
+                            <strong>891 kcal</strong>
+                            <span>89 kcal</span>
+                        </div>
+                        <div class="nutri-detail-row">
+                            <span>Grasa Total</span>
+                            <strong>99 g</strong>
+                            <span>9.9 g</span>
+                        </div>
+                        <div class="nutri-detail-row">
+                            <span>Grasa Saturada</span>
+                            <strong>13 g</strong>
+                            <span>1.3 g</span>
+                        </div>
+                        <div class="nutri-detail-row">
+                            <span>Calcio</span>
+                            <strong>490 mg</strong>
+                            <span>152 mg</span>
+                        </div>
+                        <div class="nutri-detail-row">
+                            <span>Zinc</span>
+                            <strong>13 mg</strong>
+                            <span>1.3 mg</span>
+                        </div>
+                    </div>
+                    <div class="nutri-serving">
+                        <div class="nutri-serving-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 1 5 5c0 3-2.24 5-5 5S7 10 7 7a5 5 0 0 1 5-5z"/><path d="M12 12v10"/></svg>
+                        </div>
+                        <div>
+                            <strong>Porción recomendada</strong>
+                            <p>2 cucharaditas (10 ml) &mdash; 500 porciones por garrafa de 5L</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
     </section>
 
+    <!-- Divider: Nutrition → CTA (curve) -->
+    <div class="divider-wave divider-nutri-cta">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,0 C320,80 640,0 960,60 C1120,80 1320,20 1440,40 L1440,80 L0,80 Z" fill="currentColor"/></svg>
+    </div>
+
     <!-- CTA Section -->
     <section class="section cta-section">
         <div class="cta-bg">
-            <img src="cultivo-panorama.jpg" alt="Plantación de aguacate Hass Colombia" class="cta-bg-img">
+            <img src="istockphoto-1867840262-640x640.jpg" alt="Cultivo de aguacate Hass en Colombia" class="cta-bg-img">
         </div>
         <div class="cta-overlay"></div>
         <div class="container cta-content">
             <h2>¿Listo para descubrir el<br><span class="text-gold">mejor aceite de aguacate</span><br>de Colombia?</h2>
-            <p>Únete a quienes ya confían en Bera Hass para su alimentación y bienestar.</p>
+            <p>Únete a quienes ya confían en <span class="l-b">B</span><span class="l-e">e</span><span class="l-r">r</span><span class="l-a">a</span> Hass para su alimentación y bienestar.</p>
             <div class="cta-buttons">
                 <a href="#contacto" class="btn btn-gold btn-lg">Solicitar Cotización</a>
                 <a href="https://www.instagram.com/berahass_sas/" target="_blank" rel="noopener noreferrer" class="btn btn-glass btn-lg">
@@ -367,6 +669,13 @@
             </div>
         </div>
     </section>
+
+    <!-- Divider: CTA → Contact (organic wave) -->
+    <div class="divider-wave divider-cta-contact">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path d="M0,30 C200,90 400,10 600,50 C800,90 1000,10 1200,50 C1350,70 1420,40 1440,45 L1440,100 L0,100 Z" fill="currentColor"/>
+        </svg>
+    </div>
 
     <!-- Contact Section -->
     <section class="section contact" id="contacto">
@@ -443,9 +752,15 @@
             <div class="footer-top">
                 <div class="footer-brand">
                     <a href="#inicio" class="logo footer-logo">
-                        <img src="logo-berahass.png" alt="Bera Hass" class="logo-img" width="36" height="36">
+                        <div class="avo-3d avo-3d-sm">
+                            <div class="avo-3d-body">
+                                <div class="avo-3d-inner">
+                                    <div class="avo-3d-seed"></div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="logo-text-group">
-                            <span class="logo-name">Bera</span>
+                            <span class="logo-name"><span class="l-b">B</span><span class="l-e">e</span><span class="l-r">r</span><span class="l-a">a</span></span>
                             <span class="logo-hass">HASS</span>
                         </div>
                     </a>
@@ -483,12 +798,23 @@
                     </ul>
                 </div>
             </div>
+            <div class="footer-certifications">
+                <div class="footer-cert">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                    <span>Registro INVIMA: RSA-0026118-2023</span>
+                </div>
+                <div class="footer-cert">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg>
+                    <span>Insignia Negocios Verdes</span>
+                </div>
+            </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Bera Hass - Berahass SAS. Todos los derechos reservados. Colombia &#127464;&#127476;</p>
+                <p>&copy; 2026 <span class="l-b">B</span><span class="l-e">e</span><span class="l-r">r</span><span class="l-a">a</span> Hass - <span class="l-b">B</span><span class="l-e">e</span><span class="l-r">r</span><span class="l-a">a</span>hass SAS. Todos los derechos reservados. Colombia &#127464;&#127476;</p>
             </div>
         </div>
     </footer>
 
+    <script src="cart.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

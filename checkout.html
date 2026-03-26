@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Bera Hass</title>
+    <meta name="description" content="Finaliza tu compra de aceite de aguacate Hass premium Bera Hass.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-solid" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="avo-3d avo-3d-sm">
+                    <div class="avo-3d-body"><div class="avo-3d-inner"><div class="avo-3d-seed"></div></div></div>
+                </div>
+                <div class="logo-text-group">
+                    <span class="logo-name"><span class="l-b">B</span><span class="l-e">e</span><span class="l-r">r</span><span class="l-a">a</span></span>
+                    <span class="logo-hass">HASS</span>
+                </div>
+            </a>
+            <div class="checkout-secure-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <span>Compra Segura</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="checkout-main">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="index.html">Inicio</a>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                <a href="index.html#productos">Productos</a>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                <span>Checkout</span>
+            </div>
+
+            <!-- Progress Steps -->
+            <div class="checkout-steps">
+                <div class="checkout-step active" data-step="1">
+                    <div class="step-circle">1</div>
+                    <span>Carrito</span>
+                </div>
+                <div class="step-line active"></div>
+                <div class="checkout-step active" data-step="2">
+                    <div class="step-circle">2</div>
+                    <span>Envio</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="checkout-step" data-step="3">
+                    <div class="step-circle">3</div>
+                    <span>Pago</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="checkout-step" data-step="4">
+                    <div class="step-circle">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                    </div>
+                    <span>Listo</span>
+                </div>
+            </div>
+
+            <div class="checkout-grid">
+                <!-- Left Column: Form Steps -->
+                <div class="checkout-form-col">
+
+                    <!-- Step 1: Cart Review -->
+                    <div class="checkout-section" id="stepCart">
+                        <div class="checkout-section-header">
+                            <h2>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                                Tu Pedido
+                            </h2>
+                        </div>
+                        <div class="checkout-cart-items" id="checkoutCartItems">
+                            <!-- Filled by JS -->
+                        </div>
+                        <div class="checkout-cart-empty" id="checkoutCartEmpty" style="display:none">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                            <p>Tu carrito esta vacio</p>
+                            <a href="index.html#productos" class="btn btn-gold">Ver Productos</a>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Shipping -->
+                    <div class="checkout-section" id="stepShipping">
+                        <div class="checkout-section-header">
+                            <h2>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h2a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5"/><circle cx="7.5" cy="18.5" r="1.5"/><circle cx="17.5" cy="18.5" r="1.5"/></svg>
+                                Datos de Envio
+                            </h2>
+                            <span class="section-note">Envio a toda Colombia</span>
+                        </div>
+                        <form class="checkout-form" id="shippingForm" novalidate>
+                            <div class="form-row-2">
+                                <div class="form-group">
+                                    <label for="shipName">Nombre completo <span class="req">*</span></label>
+                                    <input type="text" id="shipName" name="name" placeholder="Tu nombre completo" required autocomplete="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="shipPhone">Celular <span class="req">*</span></label>
+                                    <input type="tel" id="shipPhone" name="phone" placeholder="+57 300 000 0000" required autocomplete="tel">
+                                </div>
+                            </div>
+                            <div class="form-row-2">
+                                <div class="form-group">
+                                    <label for="shipEmail">Email <span class="req">*</span></label>
+                                    <input type="email" id="shipEmail" name="email" placeholder="tu@email.com" required autocomplete="email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="shipDoc">Cedula / NIT <span class="req">*</span></label>
+                                    <input type="text" id="shipDoc" name="document" placeholder="123.456.789" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="shipAddress">Direccion <span class="req">*</span></label>
+                                <input type="text" id="shipAddress" name="address" placeholder="Calle, carrera, numero, apto, barrio" required autocomplete="street-address">
+                            </div>
+                            <div class="form-row-3">
+                                <div class="form-group">
+                                    <label for="shipCity">Ciudad <span class="req">*</span></label>
+                                    <input type="text" id="shipCity" name="city" placeholder="Ej: Bogota" required autocomplete="address-level2">
+                                </div>
+                                <div class="form-group">
+                                    <label for="shipDept">Departamento <span class="req">*</span></label>
+                                    <select id="shipDept" name="department" required>
+                                        <option value="" disabled selected>Selecciona</option>
+                                        <option>Amazonas</option>
+                                        <option>Antioquia</option>
+                                        <option>Arauca</option>
+                                        <option>Atlantico</option>
+                                        <option>Bolivar</option>
+                                        <option>Boyaca</option>
+                                        <option>Caldas</option>
+                                        <option>Caqueta</option>
+                                        <option>Casanare</option>
+                                        <option>Cauca</option>
+                                        <option>Cesar</option>
+                                        <option>Choco</option>
+                                        <option>Cordoba</option>
+                                        <option>Cundinamarca</option>
+                                        <option>Guainia</option>
+                                        <option>Guaviare</option>
+                                        <option>Huila</option>
+                                        <option>La Guajira</option>
+                                        <option>Magdalena</option>
+                                        <option>Meta</option>
+                                        <option>Narino</option>
+                                        <option>Norte de Santander</option>
+                                        <option>Putumayo</option>
+                                        <option>Quindio</option>
+                                        <option>Risaralda</option>
+                                        <option>San Andres y Providencia</option>
+                                        <option>Santander</option>
+                                        <option>Sucre</option>
+                                        <option>Tolima</option>
+                                        <option>Valle del Cauca</option>
+                                        <option>Vaupes</option>
+                                        <option>Vichada</option>
+                                        <option>Bogota D.C.</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="shipZip">Codigo Postal</label>
+                                    <input type="text" id="shipZip" name="zip" placeholder="Opcional" autocomplete="postal-code">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="shipNotes">Notas del pedido</label>
+                                <textarea id="shipNotes" name="notes" rows="2" placeholder="Instrucciones especiales para la entrega (opcional)"></textarea>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Step 3: Payment -->
+                    <div class="checkout-section" id="stepPayment">
+                        <div class="checkout-section-header">
+                            <h2>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                                Metodo de Pago
+                            </h2>
+                            <span class="section-note">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                                Pago 100% seguro
+                            </span>
+                        </div>
+
+                        <p class="payment-intro">Selecciona tu metodo de pago preferido. Aceptamos transferencias desde cualquier banco en Colombia.</p>
+
+                        <div class="payment-methods">
+                            <!-- Transferencia Bancaria -->
+                            <label class="payment-option" for="payTransfer">
+                                <input type="radio" name="payMethod" id="payTransfer" value="transferencia" checked>
+                                <div class="payment-option-content">
+                                    <div class="payment-icon payment-icon-bank">
+                                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18"/><path d="M3 10h18"/><path d="M12 3l9 7H3l9-7z"/><path d="M5 10v8"/><path d="M9 10v8"/><path d="M15 10v8"/><path d="M19 10v8"/></svg>
+                                    </div>
+                                    <div class="payment-text">
+                                        <strong>Transferencia Bancaria</strong>
+                                        <span>Desde cualquier banco colombiano</span>
+                                    </div>
+                                    <div class="payment-radio"></div>
+                                </div>
+                                <div class="payment-details" id="detailsTransfer">
+                                    <div class="payment-account-box">
+                                        <div class="payment-account-header">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                                            <span>Datos para transferencia</span>
+                                        </div>
+                                        <div class="payment-account-row">
+                                            <span class="payment-account-label">Banco</span>
+                                            <span class="payment-account-value">Bancolombia</span>
+                                        </div>
+                                        <div class="payment-account-row">
+                                            <span class="payment-account-label">Tipo de cuenta</span>
+                                            <span class="payment-account-value">Ahorros</span>
+                                        </div>
+                                        <div class="payment-account-row">
+                                            <span class="payment-account-label">Numero de cuenta</span>
+                                            <span class="payment-account-value payment-pending">Pendiente por asignar</span>
+                                        </div>
+                                        <div class="payment-account-row">
+                                            <span class="payment-account-label">Titular</span>
+                                            <span class="payment-account-value">Berahass SAS</span>
+                                        </div>
+                                        <div class="payment-account-row">
+                                            <span class="payment-account-label">NIT</span>
+                                            <span class="payment-account-value payment-pending">Pendiente por asignar</span>
+                                        </div>
+                                    </div>
+                                    <div class="payment-banks-accepted">
+                                        <p class="banks-label">Transfiere desde tu banco:</p>
+                                        <div class="banks-grid">
+                                            <div class="bank-chip"><span class="bank-dot" style="background:#FDDA24"></span>Bancolombia</div>
+                                            <div class="bank-chip"><span class="bank-dot" style="background:#E42313"></span>Davivienda</div>
+                                            <div class="bank-chip"><span class="bank-dot" style="background:#00248C"></span>BBVA</div>
+                                            <div class="bank-chip"><span class="bank-dot" style="background:#ED1C24"></span>Banco de Bogota</div>
+                                            <div class="bank-chip"><span class="bank-dot" style="background:#D4213D"></span>Scotiabank Colpatria</div>
+                                            <div class="bank-chip"><span class="bank-dot" style="background:#007DC3"></span>Banco de Occidente</div>
+                                            <div class="bank-chip"><span class="bank-dot" style="background:#00A651"></span>Banco Popular</div>
+                                            <div class="bank-chip"><span class="bank-dot" style="background:#005DA4"></span>Banco Caja Social</div>
+                                            <div class="bank-chip"><span class="bank-dot" style="background:#EC1C24"></span>AV Villas</div>
+                                            <div class="bank-chip"><span class="bank-dot" style="background:#0066B3"></span>Banco Agrario</div>
+                                            <div class="bank-chip"><span class="bank-dot" style="background:#A020F0"></span>Nu Colombia</div>
+                                            <div class="bank-chip"><span class="bank-dot" style="background:#1C1C1C"></span>Banco Falabella</div>
+                                            <div class="bank-chip"><span class="bank-dot" style="background:#008E6F"></span>Banco Finandina</div>
+                                            <div class="bank-chip"><span class="bank-dot" style="background:#003DA5"></span>Banco Itau</div>
+                                            <div class="bank-chip bank-chip-more">+ Todos los bancos</div>
+                                        </div>
+                                    </div>
+                                    <p class="payment-instruction">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                                        Realiza la transferencia por el valor total indicado y envía el comprobante para confirmar tu pedido.
+                                    </p>
+                                </div>
+                            </label>
+
+                            <!-- Nequi -->
+                            <label class="payment-option" for="payNequi">
+                                <input type="radio" name="payMethod" id="payNequi" value="nequi">
+                                <div class="payment-option-content">
+                                    <div class="payment-icon payment-icon-nequi">
+                                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="3"/><circle cx="12" cy="17" r="1"/><path d="M9 6h6"/></svg>
+                                    </div>
+                                    <div class="payment-text">
+                                        <strong>Nequi</strong>
+                                        <span>Paga rapido desde tu celular</span>
+                                    </div>
+                                    <div class="payment-radio"></div>
+                                </div>
+                                <div class="payment-details" id="detailsNequi">
+                                    <div class="payment-account-box">
+                                        <div class="payment-account-header">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="3"/><circle cx="12" cy="17" r="1"/></svg>
+                                            <span>Datos Nequi</span>
+                                        </div>
+                                        <div class="payment-account-row">
+                                            <span class="payment-account-label">Numero Nequi</span>
+                                            <span class="payment-account-value payment-pending">Pendiente por asignar</span>
+                                        </div>
+                                        <div class="payment-account-row">
+                                            <span class="payment-account-label">Nombre</span>
+                                            <span class="payment-account-value">Berahass SAS</span>
+                                        </div>
+                                    </div>
+                                    <p class="payment-instruction">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                                        Abre tu app Nequi, envia el dinero al numero indicado y comparte el comprobante.
+                                    </p>
+                                </div>
+                            </label>
+
+                            <!-- Daviplata -->
+                            <label class="payment-option" for="payDaviplata">
+                                <input type="radio" name="payMethod" id="payDaviplata" value="daviplata">
+                                <div class="payment-option-content">
+                                    <div class="payment-icon payment-icon-daviplata">
+                                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M12 6v6l4 2"/></svg>
+                                    </div>
+                                    <div class="payment-text">
+                                        <strong>Daviplata</strong>
+                                        <span>Transferencia por Daviplata</span>
+                                    </div>
+                                    <div class="payment-radio"></div>
+                                </div>
+                                <div class="payment-details" id="detailsDaviplata">
+                                    <div class="payment-account-box">
+                                        <div class="payment-account-header">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M12 6v6l4 2"/></svg>
+                                            <span>Datos Daviplata</span>
+                                        </div>
+                                        <div class="payment-account-row">
+                                            <span class="payment-account-label">Numero Daviplata</span>
+                                            <span class="payment-account-value payment-pending">Pendiente por asignar</span>
+                                        </div>
+                                        <div class="payment-account-row">
+                                            <span class="payment-account-label">Nombre</span>
+                                            <span class="payment-account-value">Berahass SAS</span>
+                                        </div>
+                                    </div>
+                                    <p class="payment-instruction">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                                        Envia desde tu app Daviplata y comparte el comprobante.
+                                    </p>
+                                </div>
+                            </label>
+
+                            <!-- PSE -->
+                            <label class="payment-option" for="payPSE">
+                                <input type="radio" name="payMethod" id="payPSE" value="pse">
+                                <div class="payment-option-content">
+                                    <div class="payment-icon payment-icon-pse">
+                                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+                                    </div>
+                                    <div class="payment-text">
+                                        <strong>PSE - Pago Seguro en Linea</strong>
+                                        <span>Debito directo desde tu cuenta bancaria</span>
+                                    </div>
+                                    <div class="payment-radio"></div>
+                                </div>
+                                <div class="payment-details" id="detailsPSE">
+                                    <div class="payment-pse-info">
+                                        <div class="pse-step">
+                                            <div class="pse-step-num">1</div>
+                                            <p>Selecciona tu banco en el listado</p>
+                                        </div>
+                                        <div class="pse-step">
+                                            <div class="pse-step-num">2</div>
+                                            <p>Ingresa a tu banca virtual con tus credenciales</p>
+                                        </div>
+                                        <div class="pse-step">
+                                            <div class="pse-step-num">3</div>
+                                            <p>Autoriza el pago y recibe confirmacion inmediata</p>
+                                        </div>
+                                    </div>
+                                    <div class="pse-banks-label">Bancos disponibles via PSE:</div>
+                                    <div class="banks-grid banks-grid-sm">
+                                        <div class="bank-chip"><span class="bank-dot" style="background:#FDDA24"></span>Bancolombia</div>
+                                        <div class="bank-chip"><span class="bank-dot" style="background:#E42313"></span>Davivienda</div>
+                                        <div class="bank-chip"><span class="bank-dot" style="background:#00248C"></span>BBVA</div>
+                                        <div class="bank-chip"><span class="bank-dot" style="background:#ED1C24"></span>Banco de Bogota</div>
+                                        <div class="bank-chip"><span class="bank-dot" style="background:#D4213D"></span>Colpatria</div>
+                                        <div class="bank-chip"><span class="bank-dot" style="background:#007DC3"></span>Occidente</div>
+                                        <div class="bank-chip"><span class="bank-dot" style="background:#00A651"></span>Popular</div>
+                                        <div class="bank-chip"><span class="bank-dot" style="background:#005DA4"></span>Caja Social</div>
+                                        <div class="bank-chip"><span class="bank-dot" style="background:#EC1C24"></span>AV Villas</div>
+                                        <div class="bank-chip"><span class="bank-dot" style="background:#0066B3"></span>Agrario</div>
+                                        <div class="bank-chip bank-chip-more">+ 20 bancos mas</div>
+                                    </div>
+                                    <p class="payment-instruction">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                                        PSE es el sistema de pagos electronicos del Banco de la Republica. Tu transaccion esta protegida con encriptacion bancaria.
+                                    </p>
+                                </div>
+                            </label>
+                        </div>
+
+                        <!-- Comprobante -->
+                        <div class="payment-comprobante" id="comprobanteSection">
+                            <div class="comprobante-header">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                                <h4>Confirma tu pago</h4>
+                            </div>
+                            <p>Despues de realizar tu transferencia, envia el comprobante para procesar tu pedido:</p>
+                            <div class="comprobante-actions">
+                                <a href="https://wa.me/message/berahass" target="_blank" rel="noopener noreferrer" class="btn btn-comprobante btn-comprobante-wa">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                    Enviar por WhatsApp
+                                </a>
+                                <a href="https://www.instagram.com/berahass_sas/" target="_blank" rel="noopener noreferrer" class="btn btn-comprobante btn-comprobante-ig">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                                    Enviar por Instagram
+                                </a>
+                                <a href="mailto:contacto@berahass.com" class="btn btn-comprobante btn-comprobante-email">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+                                    Enviar por Email
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="checkout-nav-buttons">
+                        <button class="btn btn-glass btn-lg" id="btnPrev" style="display:none">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                            <span>Anterior</span>
+                        </button>
+                        <button class="btn btn-gold btn-lg" id="btnNext">
+                            <span>Continuar al Envio</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Column: Order Summary (sticky) -->
+                <div class="checkout-summary-col">
+                    <div class="checkout-summary" id="checkoutSummary">
+                        <h3>Resumen del Pedido</h3>
+                        <div class="summary-items" id="summaryItems"></div>
+                        <div class="summary-divider"></div>
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="summarySubtotal">$0</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Envio</span>
+                            <span id="summaryShipping" class="summary-shipping-value">Por calcular</span>
+                        </div>
+                        <div class="summary-divider"></div>
+                        <div class="summary-row summary-total">
+                            <span>Total a Pagar</span>
+                            <span id="summaryTotal">$0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Confirmation (hidden by default) -->
+            <div class="checkout-confirmation" id="orderConfirmation" style="display:none">
+                <div class="confirmation-icon">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                </div>
+                <h2>Pedido Registrado</h2>
+                <p class="confirmation-number">Pedido <strong id="orderNumber">#BH-000000</strong></p>
+                <p class="confirmation-msg">Hemos recibido tu pedido exitosamente. Te contactaremos al celular y email proporcionados para confirmar el envio y coordinar el pago.</p>
+                <div class="confirmation-details" id="confirmationDetails"></div>
+                <div class="confirmation-actions">
+                    <a href="index.html" class="btn btn-gold btn-lg">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        <span>Volver al Inicio</span>
+                    </a>
+                    <a href="https://www.instagram.com/berahass_sas/" target="_blank" rel="noopener noreferrer" class="btn btn-glass btn-lg">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        <span>Seguir en Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Bera Hass - Berahass SAS. Todos los derechos reservados. Colombia &#127464;&#127476;</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+    <script src="checkout.js"></script>
+</body>
+</html>
