@@ -324,16 +324,7 @@ button, input, select, textarea { font: inherit; }
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background:
-        linear-gradient(
-            90deg,
-            rgba(8,18,10,0.65) 0%,
-            rgba(8,18,10,0.50) 35%,
-            rgba(8,18,10,0.30) 55%,
-            rgba(8,18,10,0.15) 70%,
-            rgba(8,18,10,0.05) 85%,
-            transparent 100%
-        );
+    background: rgba(8,18,10,0.45);
     z-index: 1;
 }
 /* Bottom gradient fade */
@@ -352,6 +343,7 @@ button, input, select, textarea { font: inherit; }
     position: relative;
     z-index: 2;
     display: flex;
+    justify-content: center;
     align-items: center;
     min-height: 100vh;
     padding: 6rem 0;
@@ -361,10 +353,12 @@ button, input, select, textarea { font: inherit; }
     flex: 1;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 3rem;
 }
 .hero-text {
-    max-width: 520px;
+    max-width: 700px;
     color: white;
 }
 .hero-badge {
@@ -431,6 +425,7 @@ button, input, select, textarea { font: inherit; }
 .hero-buttons {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
     margin-top: 2rem;
     animation: fadeInUp 1s ease 0.8s both;
