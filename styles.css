@@ -897,7 +897,7 @@ button, input, select, textarea { font: inherit; }
     background: linear-gradient(160deg, #f8f4e8 0%, #ede4c8 100%);
 }
 .industrial-bg {
-    background: linear-gradient(160deg, #374151 0%, #1f2937 100%);
+    background: linear-gradient(160deg, #e8e6e0 0%, #d4d2cc 100%);
 }
 .prod-img {
     max-height: 260px;
@@ -916,6 +916,7 @@ button, input, select, textarea { font: inherit; }
     max-height: 260px;
     object-fit: contain;
     filter: drop-shadow(0 8px 24px rgba(0,0,0,0.3));
+    mix-blend-mode: normal;
 }
 .prod-badge {
     position: absolute;
