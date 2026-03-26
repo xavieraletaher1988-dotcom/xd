@@ -987,6 +987,88 @@ button, input, select, textarea { font: inherit; }
     font-weight: 600;
 }
 
+/* Product Price */
+.prod-price-row {
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+    margin-bottom: 1rem;
+}
+.prod-price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.15rem;
+}
+.price-currency {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--green);
+}
+.price-amount {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1;
+}
+.price-unit {
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-weight: 600;
+    margin-left: 0.3rem;
+}
+.prod-price-gold .price-currency,
+.prod-price-gold .price-amount {
+    color: var(--gold);
+}
+.prod-price-gold .price-amount {
+    color: #a88620;
+}
+
+/* Product Actions */
+.prod-actions {
+    display: flex;
+    gap: 0.6rem;
+}
+.prod-actions .btn-prod {
+    flex: 1;
+}
+.btn-prod-cart {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: var(--radius-sm);
+    border: 2px solid var(--green);
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+}
+.btn-prod-cart svg {
+    stroke: var(--green);
+    transition: stroke 0.3s;
+}
+.btn-prod-cart:hover {
+    background: var(--green);
+}
+.btn-prod-cart:hover svg {
+    stroke: white;
+}
+.btn-prod-cart-gold {
+    border-color: var(--gold);
+}
+.btn-prod-cart-gold svg {
+    stroke: var(--gold);
+}
+.btn-prod-cart-gold:hover {
+    background: var(--gold);
+}
+.btn-prod-cart-gold:hover svg {
+    stroke: #1a1200;
+}
+
 /* ─── BENEFITS ───────────────────────────────────── */
 .benefits {
     background: var(--bg);
