@@ -1651,6 +1651,101 @@ button, input, select, textarea { font: inherit; }
     transform: translateY(0);
 }
 
+/* ─── SECTION DIVIDERS ───────────────────────────── */
+.divider-wave {
+    position: relative;
+    z-index: 4;
+    line-height: 0;
+    margin-top: -1px;
+}
+.divider-wave svg {
+    display: block;
+    width: 100%;
+}
+
+/* Hero → Stats: green wave */
+.divider-dark {
+    color: var(--green);
+    margin-top: -2px;
+}
+.divider-dark svg {
+    height: 80px;
+}
+
+/* Stats → About: light wave */
+.divider-to-light {
+    color: var(--bg);
+    background: var(--green);
+}
+.divider-to-light svg {
+    height: 60px;
+}
+
+/* About → Products: sharp diagonal */
+.divider-diagonal {
+    position: relative;
+    height: 100px;
+    overflow: hidden;
+    z-index: 4;
+}
+.divider-to-dark {
+    background: linear-gradient(175deg, var(--bg) 48%, var(--dark) 48.5%);
+}
+
+/* Products → Benefits: mountain wave */
+.divider-products-ben {
+    color: var(--bg);
+    background: var(--dark);
+}
+.divider-products-ben svg {
+    height: 90px;
+}
+
+/* Benefits → Process: layered waves */
+.divider-ben-process {
+    background: transparent;
+    margin-top: -50px;
+    position: relative;
+    z-index: 5;
+}
+.divider-ben-process svg {
+    height: 80px;
+}
+
+/* Process → Nutrition: dramatic angle */
+.divider-angle {
+    position: relative;
+    z-index: 4;
+    height: 120px;
+    background: var(--bg);
+    overflow: hidden;
+}
+.divider-to-nutri {
+    background: linear-gradient(168deg, var(--bg) 45%, #0f1d12 45.5%);
+}
+
+/* Nutrition → CTA */
+.divider-nutri-cta {
+    background: #0f1d12;
+    margin-top: -1px;
+}
+.divider-nutri-cta svg {
+    height: 60px;
+    color: transparent;
+}
+.divider-nutri-cta path {
+    fill: rgba(15,29,18,0.3);
+}
+
+/* CTA → Contact: organic wave */
+.divider-cta-contact {
+    color: var(--bg);
+    margin-top: -1px;
+}
+.divider-cta-contact svg {
+    height: 80px;
+}
+
 /* ─── RESPONSIVE ─────────────────────────────────── */
 @media (max-width: 1024px) {
     .products-grid,
