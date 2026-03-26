@@ -429,29 +429,123 @@
     </section>
 
     <!-- Nutritional Section -->
-    <section class="section nutrition">
+    <section class="nutri-v2">
         <div class="container">
-            <div class="nutri-grid">
-                <div class="nutri-content">
-                    <span class="section-tag">Información Nutricional</span>
-                    <h2>Nutrición que<br><span class="text-gradient">Habla por Sí Sola</span></h2>
-                    <p>Nuestro aceite de aguacate Hass es un concentrado de nutrientes esenciales para tu salud.</p>
+            <!-- Header -->
+            <div class="nutri-v2-header">
+                <div class="nutri-v2-title">
+                    <span class="section-tag light">Información Nutricional</span>
+                    <h2>Nutrición que<br><span class="text-gold">Habla por Sí Sola</span></h2>
                 </div>
-                <div class="nutri-table-wrap">
-                    <table class="nutri-table">
-                        <thead>
-                            <tr><th>Nutriente</th><th>Por 100g</th><th>Por Porción (10ml)</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Calorías</td><td><strong>891 kcal</strong></td><td>89 kcal</td></tr>
-                            <tr><td>Grasa Total</td><td><strong>99 g</strong></td><td>9.9 g</td></tr>
-                            <tr><td>Grasa Saturada</td><td><strong>13 g</strong></td><td>1.3 g</td></tr>
-                            <tr><td>Calcio</td><td><strong>490 mg</strong></td><td>152 mg</td></tr>
-                            <tr><td>Zinc</td><td><strong>13 mg</strong></td><td>1.3 mg</td></tr>
-                        </tbody>
-                    </table>
-                    <p class="nutri-note">Tamaño de porción: 2 cucharaditas (10 ml)</p>
+                <p class="nutri-v2-sub">Cada porción de 10ml de nuestro aceite concentra los nutrientes esenciales del aguacate Hass colombiano.</p>
+            </div>
+
+            <!-- Main Grid: Visual Cards + Table -->
+            <div class="nutri-v2-layout">
+                <!-- Highlight Cards -->
+                <div class="nutri-highlights">
+                    <div class="nutri-card nutri-card-hero">
+                        <div class="nutri-card-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c0 0-8 9.27-8 13a8 8 0 0 0 16 0c0-3.73-8-13-8-13z"/></svg>
+                        </div>
+                        <div class="nutri-card-data">
+                            <span class="nutri-card-value">891</span>
+                            <span class="nutri-card-unit">kcal / 100g</span>
+                        </div>
+                        <span class="nutri-card-label">Calorías</span>
+                        <div class="nutri-bar"><div class="nutri-bar-fill" style="width:100%"></div></div>
+                    </div>
+                    <div class="nutri-card">
+                        <div class="nutri-card-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
+                        </div>
+                        <div class="nutri-card-data">
+                            <span class="nutri-card-value">99g</span>
+                            <span class="nutri-card-unit">/ 100g</span>
+                        </div>
+                        <span class="nutri-card-label">Grasa Total</span>
+                        <div class="nutri-bar"><div class="nutri-bar-fill" style="width:99%"></div></div>
+                    </div>
+                    <div class="nutri-card">
+                        <div class="nutri-card-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+                        </div>
+                        <div class="nutri-card-data">
+                            <span class="nutri-card-value">13g</span>
+                            <span class="nutri-card-unit">/ 100g</span>
+                        </div>
+                        <span class="nutri-card-label">Grasa Saturada</span>
+                        <div class="nutri-bar"><div class="nutri-bar-fill nutri-bar-low" style="width:13%"></div></div>
+                    </div>
+                    <div class="nutri-card">
+                        <div class="nutri-card-icon nutri-icon-gold">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/></svg>
+                        </div>
+                        <div class="nutri-card-data">
+                            <span class="nutri-card-value">490mg</span>
+                            <span class="nutri-card-unit">/ 100g</span>
+                        </div>
+                        <span class="nutri-card-label">Calcio</span>
+                        <div class="nutri-bar"><div class="nutri-bar-fill nutri-bar-gold" style="width:65%"></div></div>
+                    </div>
+                    <div class="nutri-card">
+                        <div class="nutri-card-icon nutri-icon-gold">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        </div>
+                        <div class="nutri-card-data">
+                            <span class="nutri-card-value">13mg</span>
+                            <span class="nutri-card-unit">/ 100g</span>
+                        </div>
+                        <span class="nutri-card-label">Zinc</span>
+                        <div class="nutri-bar"><div class="nutri-bar-fill nutri-bar-gold" style="width:45%"></div></div>
+                    </div>
                 </div>
+
+                <!-- Right Side: Table + Serving Info -->
+                <div class="nutri-detail">
+                    <div class="nutri-detail-table">
+                        <div class="nutri-detail-head">
+                            <span>Nutriente</span>
+                            <span>Por 100g</span>
+                            <span>Por Porción</span>
+                        </div>
+                        <div class="nutri-detail-row">
+                            <span>Calorías</span>
+                            <strong>891 kcal</strong>
+                            <span>89 kcal</span>
+                        </div>
+                        <div class="nutri-detail-row">
+                            <span>Grasa Total</span>
+                            <strong>99 g</strong>
+                            <span>9.9 g</span>
+                        </div>
+                        <div class="nutri-detail-row">
+                            <span>Grasa Saturada</span>
+                            <strong>13 g</strong>
+                            <span>1.3 g</span>
+                        </div>
+                        <div class="nutri-detail-row">
+                            <span>Calcio</span>
+                            <strong>490 mg</strong>
+                            <span>152 mg</span>
+                        </div>
+                        <div class="nutri-detail-row">
+                            <span>Zinc</span>
+                            <strong>13 mg</strong>
+                            <span>1.3 mg</span>
+                        </div>
+                    </div>
+                    <div class="nutri-serving">
+                        <div class="nutri-serving-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                        <div>
+                            <strong>Porción recomendada</strong>
+                            <p>2 cucharaditas (10 ml) &mdash; 500 porciones por garrafa de 5L</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
     </section>
