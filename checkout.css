@@ -308,12 +308,14 @@
     justify-content: center;
     flex-shrink: 0;
 }
-.payment-icon-banco { background: #fdf5e6; }
-.payment-icon-banco svg { stroke: #c9a227; }
-.payment-icon-nequi { background: #e8f5e9; }
-.payment-icon-nequi svg { stroke: #2d6a4f; }
-.payment-icon-contra { background: #e3f2fd; }
-.payment-icon-contra svg { stroke: #1565c0; }
+.payment-icon-bank { background: #f0f4f8; }
+.payment-icon-bank svg { stroke: #1a4d2e; }
+.payment-icon-nequi { background: #ede7f6; }
+.payment-icon-nequi svg { stroke: #6a1b9a; }
+.payment-icon-daviplata { background: #fce4ec; }
+.payment-icon-daviplata svg { stroke: #e42313; }
+.payment-icon-pse { background: #e3f2fd; }
+.payment-icon-pse svg { stroke: #0d47a1; }
 .payment-text { flex: 1; }
 .payment-text strong { display: block; font-size: 0.95rem; color: var(--text); }
 .payment-text span { font-size: 0.8rem; color: var(--muted); }
@@ -374,21 +376,127 @@
     font-style: italic;
     font-weight: 500;
 }
+.payment-intro {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+}
 .payment-instruction {
     font-size: 0.82rem;
     color: var(--muted);
     line-height: 1.5;
-    margin-top: 0.5rem;
+    margin-top: 0.8rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
 }
+.payment-instruction svg { flex-shrink: 0; margin-top: 1px; stroke: var(--green); }
+
+/* Account box header */
+.payment-account-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--green-light);
+    font-weight: 700;
+    font-size: 0.88rem;
+    color: var(--green);
+}
+.payment-account-header svg { stroke: var(--green); }
+
+/* Banks Grid */
+.payment-banks-accepted {
+    margin-top: 1rem;
+}
+.banks-label, .pse-banks-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+}
+.banks-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+.bank-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.7rem;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text);
+    transition: all 0.2s;
+}
+.bank-chip:hover { border-color: var(--green); background: var(--green-light); }
+.bank-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+.bank-chip-more {
+    background: var(--green-light);
+    color: var(--green);
+    border-color: transparent;
+    font-weight: 700;
+}
+.banks-grid-sm .bank-chip { font-size: 0.7rem; padding: 0.25rem 0.6rem; }
+
+/* PSE Steps */
+.payment-pse-info {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.pse-step {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 0.8rem;
+    background: #f0f4ff;
+    border-radius: var(--radius-sm);
+}
+.pse-step-num {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #0d47a1;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+.pse-step p { font-size: 0.78rem; color: var(--text); line-height: 1.4; margin: 0; }
 
 /* ── Comprobante ─────────────────────────────────────── */
 .payment-comprobante {
     margin-top: 1.5rem;
     padding: 1.5rem;
-    background: var(--bg);
-    border-radius: var(--radius-sm);
-    border: 1px dashed var(--line);
+    background: white;
+    border-radius: var(--radius);
+    border: 2px solid var(--green-light);
+    box-shadow: 0 4px 16px rgba(26,77,46,0.06);
 }
+.comprobante-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.3rem;
+}
+.comprobante-header svg { stroke: var(--green); }
+.comprobante-header h4 { font-size: 1rem; }
 .payment-comprobante h4 {
     font-size: 0.95rem;
     margin-bottom: 0.3rem;
@@ -417,6 +525,11 @@
     color: white;
 }
 .btn-comprobante-ig:hover { opacity: 0.9; transform: translateY(-2px); }
+.btn-comprobante-wa {
+    background: #25D366;
+    color: white;
+}
+.btn-comprobante-wa:hover { background: #1ebe5a; transform: translateY(-2px); }
 .btn-comprobante-email {
     background: var(--green);
     color: white;
@@ -521,23 +634,6 @@
     border-radius: 2px;
     transition: width 0.5s ease;
 }
-
-.summary-trust {
-    margin-top: 1.2rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--line);
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-.summary-trust-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.78rem;
-    color: var(--muted);
-}
-.summary-trust-item svg { stroke: var(--green); flex-shrink: 0; }
 
 /* ── Confirmation ────────────────────────────────────── */
 .checkout-confirmation {
@@ -657,4 +753,7 @@
     .checkout-nav-buttons .btn { width: 100%; justify-content: center; }
     .confirmation-actions { flex-direction: column; }
     .confirmation-actions .btn { width: 100%; justify-content: center; }
+    .payment-pse-info { flex-direction: column; }
+    .comprobante-actions { flex-direction: column; }
+    .comprobante-actions .btn-comprobante { width: 100%; justify-content: center; }
 }

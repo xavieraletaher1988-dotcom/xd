@@ -217,10 +217,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── Payment method toggle ───────────────────────────
     function updateComprobanteVisibility() {
-        const selected = document.querySelector('input[name="payMethod"]:checked')?.value;
         const comprobanteSection = document.getElementById('comprobanteSection');
         if (comprobanteSection) {
-            comprobanteSection.style.display = (selected === 'contraentrega') ? 'none' : 'block';
+            comprobanteSection.style.display = 'block';
         }
     }
 
@@ -251,12 +250,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const subtotal = getCartTotal();
         const shipping = subtotal >= 150000 ? 0 : 12000;
         const total = subtotal + shipping;
-        const payMethod = document.querySelector('input[name="payMethod"]:checked')?.value || 'bancolombia';
+        const payMethod = document.querySelector('input[name="payMethod"]:checked')?.value || 'transferencia';
 
         const payMethodNames = {
-            bancolombia: 'Bancolombia (Transferencia)',
+            transferencia: 'Transferencia Bancaria',
             nequi: 'Nequi',
-            contraentrega: 'Pago Contra Entrega'
+            daviplata: 'Daviplata',
+            pse: 'PSE - Pago Seguro en Linea'
         };
 
         const orderNum = 'BH-' + Date.now().toString(36).toUpperCase().slice(-6);
