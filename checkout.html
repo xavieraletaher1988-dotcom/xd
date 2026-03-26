@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Bera Hass</title>
+    <meta name="description" content="Finaliza tu compra de aceite de aguacate Hass premium Bera Hass.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-solid" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="avo-3d avo-3d-sm">
+                    <div class="avo-3d-body"><div class="avo-3d-inner"><div class="avo-3d-seed"></div></div></div>
+                </div>
+                <div class="logo-text-group">
+                    <span class="logo-name"><span class="l-b">B</span><span class="l-e">e</span><span class="l-r">r</span><span class="l-a">a</span></span>
+                    <span class="logo-hass">HASS</span>
+                </div>
+            </a>
+            <div class="checkout-secure-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <span>Compra Segura</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="checkout-main">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="index.html">Inicio</a>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                <a href="index.html#productos">Productos</a>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                <span>Checkout</span>
+            </div>
+
+            <!-- Progress Steps -->
+            <div class="checkout-steps">
+                <div class="checkout-step active" data-step="1">
+                    <div class="step-circle">1</div>
+                    <span>Carrito</span>
+                </div>
+                <div class="step-line active"></div>
+                <div class="checkout-step active" data-step="2">
+                    <div class="step-circle">2</div>
+                    <span>Envio</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="checkout-step" data-step="3">
+                    <div class="step-circle">3</div>
+                    <span>Pago</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="checkout-step" data-step="4">
+                    <div class="step-circle">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                    </div>
+                    <span>Listo</span>
+                </div>
+            </div>
+
+            <div class="checkout-grid">
+                <!-- Left Column: Form Steps -->
+                <div class="checkout-form-col">
+
+                    <!-- Step 1: Cart Review -->
+                    <div class="checkout-section" id="stepCart">
+                        <div class="checkout-section-header">
+                            <h2>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                                Tu Pedido
+                            </h2>
+                        </div>
+                        <div class="checkout-cart-items" id="checkoutCartItems">
+                            <!-- Filled by JS -->
+                        </div>
+                        <div class="checkout-cart-empty" id="checkoutCartEmpty" style="display:none">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                            <p>Tu carrito esta vacio</p>
+                            <a href="index.html#productos" class="btn btn-gold">Ver Productos</a>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Shipping -->
+                    <div class="checkout-section" id="stepShipping">
+                        <div class="checkout-section-header">
+                            <h2>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h2a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5"/><circle cx="7.5" cy="18.5" r="1.5"/><circle cx="17.5" cy="18.5" r="1.5"/></svg>
+                                Datos de Envio
+                            </h2>
+                            <span class="section-note">Envio a toda Colombia</span>
+                        </div>
+                        <form class="checkout-form" id="shippingForm" novalidate>
+                            <div class="form-row-2">
+                                <div class="form-group">
+                                    <label for="shipName">Nombre completo <span class="req">*</span></label>
+                                    <input type="text" id="shipName" name="name" placeholder="Tu nombre completo" required autocomplete="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="shipPhone">Celular <span class="req">*</span></label>
+                                    <input type="tel" id="shipPhone" name="phone" placeholder="+57 300 000 0000" required autocomplete="tel">
+                                </div>
+                            </div>
+                            <div class="form-row-2">
+                                <div class="form-group">
+                                    <label for="shipEmail">Email <span class="req">*</span></label>
+                                    <input type="email" id="shipEmail" name="email" placeholder="tu@email.com" required autocomplete="email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="shipDoc">Cedula / NIT <span class="req">*</span></label>
+                                    <input type="text" id="shipDoc" name="document" placeholder="123.456.789" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="shipAddress">Direccion <span class="req">*</span></label>
+                                <input type="text" id="shipAddress" name="address" placeholder="Calle, carrera, numero, apto, barrio" required autocomplete="street-address">
+                            </div>
+                            <div class="form-row-3">
+                                <div class="form-group">
+                                    <label for="shipCity">Ciudad <span class="req">*</span></label>
+                                    <input type="text" id="shipCity" name="city" placeholder="Ej: Bogota" required autocomplete="address-level2">
+                                </div>
+                                <div class="form-group">
+                                    <label for="shipDept">Departamento <span class="req">*</span></label>
+                                    <select id="shipDept" name="department" required>
+                                        <option value="" disabled selected>Selecciona</option>
+                                        <option>Amazonas</option>
+                                        <option>Antioquia</option>
+                                        <option>Arauca</option>
+                                        <option>Atlantico</option>
+                                        <option>Bolivar</option>
+                                        <option>Boyaca</option>
+                                        <option>Caldas</option>
+                                        <option>Caqueta</option>
+                                        <option>Casanare</option>
+                                        <option>Cauca</option>
+                                        <option>Cesar</option>
+                                        <option>Choco</option>
+                                        <option>Cordoba</option>
+                                        <option>Cundinamarca</option>
+                                        <option>Guainia</option>
+                                        <option>Guaviare</option>
+                                        <option>Huila</option>
+                                        <option>La Guajira</option>
+                                        <option>Magdalena</option>
+                                        <option>Meta</option>
+                                        <option>Narino</option>
+                                        <option>Norte de Santander</option>
+                                        <option>Putumayo</option>
+                                        <option>Quindio</option>
+                                        <option>Risaralda</option>
+                                        <option>San Andres y Providencia</option>
+                                        <option>Santander</option>
+                                        <option>Sucre</option>
+                                        <option>Tolima</option>
+                                        <option>Valle del Cauca</option>
+                                        <option>Vaupes</option>
+                                        <option>Vichada</option>
+                                        <option>Bogota D.C.</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="shipZip">Codigo Postal</label>
+                                    <input type="text" id="shipZip" name="zip" placeholder="Opcional" autocomplete="postal-code">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="shipNotes">Notas del pedido</label>
+                                <textarea id="shipNotes" name="notes" rows="2" placeholder="Instrucciones especiales para la entrega (opcional)"></textarea>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Step 3: Payment -->
+                    <div class="checkout-section" id="stepPayment">
+                        <div class="checkout-section-header">
+                            <h2>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                                Metodo de Pago
+                            </h2>
+                        </div>
+                        <div class="payment-methods">
+                            <label class="payment-option" for="payBancolombia">
+                                <input type="radio" name="payMethod" id="payBancolombia" value="bancolombia" checked>
+                                <div class="payment-option-content">
+                                    <div class="payment-icon payment-icon-banco">
+                                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 14h4"/></svg>
+                                    </div>
+                                    <div class="payment-text">
+                                        <strong>Bancolombia</strong>
+                                        <span>Transferencia a cuenta de ahorros</span>
+                                    </div>
+                                    <div class="payment-radio"></div>
+                                </div>
+                                <div class="payment-details" id="detailsBancolombia">
+                                    <div class="payment-account-box">
+                                        <div class="payment-account-row">
+                                            <span class="payment-account-label">Tipo de cuenta</span>
+                                            <span class="payment-account-value">Ahorros</span>
+                                        </div>
+                                        <div class="payment-account-row">
+                                            <span class="payment-account-label">Numero de cuenta</span>
+                                            <span class="payment-account-value payment-pending">Pendiente por asignar</span>
+                                        </div>
+                                        <div class="payment-account-row">
+                                            <span class="payment-account-label">Titular</span>
+                                            <span class="payment-account-value">Berahass SAS</span>
+                                        </div>
+                                        <div class="payment-account-row">
+                                            <span class="payment-account-label">NIT</span>
+                                            <span class="payment-account-value payment-pending">Pendiente por asignar</span>
+                                        </div>
+                                    </div>
+                                    <p class="payment-instruction">Realiza la transferencia por el valor total y envía el comprobante a nuestro WhatsApp o email.</p>
+                                </div>
+                            </label>
+
+                            <label class="payment-option" for="payNequi">
+                                <input type="radio" name="payMethod" id="payNequi" value="nequi">
+                                <div class="payment-option-content">
+                                    <div class="payment-icon payment-icon-nequi">
+                                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="3"/><circle cx="12" cy="17" r="1"/><path d="M9 6h6"/></svg>
+                                    </div>
+                                    <div class="payment-text">
+                                        <strong>Nequi</strong>
+                                        <span>Transferencia por Nequi</span>
+                                    </div>
+                                    <div class="payment-radio"></div>
+                                </div>
+                                <div class="payment-details" id="detailsNequi">
+                                    <div class="payment-account-box">
+                                        <div class="payment-account-row">
+                                            <span class="payment-account-label">Numero Nequi</span>
+                                            <span class="payment-account-value payment-pending">Pendiente por asignar</span>
+                                        </div>
+                                        <div class="payment-account-row">
+                                            <span class="payment-account-label">Nombre</span>
+                                            <span class="payment-account-value">Berahass SAS</span>
+                                        </div>
+                                    </div>
+                                    <p class="payment-instruction">Envía el dinero al numero indicado y comparte el comprobante con nosotros.</p>
+                                </div>
+                            </label>
+
+                            <label class="payment-option" for="payContra">
+                                <input type="radio" name="payMethod" id="payContra" value="contraentrega">
+                                <div class="payment-option-content">
+                                    <div class="payment-icon payment-icon-contra">
+                                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96L12 12.01l8.73-5.05"/><path d="M12 22.08V12"/></svg>
+                                    </div>
+                                    <div class="payment-text">
+                                        <strong>Pago Contra Entrega</strong>
+                                        <span>Paga cuando recibas tu pedido</span>
+                                    </div>
+                                    <div class="payment-radio"></div>
+                                </div>
+                                <div class="payment-details" id="detailsContra">
+                                    <p class="payment-instruction">Paga en efectivo o con datáfono al momento de recibir tu pedido. Disponible en ciudades principales.</p>
+                                </div>
+                            </label>
+                        </div>
+
+                        <!-- Upload comprobante -->
+                        <div class="payment-comprobante" id="comprobanteSection">
+                            <h4>Comprobante de pago</h4>
+                            <p>Después de realizar tu transferencia, sube o envía tu comprobante:</p>
+                            <div class="comprobante-actions">
+                                <a href="https://www.instagram.com/berahass_sas/" target="_blank" rel="noopener noreferrer" class="btn btn-comprobante btn-comprobante-ig">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                                    Enviar por Instagram
+                                </a>
+                                <a href="mailto:contacto@berahass.com" class="btn btn-comprobante btn-comprobante-email">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+                                    Enviar por Email
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="checkout-nav-buttons">
+                        <button class="btn btn-glass btn-lg" id="btnPrev" style="display:none">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                            <span>Anterior</span>
+                        </button>
+                        <button class="btn btn-gold btn-lg" id="btnNext">
+                            <span>Continuar al Envio</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Column: Order Summary (sticky) -->
+                <div class="checkout-summary-col">
+                    <div class="checkout-summary" id="checkoutSummary">
+                        <h3>Resumen del Pedido</h3>
+                        <div class="summary-items" id="summaryItems"></div>
+                        <div class="summary-divider"></div>
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="summarySubtotal">$0</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Envio</span>
+                            <span id="summaryShipping" class="summary-shipping-value">Por calcular</span>
+                        </div>
+                        <div class="summary-divider"></div>
+                        <div class="summary-row summary-total">
+                            <span>Total a Pagar</span>
+                            <span id="summaryTotal">$0</span>
+                        </div>
+                        <div class="summary-trust">
+                            <div class="summary-trust-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                                <span>INVIMA RSA-0026118-2023</span>
+                            </div>
+                            <div class="summary-trust-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h2a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5"/><circle cx="7.5" cy="18.5" r="1.5"/><circle cx="17.5" cy="18.5" r="1.5"/></svg>
+                                <span>Envio a toda Colombia</span>
+                            </div>
+                            <div class="summary-trust-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/></svg>
+                                <span>Negocios Verdes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Confirmation (hidden by default) -->
+            <div class="checkout-confirmation" id="orderConfirmation" style="display:none">
+                <div class="confirmation-icon">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                </div>
+                <h2>Pedido Registrado</h2>
+                <p class="confirmation-number">Pedido <strong id="orderNumber">#BH-000000</strong></p>
+                <p class="confirmation-msg">Hemos recibido tu pedido exitosamente. Te contactaremos al celular y email proporcionados para confirmar el envio y coordinar el pago.</p>
+                <div class="confirmation-details" id="confirmationDetails"></div>
+                <div class="confirmation-actions">
+                    <a href="index.html" class="btn btn-gold btn-lg">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        <span>Volver al Inicio</span>
+                    </a>
+                    <a href="https://www.instagram.com/berahass_sas/" target="_blank" rel="noopener noreferrer" class="btn btn-glass btn-lg">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        <span>Seguir en Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Bera Hass - Berahass SAS. Todos los derechos reservados. Colombia &#127464;&#127476;</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+    <script src="checkout.js"></script>
+</body>
+</html>
