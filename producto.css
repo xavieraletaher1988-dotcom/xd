@@ -226,6 +226,13 @@
     font-weight: 600;
     color: var(--text);
 }
+.spec-row-green .spec-value {
+    color: #27ae60;
+    font-weight: 700;
+}
+.spec-row-green .spec-label {
+    color: #27ae60;
+}
 
 /* Nutrients */
 .prod-detail-nutrients {
