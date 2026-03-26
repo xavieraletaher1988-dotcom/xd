@@ -1078,6 +1078,10 @@ button, input, select, textarea { font: inherit; }
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
+.l-b, .l-e, .l-r, .l-a {
+    -webkit-text-fill-color: currentColor !important;
+    background: none !important;
+}
 .about-body {
     font-size: 1rem;
     color: var(--muted);
