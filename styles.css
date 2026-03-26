@@ -889,6 +889,7 @@ button, input, select, textarea { font: inherit; }
     justify-content: center;
     padding: 2.5rem 2rem;
     overflow: hidden;
+    background: #ffffff;
 }
 .prod-header::before {
     content: '';
@@ -898,7 +899,7 @@ button, input, select, textarea { font: inherit; }
     transform: translateX(-50%);
     width: 70%;
     height: 40%;
-    background: radial-gradient(ellipse at center, rgba(0,0,0,0.06) 0%, transparent 70%);
+    background: none;
     pointer-events: none;
     z-index: 1;
 }
@@ -916,21 +917,18 @@ button, input, select, textarea { font: inherit; }
     width: auto;
     max-width: 75%;
     object-fit: contain;
-    filter: drop-shadow(0 8px 20px rgba(0,0,0,0.12));
+    filter: none;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), filter 0.5s ease;
     position: relative;
     z-index: 2;
-    mix-blend-mode: multiply;
 }
 .prod-card:hover .prod-img {
     transform: scale(1.08) translateY(-8px);
-    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.18));
 }
 .prod-img-garrafa {
     max-height: 270px;
     max-width: 70%;
     object-fit: contain;
-    mix-blend-mode: multiply;
 }
 .prod-badge {
     position: absolute;
