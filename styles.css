@@ -903,13 +903,13 @@ button, input, select, textarea { font: inherit; }
     z-index: 1;
 }
 .refinado-bg {
-    background: linear-gradient(180deg, #f7f6f2 0%, #edece6 100%);
+    background: #ffffff;
 }
 .extravirgen-bg {
-    background: linear-gradient(180deg, #faf9f3 0%, #f2efdf 100%);
+    background: #ffffff;
 }
 .industrial-bg {
-    background: linear-gradient(180deg, #f7f6f2 0%, #edece6 100%);
+    background: #ffffff;
 }
 .prod-img {
     max-height: 280px;
