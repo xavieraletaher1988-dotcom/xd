@@ -66,17 +66,37 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', e => {
             e.preventDefault();
             const btn = form.querySelector('button[type="submit"]');
-            btn.innerHTML = '<span>&#10004; ¡Mensaje Enviado!</span>';
-            btn.style.background = 'var(--green)';
-            btn.style.color = '#fff';
+            const data = new FormData(form);
+            btn.innerHTML = '<span>Enviando...</span>';
             btn.disabled = true;
-            setTimeout(() => {
-                btn.innerHTML = '<span>Enviar Mensaje</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4 20-7z"/></svg>';
-                btn.style.background = '';
-                btn.style.color = '';
-                btn.disabled = false;
-                form.reset();
-            }, 3500);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            }).then(res => {
+                if (res.ok) {
+                    btn.innerHTML = '<span>&#10004; ¡Mensaje Enviado!</span>';
+                    btn.style.background = 'var(--green)';
+                    btn.style.color = '#fff';
+                    form.reset();
+                } else {
+                    btn.innerHTML = '<span>&#10008; Error, intenta de nuevo</span>';
+                    btn.style.background = '#c0392b';
+                    btn.style.color = '#fff';
+                }
+            }).catch(() => {
+                btn.innerHTML = '<span>&#10008; Error de conexión</span>';
+                btn.style.background = '#c0392b';
+                btn.style.color = '#fff';
+            }).finally(() => {
+                setTimeout(() => {
+                    btn.innerHTML = '<span>Enviar Mensaje</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4 20-7z"/></svg>';
+                    btn.style.background = '';
+                    btn.style.color = '';
+                    btn.disabled = false;
+                }, 4000);
+            });
         });
     }
 

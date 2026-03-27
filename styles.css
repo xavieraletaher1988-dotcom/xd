@@ -7,7 +7,7 @@
     --bg: #f6f4ed;
     --surface: #ffffff;
     --text: #172414;
-    --muted: #5c6758;
+    --muted: #4a5446;
     --line: rgba(23,36,20,0.1);
     --green: #1a4d2e;
     --green-2: #2d6a4f;
@@ -347,28 +347,7 @@ button, input, select, textarea { font: inherit; }
     0% { opacity: 1; }
     100% { opacity: 0.85; }
 }
-/* Animated light particles */
-.hero-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,0.3) 0%, transparent 100%),
-        radial-gradient(2px 2px at 60% 20%, rgba(255,255,255,0.2) 0%, transparent 100%),
-        radial-gradient(3px 3px at 80% 60%, rgba(255,255,255,0.15) 0%, transparent 100%),
-        radial-gradient(2px 2px at 40% 70%, rgba(255,255,255,0.25) 0%, transparent 100%),
-        radial-gradient(2px 2px at 70% 80%, rgba(255,255,255,0.2) 0%, transparent 100%),
-        radial-gradient(3px 3px at 15% 65%, rgba(255,255,255,0.15) 0%, transparent 100%);
-    z-index: 1;
-    animation: particlesFloat 12s ease-in-out infinite alternate;
-    pointer-events: none;
-}
-@keyframes particlesFloat {
-    0% { transform: translateY(0) translateX(0); opacity: 0.6; }
-    50% { transform: translateY(-15px) translateX(8px); opacity: 1; }
-    100% { transform: translateY(-5px) translateX(-5px); opacity: 0.7; }
-}
-/* Golden light leak effect */
+/* Subtle golden light accent */
 .hero::before {
     content: '';
     position: absolute;
@@ -376,15 +355,9 @@ button, input, select, textarea { font: inherit; }
     right: -10%;
     width: 60%;
     height: 60%;
-    background: radial-gradient(ellipse, rgba(196,164,75,0.12) 0%, transparent 70%);
+    background: radial-gradient(ellipse, rgba(196,164,75,0.08) 0%, transparent 70%);
     z-index: 1;
-    animation: lightLeak 10s ease-in-out infinite alternate;
     pointer-events: none;
-}
-@keyframes lightLeak {
-    0% { transform: translate(0, 0) scale(1); opacity: 0.5; }
-    50% { transform: translate(-5%, 10%) scale(1.2); opacity: 0.8; }
-    100% { transform: translate(3%, 5%) scale(1.1); opacity: 0.6; }
 }
 /* Bottom gradient fade */
 .hero-bottom-fade {
@@ -3136,4 +3109,78 @@ button, input, select, textarea { font: inherit; }
     .nutri-highlights { grid-template-columns: 1fr; }
     .nutri-card-hero { grid-column: auto; }
     .nutri-v2-header h2 { font-size: 1.8rem; }
+}
+
+/* ─── WHATSAPP FLOATING BUTTON ──────────────────── */
+.whatsapp-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 9999;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #25d366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+        0 4px 15px rgba(37,211,102,0.4),
+        0 8px 30px rgba(0,0,0,0.15);
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    animation: whatsappBounce 3s ease-in-out infinite;
+    text-decoration: none;
+}
+.whatsapp-float:hover {
+    transform: scale(1.12);
+    box-shadow:
+        0 6px 25px rgba(37,211,102,0.5),
+        0 12px 40px rgba(0,0,0,0.2);
+}
+.whatsapp-float:hover .whatsapp-tooltip {
+    opacity: 1;
+    transform: translateX(-110%) translateY(-50%) scale(1);
+    pointer-events: auto;
+}
+.whatsapp-tooltip {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateX(-100%) translateY(-50%) scale(0.9);
+    background: #fff;
+    color: #172414;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+.whatsapp-tooltip::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 6px solid transparent;
+    border-left-color: #fff;
+}
+@keyframes whatsappBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+@media (max-width: 768px) {
+    .whatsapp-float { width: 52px; height: 52px; bottom: 20px; right: 20px; }
+}
+
+/* ─── ACCESSIBILITY: Reduced Motion ─────────────── */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
