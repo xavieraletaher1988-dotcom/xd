@@ -1781,6 +1781,32 @@ button, input, select, textarea { font: inherit; }
     stroke: #1a1200;
 }
 
+/* WhatsApp Product Button */
+.btn-prod-wa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(37,211,102,0.12);
+    border: 1.5px solid rgba(37,211,102,0.3);
+    color: #25d366;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+}
+.btn-prod-wa:hover {
+    background: #25d366;
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+}
+.btn-prod-wa-gold {
+    border-color: rgba(37,211,102,0.4);
+    background: rgba(37,211,102,0.15);
+}
+
 /* Product Animations */
 @keyframes shineSweep {
     0% { left: -100%; }
@@ -2758,7 +2784,7 @@ button, input, select, textarea { font: inherit; }
 /* ─── CART SYSTEM ────────────────────────────────── */
 
 /* Navbar cart button */
-.nav-cart-btn {
+.nav-wa-btn {
     position: relative;
     display: flex;
     align-items: center;
@@ -2766,26 +2792,28 @@ button, input, select, textarea { font: inherit; }
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.15);
-    color: white;
+    background: rgba(37,211,102,0.15);
+    border: 1px solid rgba(37,211,102,0.3);
+    color: #25d366;
     cursor: pointer;
     transition: all 0.3s;
     text-decoration: none;
 }
-.nav-cart-btn:hover {
-    background: rgba(255,255,255,0.15);
-    transform: scale(1.05);
+.nav-wa-btn:hover {
+    background: #25d366;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(37,211,102,0.4);
 }
-.navbar-solid .nav-cart-btn,
-.navbar.scrolled .nav-cart-btn {
-    background: var(--green-light);
-    border-color: transparent;
-    color: var(--green);
+.navbar-solid .nav-wa-btn,
+.navbar.scrolled .nav-wa-btn {
+    background: rgba(37,211,102,0.1);
+    border-color: rgba(37,211,102,0.25);
+    color: #25d366;
 }
-.navbar-solid .nav-cart-btn:hover,
-.navbar.scrolled .nav-cart-btn:hover {
-    background: var(--green);
+.navbar-solid .nav-wa-btn:hover,
+.navbar.scrolled .nav-wa-btn:hover {
+    background: #25d366;
     color: white;
 }
 .cart-badge {
