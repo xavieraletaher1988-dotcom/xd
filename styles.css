@@ -73,8 +73,14 @@ button, input, select, textarea { font: inherit; }
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.8rem;
+    gap: 1rem;
     margin-bottom: 1.5rem;
+}
+.preloader-logo-img {
+    width: 72px;
+    height: auto;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));
+    animation: avo-float 3s ease-in-out infinite;
 }
 /* ── CSS 3D Avocado ── */
 .avo-3d {
@@ -212,8 +218,16 @@ button, input, select, textarea { font: inherit; }
 .logo {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
+    gap: 0.5rem;
     z-index: 10;
+}
+.logo-img {
+    width: 38px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+.logo:hover .logo-img {
+    transform: rotate(-5deg) scale(1.05);
 }
 .avo-3d-sm {
     width: 36px;
@@ -2695,8 +2709,9 @@ button, input, select, textarea { font: inherit; }
 .footer-logo {
     margin-bottom: 1rem;
 }
-.footer-logo .avo-3d-sm {
-    filter: drop-shadow(0 3px 8px rgba(0,0,0,0.4));
+.footer-logo .logo-img {
+    width: 36px;
+    filter: drop-shadow(0 3px 8px rgba(0,0,0,0.4)) brightness(1.1);
 }
 .footer-logo .logo-name,
 .footer-logo .logo-hass {
