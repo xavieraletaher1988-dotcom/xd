@@ -601,9 +601,9 @@ button, input, select, textarea { font: inherit; }
     justify-content: center;
     overflow: hidden;
 }
-.refinado-bg { background: #f3f5f0; }
-.extravirgen-bg { background: #f8f5e8; }
-.industrial-bg { background: #eef2ee; }
+.refinado-bg { background: #ffffff; }
+.extravirgen-bg { background: #ffffff; }
+.industrial-bg { background: #ffffff; }
 .prod-img {
     max-height: 180px;
     width: auto;
