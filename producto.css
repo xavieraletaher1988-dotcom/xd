@@ -292,6 +292,22 @@
     justify-content: center;
     gap: 0.5rem;
 }
+.btn-whatsapp {
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.9rem 2rem;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(37,211,102,0.3);
+}
+.btn-whatsapp:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(37,211,102,0.4);
+    background: linear-gradient(135deg, #20c05c, #0f7a6b);
+}
 
 /* Trust Badges */
 .prod-trust-badges {
@@ -389,25 +405,74 @@
 @media (max-width: 768px) {
     .prod-detail-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.5rem;
     }
     .prod-gallery-main {
-        min-height: 350px;
+        min-height: 280px;
+        padding: 1.5rem;
+    }
+    .prod-gallery-img {
+        max-height: 260px;
     }
     .prod-gallery-features {
         flex-direction: column;
     }
+    .gallery-feat {
+        padding: 0.7rem;
+        font-size: 0.75rem;
+    }
+    .prod-detail-info {
+        padding-top: 0;
+    }
     .prod-detail-info h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+    }
+    .prod-detail-desc {
+        font-size: 0.92rem;
     }
     .detail-price-amount {
-        font-size: 2.2rem;
+        font-size: 2rem;
+    }
+    .prod-detail-price-box {
+        padding: 1rem 1.2rem;
+    }
+    .spec-row {
+        font-size: 0.85rem;
     }
     .related-grid {
         grid-template-columns: 1fr;
     }
+    .related-img {
+        height: 160px;
+    }
     .prod-trust-badges {
         flex-direction: column;
         gap: 0.8rem;
+    }
+    .btn-whatsapp {
+        font-size: 0.9rem;
+        padding: 0.85rem 1.5rem;
+        min-height: 50px;
+    }
+    .breadcrumb {
+        padding: 1rem 0;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .prod-gallery-main {
+        min-height: 220px;
+        border-radius: 12px;
+    }
+    .prod-detail-info h1 {
+        font-size: 1.4rem;
+    }
+    .detail-price-amount {
+        font-size: 1.8rem;
+    }
+    .detail-nutrients-list span {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.6rem;
     }
 }

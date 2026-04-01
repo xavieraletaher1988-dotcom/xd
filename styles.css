@@ -277,7 +277,7 @@ button, input, select, textarea { font: inherit; }
     display: flex;
     align-items: center;
     overflow: hidden;
-    background: url('hero-cultivo.png') center/cover fixed;
+    background: url('hero-cultivo.jpg') center/cover fixed;
 }
 .hero-bg {
     display: none;
@@ -345,7 +345,7 @@ button, input, select, textarea { font: inherit; }
 
 /* ─── SHARED HERO BACKGROUND ON PANORAMA ─── */
 .about-panorama {
-    background: url('hero-cultivo.png') center/cover fixed;
+    background: url('hero-cultivo.jpg') center/cover fixed;
 }
 .about-panorama .about-panorama-img {
     display: none;
@@ -1374,6 +1374,7 @@ button, input, select, textarea { font: inherit; }
 .whatsapp-float:hover .whatsapp-tooltip { opacity: 1; }
 
 /* ─── RESPONSIVE ─── */
+/* ─── TABLET ─── */
 @media (max-width: 1024px) {
     .products-grid { grid-template-columns: repeat(2, 1fr); }
     .ben-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1381,8 +1382,16 @@ button, input, select, textarea { font: inherit; }
     .about-story { grid-template-columns: 1fr; gap: 2.5rem; }
     .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
     .about-panorama-content h2 { font-size: 2rem; }
+    /* Fix background-attachment:fixed on touch/tablet devices */
+    .hero,
+    .about-panorama {
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center;
+    }
 }
 
+/* ─── MOBILE NAV ─── */
 @media (max-width: 820px) {
     .nav-toggle { display: inline-flex; }
     .nav-links {
@@ -1390,7 +1399,7 @@ button, input, select, textarea { font: inherit; }
         top: 0;
         right: -100%;
         width: 280px;
-        height: 100vh;
+        height: 100dvh;
         background: #fff;
         flex-direction: column;
         align-items: stretch;
@@ -1398,37 +1407,71 @@ button, input, select, textarea { font: inherit; }
         box-shadow: var(--shadow-lg);
         transition: right 0.35s ease;
         z-index: 5;
+        overflow-y: auto;
     }
     .nav-links.active { right: 0; }
     .nav-links a {
-        font-size: 0.95rem;
-        padding: 0.6rem 0;
+        font-size: 1rem;
+        padding: 0.8rem 0;
         border-bottom: 1px solid var(--line);
+        -webkit-tap-highlight-color: transparent;
     }
     .nav-links a::after { display: none; }
     .btn-nav {
         text-align: center !important;
         margin-top: 0.5rem;
+        padding: 0.7rem 1.3rem !important;
     }
+    .hero { min-height: 85vh; }
+    .hero-split { padding: 6rem 0 4rem; }
     .hero-text h1 { font-size: 2.5rem; }
     .section-header h2 { font-size: 1.8rem; }
     .contact-layout { grid-template-columns: 1fr; gap: 2rem; }
     .products-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+    .about-panorama { min-height: 40vh; }
 }
 
+/* ─── MOBILE SMALL ─── */
 @media (max-width: 600px) {
-    .section { padding: 3.5rem 0; }
-    .hero-text h1 { font-size: 2rem; }
-    .hero-subtitle { font-size: 0.9rem; }
-    .ben-grid { grid-template-columns: 1fr; }
-    .process-steps { grid-template-columns: 1fr 1fr; }
+    .section { padding: 3rem 0; }
+    .hero { min-height: 80vh; }
+    .hero-split { padding: 5rem 0 3rem; }
+    .hero-text h1 { font-size: 2rem; line-height: 1.15; }
+    .hero-subtitle { font-size: 0.88rem; margin-bottom: 1.8rem; }
+    .hero-buttons .btn-gold { padding: 0.75rem 1.8rem; font-size: 0.85rem; }
+    .section-header { margin-bottom: 2.5rem; }
+    .section-header h2 { font-size: 1.6rem; }
+    .ben-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .ben-card-v2 { padding: 1.5rem 1.2rem; }
+    .process-steps { grid-template-columns: 1fr; gap: 1rem; }
+    .p-step { padding: 1.5rem 1rem; }
     .form-row { grid-template-columns: 1fr; }
     .footer-top { grid-template-columns: 1fr; gap: 1.5rem; }
     .footer-certifications { flex-direction: column; align-items: center; gap: 0.5rem; }
     .about-counters { flex-direction: column; }
     .about-counter-divider { width: 60%; height: 1px; margin: 0 auto; }
-    .about-panorama-content h2 { font-size: 1.7rem; }
-    .whatsapp-float { width: 48px; height: 48px; bottom: 16px; right: 16px; }
+    .about-panorama { min-height: 35vh; }
+    .about-panorama-content h2 { font-size: 1.5rem; }
+    .panorama-subtitle { font-size: 0.88rem; }
+    .about-panorama-content { padding: 3rem 0; }
+    .about-story { gap: 2rem; padding: 3rem 0; }
+    .about-headline { font-size: 1.35rem; }
+    .about-mosaic { gap: 0.5rem; }
+    .prod-card { border-radius: 12px; }
+    .prod-info { padding: 1.2rem; }
+    .prod-info h3 { font-size: 1.1rem; }
+    .price-amount { font-size: 1.4rem; }
+    .btn-prod { padding: 0.7rem 1rem; font-size: 0.82rem; min-height: 44px; }
+    .prod-nutrients span { font-size: 0.65rem; padding: 0.18rem 0.5rem; }
+    /* Touch-friendly tap targets */
+    .btn, a.btn, button { min-height: 44px; }
+    .c-card { padding: 0.8rem; min-height: 44px; }
+    .contact-form .btn { padding: 0.9rem 2rem; }
+    .whatsapp-float { width: 50px; height: 50px; bottom: 16px; right: 16px; }
+    /* Better spacing */
+    .container { width: min(calc(100% - 1.5rem), var(--container)); }
+    /* Safe area for notched phones */
+    .navbar { padding-top: max(0.6rem, env(safe-area-inset-top)); }
 }
 
 /* ─── REDUCED MOTION ─── */
