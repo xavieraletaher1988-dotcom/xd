@@ -58,7 +58,12 @@
     position: relative;
     overflow: hidden;
     padding: 2.5rem;
-    background: #ffffff;
+    background: linear-gradient(145deg, #ffffff 0%, #fafaf7 100%);
+    border: 1px solid var(--line);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.prod-gallery-main:hover {
+    box-shadow: 0 20px 50px rgba(0,0,0,0.06);
 }
 .prod-gallery-badge {
     position: absolute;
@@ -73,8 +78,9 @@
     z-index: 3;
 }
 .prod-gallery-badge-gold {
-    background: var(--gold);
+    background: linear-gradient(135deg, var(--gold), #d4a81a);
     color: #1a1200;
+    box-shadow: 0 2px 10px rgba(184,150,12,0.3);
 }
 .prod-gallery-img {
     max-height: 380px;
@@ -83,7 +89,8 @@
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .prod-gallery-main:hover .prod-gallery-img {
-    transform: scale(1.05) translateY(-8px);
+    transform: scale(1.06) translateY(-10px);
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1));
 }
 .prod-gallery-features {
     display: flex;
@@ -102,6 +109,13 @@
     font-size: 0.78rem;
     font-weight: 600;
     color: var(--text);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.gallery-feat:hover {
+    border-color: var(--green-light);
+    background: var(--green-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(26,60,40,0.08);
 }
 .gallery-feat svg {
     stroke: var(--green);
@@ -153,11 +167,16 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.2rem 1.5rem;
-    background: white;
-    border-radius: var(--radius-sm);
+    padding: 1.3rem 1.6rem;
+    background: linear-gradient(135deg, rgba(232,240,235,0.3), rgba(255,255,255,0.8));
+    border-radius: var(--radius);
     border: 2px solid var(--green-light);
     margin-bottom: 1.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.prod-detail-price-box:hover {
+    border-color: var(--green);
+    box-shadow: 0 8px 25px rgba(26,60,40,0.08);
 }
 .prod-detail-price {
     display: flex;
@@ -315,11 +334,27 @@
     overflow: hidden;
     text-decoration: none;
     color: var(--text);
-    transition: all 0.3s;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+.related-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+    pointer-events: none;
+}
+.related-card:hover::before {
+    left: 150%;
 }
 .related-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.1);
     border-color: transparent;
 }
 .related-img {
