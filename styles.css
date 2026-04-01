@@ -1458,11 +1458,15 @@ button, input, select, textarea { font: inherit; }
     .about-story { grid-template-columns: 1fr; gap: 2.5rem; }
     .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
     .about-panorama-content h2 { font-size: 2rem; }
-    .hero,
+    /* Fix background-attachment:fixed on touch/tablet devices */
     .about-panorama {
         background-attachment: scroll;
         background-size: cover;
         background-position: center;
+    }
+    /* Reduce hero zoom animation on mobile for performance */
+    .hero-bg {
+        animation-duration: 25s;
     }
 }
 
@@ -1514,6 +1518,7 @@ button, input, select, textarea { font: inherit; }
         transform: rotate(-45deg) translate(5px, -4px);
     }
     .hero { min-height: 85dvh; }
+    .hero-bg { inset: -10px; }
     .hero-split { padding: 6rem 0 4rem; }
     .hero-text h1 { font-size: 2.5rem; }
     .section-header h2 { font-size: 1.8rem; }
@@ -1528,8 +1533,13 @@ button, input, select, textarea { font: inherit; }
 @media (max-width: 600px) {
     .section { padding: 3rem 0; }
     .hero { min-height: 80dvh; }
+    .hero-bg { inset: -5px; animation-duration: 30s; }
+    .hero-particles .particle { display: none; }
+    .hero-particles .particle:nth-child(-n+4) { display: block; }
     .hero-split { padding: 5rem 0 3rem; }
     .hero-text h1 { font-size: 2rem; line-height: 1.15; }
+    .hero-text h1 { animation-delay: 0.1s; }
+    .section-header h2::after { width: 40px; height: 2px; }
     .hero-subtitle { font-size: 0.88rem; margin-bottom: 1.8rem; max-width: 100%; }
     .hero-buttons { width: 100%; }
     .hero-buttons .btn-gold {
