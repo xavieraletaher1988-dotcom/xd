@@ -350,6 +350,91 @@ button, input, select, textarea { font: inherit; }
     box-shadow: 0 8px 35px rgba(26,60,40,0.4), 0 0 60px rgba(26,60,40,0.15);
 }
 
+/* ─── HERO ↔ ABOUT CINEMATIC BRIDGE ─── */
+.hero-about-bridge {
+    position: relative;
+    z-index: 10;
+    height: clamp(60px, 8vw, 100px);
+    margin-top: -1px;
+    margin-bottom: -1px;
+    overflow: hidden;
+    pointer-events: none;
+    background: linear-gradient(180deg,
+        rgba(13,34,24,0.7) 0%,
+        rgba(10,25,18,0.95) 40%,
+        rgba(10,25,18,0.95) 60%,
+        rgba(0,20,30,0.7) 100%
+    );
+}
+
+/* Diagonal stripe pattern for texture */
+.bridge-stripe {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 30px,
+        rgba(255,255,255,0.015) 30px,
+        rgba(255,255,255,0.015) 32px
+    );
+}
+
+/* Glowing gold horizontal line across the bridge */
+.bridge-gold-accent {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    transform: translateY(-50%);
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(184,150,12,0.15) 15%,
+        rgba(184,150,12,0.6) 35%,
+        var(--gold) 50%,
+        rgba(184,150,12,0.6) 65%,
+        rgba(184,150,12,0.15) 85%,
+        transparent 100%
+    );
+    box-shadow:
+        0 0 8px rgba(184,150,12,0.3),
+        0 0 20px rgba(184,150,12,0.15),
+        0 0 40px rgba(184,150,12,0.08);
+    animation: bridgeGlow 4s ease-in-out infinite;
+}
+
+@keyframes bridgeGlow {
+    0%, 100% { opacity: 0.6; filter: brightness(1); }
+    50% { opacity: 1; filter: brightness(1.3); }
+}
+
+/* Hero fades into the bridge */
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(to bottom, transparent, rgba(13,34,24,0.6));
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* About panorama fades from the bridge */
+.about-panorama::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to top, transparent, rgba(0,20,30,0.5));
+    z-index: 2;
+    pointer-events: none;
+}
+
 /* ─── SECTIONS ─── */
 .section {
     padding: 6rem 0;
