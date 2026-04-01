@@ -108,7 +108,7 @@ button, input, select, textarea { font: inherit; }
     background: linear-gradient(90deg, var(--gold), #d4a81a, var(--gold));
     background-size: 200% 100%;
     border-radius: 4px;
-    animation: preloaderFill 1.5s ease forwards, shimmerBar 1.5s ease-in-out infinite;
+    animation: preloaderFill 0.8s ease forwards, shimmerBar 0.8s ease-in-out infinite;
     box-shadow: 0 0 12px rgba(184,150,12,0.5);
 }
 @keyframes preloaderFill {

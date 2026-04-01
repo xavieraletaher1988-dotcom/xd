@@ -9,25 +9,41 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Berahass | Aceite de Aguacate Hass Premium">
     <meta property="og:description" content="Aceite de aguacate Hass 100% puro, prensado en fr&iacute;o desde Colombia. Refinado, Extra Virgen y Gal&oacute;n de 5 Litros.">
-    <meta property="og:image" content="https://xavieraletaher1988-dotcom.github.io/xd/hero-cultivo.png">
-    <meta property="og:url" content="https://xavieraletaher1988-dotcom.github.io/xd/">
+    <meta property="og:image" content="https://berahass.co/hero-cultivo.jpg">
+    <meta property="og:url" content="https://berahass.co/">
     <meta property="og:locale" content="es_CO">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Berahass | Aceite de Aguacate Hass Premium">
     <meta name="twitter:description" content="Aceite de aguacate Hass 100% puro de Colombia.">
-    <meta name="twitter:image" content="https://xavieraletaher1988-dotcom.github.io/xd/hero-cultivo.png">
+    <meta name="twitter:image" content="https://berahass.co/hero-cultivo.jpg">
     <!-- Theme color for mobile browsers -->
     <meta name="theme-color" content="#1a4d2e">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
     <!-- Preload critical resources -->
-    <link rel="preload" href="hero-cultivo.jpg" as="image">
+    <link rel="preload" href="hero-cultivo.jpg" as="image" fetchpriority="high">
     <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="logo-oficial.png" as="image">
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://formspree.io">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Load fonts with display=swap for instant text render -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="styles.css">
+    <!-- Inline critical CSS for instant first paint -->
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:-apple-system,sans-serif;overflow-x:hidden}
+        .preloader{position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#0d2218,#1a3c28,#1a4d2e);display:flex;align-items:center;justify-content:center}
+        .preloader-logo-img{width:90px;height:auto;border-radius:18px}
+        .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:.9rem 0;background:rgba(255,255,255,.7);backdrop-filter:blur(20px)}
+        .hero{position:relative;min-height:100vh;display:flex;align-items:center;background:#1a3c28}
+    </style>
 </head>
 <body>
 
