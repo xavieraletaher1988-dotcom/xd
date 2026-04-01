@@ -120,6 +120,19 @@ button, input, select, textarea { font: inherit; }
     100% { background-position: 200% 0; }
 }
 
+/* ─── BERAHASS BRAND COLORS (Colombia flag) ─── */
+.brand-col {
+    font-weight: inherit;
+    font-style: normal;
+}
+.brand-col .b-y { color: #FCD116; }
+.brand-col .b-b { color: #003893; }
+.brand-col .b-r { color: #CE1126; }
+/* Light backgrounds */
+.brand-col-dark .b-y { color: #d4a81a; }
+.brand-col-dark .b-b { color: #003893; }
+.brand-col-dark .b-r { color: #CE1126; }
+
 /* ─── NAVBAR ─── */
 .navbar {
     position: fixed;
