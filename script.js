@@ -165,11 +165,31 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     window.addEventListener('scroll', highlightNav, { passive: true });
 
-    // ── Parallax hero bg ───────────────────────────────
+    // ── Parallax hero + panorama (connected depth) ─────
+    const heroImg = document.querySelector('.hero-bg-img');
+    const panoramaImg = document.querySelector('.about-panorama-img');
+    const bridgeLine = document.querySelector('.bridge-gold-line');
     window.addEventListener('scroll', () => {
-        const heroImg = document.querySelector('.hero-bg-img');
-        if (heroImg && window.scrollY < window.innerHeight) {
-            heroImg.style.transform = `scale(1.05) translateY(${window.scrollY * 0.2}px)`;
+        const sy = window.scrollY;
+        // Hero parallax
+        if (heroImg && sy < window.innerHeight * 1.2) {
+            heroImg.style.transform = `scale(1.08) translateY(${sy * 0.18}px)`;
+        }
+        // Panorama counter-parallax (slower, creates depth connection)
+        if (panoramaImg) {
+            const rect = panoramaImg.parentElement.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+                panoramaImg.style.transform = `scale(1.06) translateY(${(progress - 0.5) * -40}px)`;
+            }
+        }
+        // Bridge gold line rotates subtly with scroll
+        if (bridgeLine) {
+            const bridgeRect = bridgeLine.parentElement.getBoundingClientRect();
+            if (bridgeRect.top < window.innerHeight && bridgeRect.bottom > 0) {
+                const p = (window.innerHeight - bridgeRect.top) / window.innerHeight;
+                bridgeLine.style.transform = `rotate(${-2.5 + p * 1.5}deg)`;
+            }
         }
     }, { passive: true });
 
