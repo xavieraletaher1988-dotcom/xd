@@ -3,7 +3,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── Preloader ──────────────────────────────────────
     const preloader = document.getElementById('preloader');
-    const hidePreloader = () => preloader.classList.add('hidden');
+    const hidePreloader = () => {
+        preloader.classList.add('hidden');
+        // Trigger hero animations after preloader
+        document.querySelectorAll('.hero-text h1, .hero-subtitle, .hero-buttons').forEach((el, i) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = `opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${0.2 + i * 0.15}s, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${0.2 + i * 0.15}s`;
+            requestAnimationFrame(() => {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            });
+        });
+    };
     window.addEventListener('load', () => setTimeout(hidePreloader, 1800));
     setTimeout(hidePreloader, 3500);
 
@@ -41,7 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
         '.section-tag, .about-grid, .products-grid, .benefits-layout, ' +
         '.process-steps, .process-visual, .cta-content, .contact-layout, ' +
         '.ben-card, .prod-card, .p-step, .stat-item, .nutri-grid, ' +
-        '.section-header, .about-float, .about-img-secondary, .benefits-image'
+        '.section-header, .about-float, .about-img-secondary, .benefits-image, ' +
+        '.ben-card-v2, .about-hl, .gallery-feat, .about-mosaic, .about-story'
     );
     const revealObs = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -55,10 +68,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealEls.forEach((el, i) => {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(28px)';
-        el.style.transition = `opacity 0.7s ease ${(i % 6) * 0.08}s, transform 0.7s ease ${(i % 6) * 0.08}s`;
+        el.style.transform = 'translateY(32px)';
+        el.style.transition = `opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${(i % 6) * 0.1}s, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${(i % 6) * 0.1}s`;
         revealObs.observe(el);
     });
+
+    // ── Counter animation ──────────────────────────────
+    const counters = document.querySelectorAll('.counter-num');
+    if (counters.length) {
+        const counterObs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const text = el.textContent.trim();
+                    const match = text.match(/^([\d.]+)(.*)$/);
+                    if (match) {
+                        const target = parseFloat(match[1]);
+                        const suffix = match[2] || '';
+                        const isDecimal = match[1].includes('.');
+                        const duration = 2000;
+                        const start = performance.now();
+                        const animate = (now) => {
+                            const progress = Math.min((now - start) / duration, 1);
+                            const eased = 1 - Math.pow(1 - progress, 3);
+                            const current = isDecimal
+                                ? (target * eased).toFixed(1)
+                                : Math.floor(target * eased);
+                            el.textContent = current + suffix;
+                            if (progress < 1) requestAnimationFrame(animate);
+                        };
+                        requestAnimationFrame(animate);
+                    }
+                    counterObs.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+        counters.forEach(c => counterObs.observe(c));
+    }
 
     // ── Contact form ───────────────────────────────────
     const form = document.getElementById('contactForm');
@@ -129,14 +175,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── Product card hover effect ──────────────────────
     document.querySelectorAll('.prod-card').forEach(card => {
+        card.style.transformStyle = 'preserve-3d';
         card.addEventListener('mousemove', e => {
             const rect = card.getBoundingClientRect();
             const x = (e.clientX - rect.left) / rect.width - 0.5;
             const y = (e.clientY - rect.top) / rect.height - 0.5;
-            card.style.transform = `translateY(-8px) rotateY(${x * 4}deg) rotateX(${-y * 3}deg)`;
+            card.style.transform = `translateY(-10px) rotateY(${x * 5}deg) rotateX(${-y * 4}deg) scale(1.02)`;
         });
         card.addEventListener('mouseleave', () => {
+            card.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
             card.style.transform = '';
+            setTimeout(() => { card.style.transition = ''; }, 500);
+        });
+    });
+
+    // ── Smooth section bg tint on scroll ───────────────
+    const tintSections = document.querySelectorAll('.section-tag');
+    if (tintSections.length) {
+        window.addEventListener('scroll', () => {
+            tintSections.forEach(tag => {
+                const rect = tag.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    const progress = 1 - (rect.top / window.innerHeight);
+                    tag.style.opacity = Math.min(1, progress * 1.5);
+                }
+            });
+        }, { passive: true });
+    }
+
+    // ── Magnetic hover on CTA buttons ──────────────────
+    document.querySelectorAll('.btn-gold, .btn-prod-gold').forEach(btn => {
+        btn.addEventListener('mousemove', e => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            btn.style.transform = `translateY(-3px) translate(${x * 0.15}px, ${y * 0.15}px)`;
+        });
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = '';
         });
     });
 
