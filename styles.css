@@ -282,17 +282,6 @@ button, input, select, textarea { font: inherit; }
     overflow: hidden;
     background: url('hero-cultivo.jpg') center/cover fixed;
 }
-.hero::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 120px;
-    background: linear-gradient(to top, var(--bg-alt) 0%, transparent 100%);
-    z-index: 3;
-    pointer-events: none;
-}
 .hero-bg {
     display: none;
 }
