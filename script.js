@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     };
-    window.addEventListener('load', () => setTimeout(hidePreloader, 1800));
-    setTimeout(hidePreloader, 3500);
+    window.addEventListener('load', () => setTimeout(hidePreloader, 800));
+    setTimeout(hidePreloader, 2000);
 
     // ── Navbar scroll ──────────────────────────────────
     const navbar = document.getElementById('navbar');
@@ -165,22 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     window.addEventListener('scroll', highlightNav, { passive: true });
 
-    // ── Parallax hero + panorama (connected depth) ─────
-    const heroImg = document.querySelector('.hero-bg-img');
-    const panoramaImg = document.querySelector('.about-panorama-img');
-    window.addEventListener('scroll', () => {
-        const sy = window.scrollY;
-        if (heroImg && sy < window.innerHeight * 1.2) {
-            heroImg.style.transform = `scale(1.08) translateY(${sy * 0.18}px)`;
-        }
-        if (panoramaImg) {
-            const rect = panoramaImg.parentElement.getBoundingClientRect();
-            if (rect.top < window.innerHeight && rect.bottom > 0) {
-                const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
-                panoramaImg.style.transform = `scale(1.06) translateY(${(progress - 0.5) * -35}px)`;
-            }
-        }
-    }, { passive: true });
+    // ── Parallax (fixed bg handled by CSS) ──────────────
 
     // ── Product card hover effect ──────────────────────
     document.querySelectorAll('.prod-card').forEach(card => {
