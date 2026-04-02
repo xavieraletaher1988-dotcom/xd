@@ -1044,10 +1044,11 @@ button, input, select, textarea { font: inherit; }
 }
 .benefits-hero-img {
     position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
+    inset: -20%;
+    width: 140%;
+    height: 140%;
     object-fit: cover;
+    object-position: center;
 }
 .benefits-hero-overlay {
     position: absolute;
