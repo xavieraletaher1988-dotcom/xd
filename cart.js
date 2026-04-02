@@ -18,7 +18,7 @@
             name: 'Aceite Extra Virgen',
             desc: 'Aceite de Aguacate Hass Extra Virgen 250ml',
             price: 31500,
-            image: 'extravirgen.png',
+            image: 'PHOTO-2026-04-01-22-43-53.jpg',
             size: '250 ml',
             tag: 'Premium'
         },
