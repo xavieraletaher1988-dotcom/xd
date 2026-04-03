@@ -9,22 +9,41 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Berahass | Aceite de Aguacate Hass Premium">
     <meta property="og:description" content="Aceite de aguacate Hass 100% puro, prensado en fr&iacute;o desde Colombia. Refinado, Extra Virgen y Gal&oacute;n de 5 Litros.">
-    <meta property="og:image" content="https://xavieraletaher1988-dotcom.github.io/xd/hero-cultivo.png">
-    <meta property="og:url" content="https://xavieraletaher1988-dotcom.github.io/xd/">
+    <meta property="og:image" content="https://berahass.co/hero-cultivo.jpg">
+    <meta property="og:url" content="https://berahass.co/">
     <meta property="og:locale" content="es_CO">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Berahass | Aceite de Aguacate Hass Premium">
     <meta name="twitter:description" content="Aceite de aguacate Hass 100% puro de Colombia.">
-    <meta name="twitter:image" content="https://xavieraletaher1988-dotcom.github.io/xd/hero-cultivo.png">
+    <meta name="twitter:image" content="https://berahass.co/hero-cultivo.jpg">
     <!-- Theme color for mobile browsers -->
     <meta name="theme-color" content="#1a4d2e">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
+    <!-- Preload critical resources -->
+    <link rel="preload" href="hero-cultivo.jpg" as="image" fetchpriority="high">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="logo-oficial.png" as="image">
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://formspree.io">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Load fonts with display=swap for instant text render -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="styles.css">
+    <!-- Inline critical CSS for instant first paint -->
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:-apple-system,sans-serif;overflow-x:hidden}
+        .preloader{position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#0d2218,#1a3c28,#1a4d2e);display:flex;align-items:center;justify-content:center}
+        .preloader-logo-img{width:90px;height:auto;border-radius:18px}
+        .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:.9rem 0;background:rgba(255,255,255,.7);backdrop-filter:blur(20px)}
+        .hero{position:relative;min-height:100vh;display:flex;align-items:center}
+    </style>
 </head>
 <body>
 
@@ -53,7 +72,6 @@
                 <li><a href="#productos">Productos</a></li>
                 <li><a href="#beneficios">Beneficios</a></li>
                 <li><a href="#proceso">Proceso</a></li>
-                <li><a href="blog.html">Blog</a></li>
                 <li><a href="#contacto" class="btn-nav">Contáctanos</a></li>
             </ul>
         </div>
@@ -61,19 +79,23 @@
 
     <!-- Hero Section -->
     <section class="hero" id="inicio">
-        <div class="hero-bg"></div>
+        <div class="hero-bg">
+            <img src="hero-cultivo.jpg" alt="Aguacates Hass frescos colgando del árbol" class="hero-bg-img">
+        </div>
         <div class="hero-overlay"></div>
+        <!-- Floating particles -->
         <div class="hero-particles">
-            <span class="particle" style="--x:10%;--y:20%;--s:6px;--d:6s;--delay:0s"></span>
-            <span class="particle" style="--x:25%;--y:60%;--s:4px;--d:8s;--delay:1s"></span>
-            <span class="particle" style="--x:50%;--y:30%;--s:8px;--d:7s;--delay:0.5s"></span>
-            <span class="particle" style="--x:70%;--y:70%;--s:5px;--d:9s;--delay:2s"></span>
-            <span class="particle" style="--x:85%;--y:15%;--s:7px;--d:6s;--delay:1.5s"></span>
-            <span class="particle" style="--x:40%;--y:80%;--s:4px;--d:10s;--delay:3s"></span>
-            <span class="particle" style="--x:60%;--y:45%;--s:6px;--d:7s;--delay:0.8s"></span>
-            <span class="particle" style="--x:15%;--y:85%;--s:5px;--d:8s;--delay:2.5s"></span>
+            <div class="particle" style="--x:10%;--y:20%;--s:6px;--d:8s;--delay:0s"></div>
+            <div class="particle" style="--x:25%;--y:70%;--s:4px;--d:12s;--delay:2s"></div>
+            <div class="particle" style="--x:50%;--y:30%;--s:5px;--d:10s;--delay:1s"></div>
+            <div class="particle" style="--x:70%;--y:60%;--s:3px;--d:14s;--delay:3s"></div>
+            <div class="particle" style="--x:85%;--y:25%;--s:7px;--d:9s;--delay:0.5s"></div>
+            <div class="particle" style="--x:40%;--y:80%;--s:4px;--d:11s;--delay:4s"></div>
+            <div class="particle" style="--x:60%;--y:15%;--s:5px;--d:13s;--delay:2.5s"></div>
+            <div class="particle" style="--x:90%;--y:50%;--s:3px;--d:15s;--delay:1.5s"></div>
         </div>
         <div class="container hero-split">
+            <!-- Left: Text + Floating Products -->
             <div class="hero-left">
                 <div class="hero-text">
                     <h1><span class="hero-accent">El Oro Líquido</span><br>de Colombia</h1>
@@ -91,13 +113,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Diagonal Transition: Hero → About -->
-    <div class="hero-about-bridge" aria-hidden="true">
-        <div class="bridge-diagonal"></div>
-        <div class="bridge-gold-line"></div>
-        <div class="bridge-glow"></div>
-    </div>
 
     <!-- About Section -->
     <section class="about-v2" id="nosotros">
@@ -146,7 +161,7 @@
             <div class="about-story">
                 <div class="about-story-text">
                     <span class="about-eyebrow">Quienes Somos</span>
-                    <h3 class="about-headline">Somos <strong>Berahass</strong>, el aceite de aguacate que Colombia le da al mundo.</h3>
+                    <h3 class="about-headline">Somos <strong class="brand-col-dark"><span class="b-y">Bera</span><span class="b-b">ha</span><span class="b-r">ss</span></strong>, el aceite de aguacate que Colombia le da al mundo.</h3>
                     <p class="about-body">Desde las fértiles tierras colombianas, seleccionamos los mejores aguacates Hass para transformarlos en un aceite excepcional. Nuestro proceso de extracción preserva todos los nutrientes, vitaminas y ácidos grasos esenciales que hacen del aguacate un superalimento reconocido mundialmente.</p>
                     <div class="about-highlights">
                         <div class="about-hl">
@@ -178,7 +193,7 @@
                         </div>
                     </div>
                     <div class="mosaic-item mosaic-wide">
-                        <img src="istockphoto-2234750139-612x612.jpg" alt="Aguacates Hass premium" loading="lazy">
+                        <img src="WhatsApp Image 2026-04-01 at 9.13.30 PM.jpeg" alt="Aguacates Hass con aceite" loading="lazy">
                         <div class="mosaic-label">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
                             Calidad Premium
@@ -204,7 +219,7 @@
             <div class="section-header light">
                 <span class="section-tag light">Nuestros Productos</span>
                 <h2>Tres Presentaciones,<br><span class="text-gold">Una Sola Calidad</span></h2>
-                <p>Cada gota de aceite Berahass es sinónimo de pureza, nutrición y sabor excepcional.</p>
+                <p>Cada gota de aceite <span class="brand-col"><span class="b-y">Bera</span><span class="b-b">ha</span><span class="b-r">ss</span></span> es sinónimo de pureza, nutrición y sabor excepcional.</p>
                 <div class="trust-badges">
                     <div class="trust-badge-item">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
@@ -231,13 +246,6 @@
                         <div class="prod-nutrients">
                             <span>Vitamina E</span><span>Fitosteroles</span><span>Ácido Oleico</span><span>Omega 3-6-9</span>
                         </div>
-                        <div class="prod-price-row">
-                            <div class="prod-price">
-                                <span class="price-currency">$</span>
-                                <span class="price-amount">26.500</span>
-                                <span class="price-unit">COP</span>
-                            </div>
-                        </div>
                         <div class="prod-actions">
                             <a href="producto-refinado.html" class="btn btn-prod">Ver Producto</a>
                         </div>
@@ -246,7 +254,7 @@
                 <!-- Extra Virgen -->
                 <div class="prod-card featured">
                     <div class="prod-header extravirgen-bg">
-                        <img src="extravirgen.png" alt="Aceite de Aguacate Hass Extra Virgen 250ml" class="prod-img" loading="lazy">
+                        <img src="PHOTO-2026-04-01-22-43-53.jpg" alt="Aceite de Aguacate Hass Extra Virgen 250ml" class="prod-img" loading="lazy">
                         <div class="prod-badge gold">250 ml</div>
                         <span class="prod-tag gold">Premium</span>
                     </div>
@@ -256,13 +264,6 @@
                         <p>Primera extracción en frío. Conserva todas las vitaminas y el sabor auténtico del aguacate. Ideal para aderezos y consumo directo.</p>
                         <div class="prod-nutrients">
                             <span>Vitamina A, B1, B2, D, E</span><span>Fitoesteroles</span><span>Magnesio</span><span>Fósforo</span><span>Potasio</span><span>Calcio</span>
-                        </div>
-                        <div class="prod-price-row">
-                            <div class="prod-price prod-price-gold">
-                                <span class="price-currency">$</span>
-                                <span class="price-amount">31.500</span>
-                                <span class="price-unit">COP</span>
-                            </div>
                         </div>
                         <div class="prod-actions">
                             <a href="producto-extravirgen.html" class="btn btn-prod btn-prod-gold">Ver Producto</a>
@@ -283,13 +284,6 @@
                         <div class="prod-nutrients">
                             <span>891 kcal/100g</span><span>Calcio 490mg</span><span>Zinc 13mg</span><span>Grasa Sat. 13g</span>
                         </div>
-                        <div class="prod-price-row">
-                            <div class="prod-price">
-                                <span class="price-currency">$</span>
-                                <span class="price-amount">510.000</span>
-                                <span class="price-unit">COP</span>
-                            </div>
-                        </div>
                         <div class="prod-actions">
                             <a href="producto-industrial.html" class="btn btn-prod">Ver Producto</a>
                         </div>
@@ -303,7 +297,7 @@
     <!-- Benefits Section -->
     <section class="section benefits" id="beneficios">
         <div class="benefits-hero-bg">
-            <img src="istockphoto-154208158-612x612.jpg" alt="Aguacates Hass" class="benefits-hero-img" loading="lazy">
+            <img src="WhatsApp Image 2026-04-01 at 9.14.23 PM.jpeg" alt="Aguacates Hass cortados" class="benefits-hero-img" loading="lazy">
             <div class="benefits-hero-overlay"></div>
             <div class="container benefits-hero-content">
                 <span class="section-tag light">Beneficios</span>
@@ -335,7 +329,7 @@
                     </div>
                     <h3>Alto Punto de Humo</h3>
                     <p>Ideal para cocinar a altas temperaturas sin generar sustancias tóxicas ni perder nutrientes.</p>
-                    <div class="ben-stat"><strong>250°C</strong> punto de humo</div>
+                    <div class="ben-stat"><strong>280°C</strong> punto de humo</div>
                 </div>
                 <div class="ben-card-v2">
                     <div class="ben-icon-wrap ben-green">
@@ -441,20 +435,20 @@
             <div class="section-header">
                 <span class="section-tag">Contacto</span>
                 <h2>¿Listo para descubrir el<br><span class="text-gold">mejor aceite de aguacate</span><br>de Colombia?</h2>
-                <p>Escr&iacute;benos y &uacute;nete a quienes ya conf&iacute;an en Berahass.</p>
+                <p>Escr&iacute;benos y &uacute;nete a quienes ya conf&iacute;an en <span class="brand-col-dark"><span class="b-y">Bera</span><span class="b-b">ha</span><span class="b-r">ss</span></span>.</p>
             </div>
             <div class="contact-layout">
                 <div class="contact-left">
                     <h3>Datos de Contacto</h3>
                     <div class="contact-cards">
-                        <div class="c-card">
+                        <a href="https://www.google.com/maps/place/Colombia" target="_blank" rel="noopener noreferrer" class="c-card c-link">
                             <div class="c-icon">&#128205;</div>
                             <div><strong>Ubicación</strong><span>Colombia</span></div>
-                        </div>
-                        <div class="c-card">
+                        </a>
+                        <a href="mailto:ventas@berahass.com" class="c-card c-link">
                             <div class="c-icon">&#128231;</div>
                             <div><strong>Email</strong><span>ventas@berahass.com</span></div>
-                        </div>
+                        </a>
                         <div class="c-card">
                             <a href="https://www.instagram.com/berahass_sas/" target="_blank" rel="noopener noreferrer" class="c-link">
                                 <div class="c-icon">&#128247;</div>
@@ -464,7 +458,7 @@
                     </div>
                 </div>
                 <div class="contact-right">
-                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xContactoBeraHass" method="POST">
+                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xojplodw" method="POST">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="nombre">Nombre</label>
@@ -560,7 +554,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Berahass SAS. Todos los derechos reservados. Colombia &#127464;&#127476;</p>
+                <p>&copy; 2026 <span class="brand-col"><span class="b-y">Bera</span><span class="b-b">ha</span><span class="b-r">ss</span></span> SAS. Todos los derechos reservados. Colombia &#127464;&#127476;</p>
             </div>
         </div>
     </footer>
@@ -571,7 +565,7 @@
         <span class="whatsapp-tooltip">Escr&iacute;benos</span>
     </a>
 
-    <script src="cart.js"></script>
-    <script src="script.js"></script>
+    <script src="cart.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
