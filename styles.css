@@ -2138,13 +2138,21 @@ a.c-card.c-link:hover {
     transform: translateY(0);
 }
 .blog-cta-inner {
-    background: linear-gradient(135deg, var(--green) 0%, #2d5a3f 100%);
+    background: url('aguacate-familia.jpg') center/cover;
     border-radius: var(--radius);
     padding: 4rem 3rem;
     text-align: center;
     position: relative;
     overflow: hidden;
 }
+.blog-cta-inner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(13,34,24,0.85) 0%, rgba(26,60,40,0.75) 100%);
+    z-index: 0;
+}
+.blog-cta-inner > * { position: relative; z-index: 1; }
 .blog-cta-inner::before {
     content: '';
     position: absolute;
