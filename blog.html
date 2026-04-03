@@ -10,10 +10,20 @@
     <meta property="og:image" content="https://berahass.co/hero-cultivo.jpg">
     <meta name="theme-color" content="#1a4d2e">
     <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preload" href="aguacate-hero.jpg" as="image" fetchpriority="high">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:-apple-system,sans-serif;overflow-x:hidden}
+        .navbar-solid{position:fixed;top:0;left:0;right:0;z-index:1000;background:#fff;padding:.9rem 0}
+        .blog-hero{position:relative;min-height:60vh;display:flex;align-items:center;background:#1a3c28}
+    </style>
 </head>
 <body>
     <!-- Navigation (solid for inner pages) -->
@@ -60,7 +70,7 @@
             <!-- Featured Article -->
             <article class="blog-featured" id="art1">
                 <div class="blog-featured-img">
-                    <img src="aguacate-salud.png" alt="Aceite de aguacate Hass puro cayendo sobre aguacates frescos" loading="lazy">
+                    <img src="aguacate-salud.jpg" alt="Aceite de aguacate Hass puro cayendo sobre aguacates frescos" loading="lazy">
                     <div class="blog-featured-overlay"></div>
                     <span class="blog-cat blog-cat-red">Imprescindible</span>
                 </div>
@@ -98,7 +108,7 @@
                 <!-- Article 2 -->
                 <article class="blog-card-2" id="art2">
                     <div class="blog-card-2-img">
-                        <img src="aguacate-cocina.png" alt="Aguacates Hass cortados listos para cocinar" loading="lazy">
+                        <img src="aguacate-cocina.jpg" alt="Aguacates Hass cortados listos para cocinar" loading="lazy">
                         <span class="blog-cat blog-cat-gold">Cocina</span>
                     </div>
                     <div class="blog-card-2-body">
@@ -144,7 +154,7 @@
                 <!-- Article 3 -->
                 <article class="blog-card-2" id="art3">
                     <div class="blog-card-2-img">
-                        <img src="aguacate-belleza.png" alt="Aceite de aguacate Hass Extra Virgen para belleza natural" loading="lazy">
+                        <img src="aguacate-belleza.jpg" alt="Aceite de aguacate Hass Extra Virgen para belleza natural" loading="lazy">
                         <span class="blog-cat blog-cat-purple">Belleza</span>
                     </div>
                     <div class="blog-card-2-body">
@@ -180,7 +190,7 @@
             <!-- Article 4 - Full Width -->
             <article class="blog-featured blog-featured-reverse" id="art4">
                 <div class="blog-featured-img">
-                    <img src="aguacate-origen.png" alt="Cultivo de aguacate Hass en las montañas de Colombia" loading="lazy">
+                    <img src="aguacate-origen.jpg" alt="Cultivo de aguacate Hass en las montañas de Colombia" loading="lazy">
                     <div class="blog-featured-overlay"></div>
                     <span class="blog-cat blog-cat-green">Origen</span>
                 </div>
