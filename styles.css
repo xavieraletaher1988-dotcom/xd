@@ -1758,7 +1758,7 @@ a.c-card.c-link:hover {
     min-height: 60vh;
     display: flex;
     align-items: center;
-    background: url('hero-cultivo.jpg') center/cover;
+    background: url('aguacate-hero.png') center/cover;
     overflow: hidden;
 }
 .blog-hero-overlay {
