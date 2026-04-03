@@ -456,6 +456,102 @@ button, input, select, textarea { font: inherit; }
     box-shadow: 0 8px 35px rgba(26,60,40,0.4), 0 0 60px rgba(26,60,40,0.15);
 }
 
+/* ─── HERO ↔ ABOUT BRIDGE ─── */
+.hero-about-bridge {
+    position: relative;
+    z-index: 10;
+    height: clamp(80px, 10vw, 140px);
+    margin-top: -1px;
+    margin-bottom: -1px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* Diagonal slash that visually merges both sections */
+.bridge-diagonal {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        168deg,
+        rgba(13,34,24,0.85) 0%,
+        rgba(13,34,24,0.6) 35%,
+        transparent 50%,
+        rgba(0,0,0,0.4) 65%,
+        rgba(0,0,0,0.7) 100%
+    );
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* Gold accent line running diagonally across */
+.bridge-gold-line {
+    position: absolute;
+    top: 0;
+    left: -10%;
+    width: 120%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 5%, var(--gold) 30%, #d4a81a 50%, var(--gold) 70%, transparent 95%);
+    transform: rotate(-2.5deg);
+    top: 50%;
+    opacity: 0.7;
+    animation: bridgeShimmer 4s ease-in-out infinite;
+    box-shadow: 0 0 15px rgba(184,150,12,0.3), 0 0 30px rgba(184,150,12,0.15);
+}
+
+@keyframes bridgeShimmer {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 0.9; }
+}
+
+/* Soft glow orb at center */
+.bridge-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 80px;
+    background: radial-gradient(ellipse, rgba(184,150,12,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: bridgeGlowPulse 5s ease-in-out infinite;
+}
+
+@keyframes bridgeGlowPulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+    50% { transform: translate(-50%, -50%) scale(1.3); opacity: 1; }
+}
+
+/* Hero bottom fade into bridge */
+.hero {
+    position: relative;
+}
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, rgba(13,34,24,0.4));
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* Panorama top fade into bridge */
+.about-v2 {
+    padding: 0;
+    position: relative;
+}
+.about-panorama::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to top, transparent, rgba(0,0,0,0.3));
+    z-index: 2;
+    pointer-events: none;
 /* ─── SHARED HERO BACKGROUND ON PANORAMA ─── */
 .about-panorama {
     background: url('hero-cultivo.jpg') center/cover fixed;
@@ -536,7 +632,6 @@ button, input, select, textarea { font: inherit; }
 }
 
 /* ─── ABOUT / PANORAMA ─── */
-.about-v2 { padding: 0; }
 .about-panorama {
     position: relative;
     min-height: 50vh;
