@@ -2138,7 +2138,7 @@ a.c-card.c-link:hover {
     transform: translateY(0);
 }
 .blog-cta-inner {
-    background: url('aguacate-familia.jpg') center 70%/cover;
+    background: url('aguacate-festin.jpg') center/cover;
     border-radius: var(--radius);
     padding: 4rem 3rem;
     text-align: center;
