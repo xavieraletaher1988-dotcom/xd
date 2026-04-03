@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     };
-    window.addEventListener('load', () => setTimeout(hidePreloader, 800));
-    setTimeout(hidePreloader, 2000);
+    window.addEventListener('load', () => setTimeout(hidePreloader, 1800));
+    setTimeout(hidePreloader, 3500);
 
     // ── Navbar scroll ──────────────────────────────────
     const navbar = document.getElementById('navbar');
@@ -165,7 +165,33 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     window.addEventListener('scroll', highlightNav, { passive: true });
 
-    // ── Parallax (fixed bg handled by CSS) ──────────────
+    // ── Parallax hero + panorama (connected depth) ─────
+    const heroImg = document.querySelector('.hero-bg-img');
+    const panoramaImg = document.querySelector('.about-panorama-img');
+    const bridgeLine = document.querySelector('.bridge-gold-line');
+    window.addEventListener('scroll', () => {
+        const sy = window.scrollY;
+        // Hero parallax
+        if (heroImg && sy < window.innerHeight * 1.2) {
+            heroImg.style.transform = `scale(1.08) translateY(${sy * 0.18}px)`;
+        }
+        // Panorama counter-parallax (slower, creates depth connection)
+        if (panoramaImg) {
+            const rect = panoramaImg.parentElement.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+                panoramaImg.style.transform = `scale(1.06) translateY(${(progress - 0.5) * -40}px)`;
+            }
+        }
+        // Bridge gold line rotates subtly with scroll
+        if (bridgeLine) {
+            const bridgeRect = bridgeLine.parentElement.getBoundingClientRect();
+            if (bridgeRect.top < window.innerHeight && bridgeRect.bottom > 0) {
+                const p = (window.innerHeight - bridgeRect.top) / window.innerHeight;
+                bridgeLine.style.transform = `rotate(${-2.5 + p * 1.5}deg)`;
+            }
+        }
+    }, { passive: true });
 
     // ── Product card hover effect ──────────────────────
     document.querySelectorAll('.prod-card').forEach(card => {
