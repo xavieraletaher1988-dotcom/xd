@@ -192,6 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }, { passive: true });
+    // ── Parallax (fixed bg handled by CSS) ──────────────
 
     // ── Product card hover effect ──────────────────────
     document.querySelectorAll('.prod-card').forEach(card => {
