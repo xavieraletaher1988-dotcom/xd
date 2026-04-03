@@ -1297,6 +1297,13 @@ button, input, select, textarea { font: inherit; }
     display: flex;
     align-items: center;
     gap: 0.8rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+a.c-card.c-link:hover {
+    border-color: var(--gold);
+    background: var(--gold-light);
 }
 .contact-form {
     display: flex;
