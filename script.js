@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     };
-    window.addEventListener('load', () => setTimeout(hidePreloader, 1800));
-    setTimeout(hidePreloader, 3500);
+    window.addEventListener('load', () => setTimeout(hidePreloader, 800));
+    setTimeout(hidePreloader, 2000);
 
     // ── Navbar scroll ──────────────────────────────────
     const navbar = document.getElementById('navbar');
@@ -192,6 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }, { passive: true });
+    // ── Parallax (fixed bg handled by CSS) ──────────────
 
     // ── Product card hover effect ──────────────────────
     document.querySelectorAll('.prod-card').forEach(card => {
