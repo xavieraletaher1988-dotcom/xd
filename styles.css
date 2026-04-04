@@ -2250,3 +2250,185 @@ a.c-card.c-link:hover {
     .blog-cta-inner h2 { font-size: 1.15rem; }
     .blog-cta-inner { padding: 2rem 1rem; }
 }
+
+/* ═══════════════════════════════════════════════════
+   RECETAS PAGE STYLES
+   ═══════════════════════════════════════════════════ */
+.recetas-hero {
+    position: relative;
+    min-height: 55vh;
+    display: flex;
+    align-items: center;
+    background: url('aguacate-recetas.jpg') center/cover;
+    overflow: hidden;
+}
+.recetas-section {
+    padding: 4rem 0 5rem;
+    background: var(--bg-alt);
+}
+.receta-card {
+    display: flex;
+    gap: 2rem;
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    transition: all 0.5s var(--transition-smooth);
+    opacity: 0;
+    transform: translateY(30px);
+}
+.receta-card.blog-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.receta-card:hover {
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(184,150,12,0.2);
+}
+.receta-num {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--gold), var(--green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    flex-shrink: 0;
+    opacity: 0.3;
+}
+.receta-content { flex: 1; }
+.receta-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+}
+.receta-tag {
+    padding: 0.25rem 0.8rem;
+    border-radius: 100px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #fff;
+}
+.receta-tag-green { background: var(--green); }
+.receta-tag-gold { background: linear-gradient(135deg, var(--gold), #d4a81a); }
+.receta-tag-purple { background: #7c3aed; }
+.receta-tiempo {
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-weight: 500;
+}
+.receta-content h2 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+}
+.receta-desc {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+}
+.receta-details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s var(--transition-smooth), opacity 0.4s ease;
+}
+.receta-details.open {
+    max-height: 2000px;
+    opacity: 1;
+    margin-top: 1.5rem;
+}
+.receta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+.receta-ingredientes h3,
+.receta-pasos h3 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--green);
+    margin-bottom: 0.8rem;
+}
+.receta-ingredientes ul {
+    list-style: none;
+    padding: 0;
+}
+.receta-ingredientes li {
+    position: relative;
+    padding-left: 1.3rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+}
+.receta-ingredientes li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: 700;
+}
+.receta-ingredientes li strong { color: var(--green); }
+.receta-pasos ol {
+    padding-left: 1.3rem;
+}
+.receta-pasos li {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+    padding-left: 0.3rem;
+}
+.receta-pasos li::marker {
+    color: var(--gold);
+    font-weight: 700;
+}
+.receta-tip {
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+    background: linear-gradient(135deg, rgba(184,150,12,0.06), rgba(184,150,12,0.02));
+    border-left: 3px solid var(--gold);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 1rem 1.2rem;
+}
+.receta-tip span { font-size: 1.2rem; flex-shrink: 0; }
+.receta-tip p {
+    font-size: 0.82rem;
+    color: var(--text);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ─── RECETAS RESPONSIVE ─── */
+@media (max-width: 820px) {
+    .recetas-hero { min-height: 45vh; }
+    .receta-card { flex-direction: column; gap: 0; padding: 1.8rem; }
+    .receta-num { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .receta-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .receta-content h2 { font-size: 1.2rem; }
+}
+@media (max-width: 600px) {
+    .recetas-hero { min-height: 40vh; }
+    .receta-card { padding: 1.3rem; margin-bottom: 1.5rem; }
+    .receta-num { font-size: 2rem; }
+    .receta-content h2 { font-size: 1.05rem; }
+    .receta-desc { font-size: 0.82rem; }
+    .receta-ingredientes li,
+    .receta-pasos li { font-size: 0.8rem; }
+    .receta-tip { flex-direction: column; gap: 0.3rem; padding: 0.8rem; }
+    .receta-tip p { font-size: 0.78rem; }
+}
