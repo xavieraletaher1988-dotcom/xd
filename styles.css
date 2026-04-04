@@ -1035,7 +1035,7 @@ button, input, select, textarea { font: inherit; }
 }
 
 /* ─── BENEFITS ─── */
-.benefits { background: var(--bg-alt); padding: 0; }
+.benefits { background: linear-gradient(180deg, #f0fdf4 0%, #dcfce7 100%); padding: 0; }
 .benefits-hero-bg {
     position: relative;
     min-height: 35vh;
@@ -1055,8 +1055,8 @@ button, input, select, textarea { font: inherit; }
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(135deg, rgba(13,34,24,0.7) 0%, rgba(0,0,0,0.3) 100%),
-        radial-gradient(ellipse at 70% 30%, rgba(184,150,12,0.08) 0%, transparent 50%);
+        linear-gradient(135deg, rgba(5,46,22,0.85) 0%, rgba(20,83,45,0.6) 50%, rgba(0,0,0,0.3) 100%),
+        radial-gradient(ellipse at 70% 30%, rgba(34,197,94,0.1) 0%, transparent 50%);
 }
 .benefits-hero-content {
     position: relative;
@@ -1078,6 +1078,9 @@ button, input, select, textarea { font: inherit; }
     color: rgba(255,255,255,0.7);
     font-size: 0.95rem;
 }
+.benefits-hero-content h2::after {
+    background: linear-gradient(90deg, #22c55e, #4ade80);
+}
 .ben-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1089,9 +1092,10 @@ button, input, select, textarea { font: inherit; }
     border-radius: var(--radius);
     padding: 2rem 1.5rem;
     transition: all 0.4s var(--transition-smooth);
-    border: 1px solid transparent;
+    border: 1px solid rgba(34,197,94,0.1);
     position: relative;
     overflow: hidden;
+    box-shadow: 0 2px 10px rgba(5,46,22,0.04);
 }
 .ben-card-v2::after {
     content: '';
@@ -1100,15 +1104,15 @@ button, input, select, textarea { font: inherit; }
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, var(--green), var(--gold));
+    background: linear-gradient(90deg, #059669, #22c55e, #4ade80);
     opacity: 0;
     transition: opacity 0.4s var(--transition-smooth);
 }
 .ben-card-v2:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-    border-color: var(--line);
-    background: linear-gradient(135deg, #fff 0%, #fafaf7 100%);
+    box-shadow: 0 20px 50px rgba(5,46,22,0.12), 0 0 30px rgba(34,197,94,0.08);
+    border-color: rgba(34,197,94,0.25);
+    background: linear-gradient(135deg, #fff 0%, #f0fdf4 100%);
 }
 .ben-card-v2:hover::after {
     opacity: 1;
@@ -1146,17 +1150,18 @@ button, input, select, textarea { font: inherit; }
 }
 .ben-stat {
     font-size: 0.72rem;
-    color: var(--green);
+    color: #059669;
     font-weight: 600;
     padding-top: 0.6rem;
-    border-top: 1px solid var(--line);
+    border-top: 1px solid rgba(34,197,94,0.15);
 }
 .ben-stat strong { font-weight: 700; }
 
 /* ─── PROCESS ─── */
 .process {
-    background: var(--bg);
+    background: linear-gradient(180deg, #052e16 0%, #0b1f12 100%);
     padding: 5rem 0;
+    color: #fff;
 }
 .process-visual {
     position: relative;
@@ -1187,7 +1192,7 @@ button, input, select, textarea { font: inherit; }
     font-family: var(--font-display);
     font-size: 2rem;
     font-weight: 700;
-    color: var(--line);
+    color: rgba(34,197,94,0.25);
     margin-bottom: 0.8rem;
     letter-spacing: -0.02em;
 }
@@ -1204,25 +1209,26 @@ button, input, select, textarea { font: inherit; }
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: var(--green-light);
-    color: var(--green);
+    background: rgba(34,197,94,0.12);
+    color: #4ade80;
     margin-bottom: 1rem;
     transition: all 0.4s var(--transition-smooth);
     position: relative;
+    border: 1px solid rgba(34,197,94,0.2);
 }
 .p-icon-svg::after {
     content: '';
     position: absolute;
     inset: -4px;
     border-radius: 50%;
-    border: 2px dashed var(--green-light);
+    border: 2px dashed rgba(34,197,94,0.3);
     opacity: 0;
     transition: all 0.4s var(--transition-smooth);
 }
 .p-step:hover .p-icon-svg {
-    background: var(--green);
-    color: #fff;
-    box-shadow: 0 8px 25px rgba(26,60,40,0.2);
+    background: #22c55e;
+    color: #052e16;
+    box-shadow: 0 8px 25px rgba(34,197,94,0.3), 0 0 40px rgba(34,197,94,0.15);
 }
 .p-step:hover .p-icon-svg::after {
     opacity: 1;
@@ -1234,13 +1240,21 @@ button, input, select, textarea { font: inherit; }
     font-size: 1rem;
     font-weight: 700;
     margin-bottom: 0.4rem;
+    color: #fff;
 }
 .p-step p {
     font-size: 0.82rem;
-    color: var(--muted);
+    color: rgba(255,255,255,0.6);
     line-height: 1.6;
 }
 .p-connector { display: none; }
+.process .section-header h2::after {
+    background: linear-gradient(90deg, #22c55e, #4ade80);
+}
+.process .process-visual {
+    border: 1px solid rgba(34,197,94,0.15);
+    box-shadow: 0 8px 30px rgba(34,197,94,0.1);
+}
 
 /* ─── CONTACT ─── */
 .contact {
