@@ -1411,6 +1411,9 @@ a.c-card.c-link:hover {
 .footer-logo .logo-img {
     width: 40px;
     filter: brightness(1.1);
+    background: #fff;
+    border-radius: 8px;
+    padding: 4px;
 }
 .footer-social {
     display: flex;
