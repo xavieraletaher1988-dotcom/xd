@@ -3,27 +3,36 @@
    ═══════════════════════════════════════════════════ */
 
 :root {
-    --bg: #ffffff;
-    --bg-alt: #fafaf7;
-    --surface: #ffffff;
-    --text: #1a1a1a;
-    --muted: #6b6b6b;
-    --light: #999;
-    --line: #e8e8e8;
-    --green: #1a3c28;
-    --green-2: #2d5a3f;
-    --green-light: #e8f0eb;
-    --gold: #b8960c;
-    --gold-2: #d4a81a;
-    --gold-light: #f5ecd0;
-    --dark: #111;
+    --bg: #f0f5f1;
+    --bg-alt: #e4ede6;
+    --surface: #f5faf6;
+    --text: #0a0f0b;
+    --muted: #3d5c45;
+    --light: #6b8f73;
+    --line: #c2d8c7;
+    --green: #0b1f12;
+    --green-2: #14532d;
+    --green-3: #166534;
+    --green-4: #15803d;
+    --green-5: #22c55e;
+    --green-6: #4ade80;
+    --green-light: #dcfce7;
+    --gold: #22c55e;
+    --gold-2: #4ade80;
+    --gold-light: #dcfce7;
+    --emerald: #059669;
+    --mint: #a7f3d0;
+    --lime: #84cc16;
+    --forest: #052e16;
+    --sage: #6b8f73;
+    --dark: #050a06;
     --radius: 16px;
     --radius-sm: 10px;
-    --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.03);
-    --shadow-md: 0 4px 16px rgba(0,0,0,0.06), 0 2px 6px rgba(0,0,0,0.04);
-    --shadow-lg: 0 8px 30px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.05);
-    --shadow-glow: 0 0 30px rgba(26,60,40,0.15);
-    --shadow-gold-glow: 0 0 30px rgba(184,150,12,0.2);
+    --shadow: 0 1px 3px rgba(5,15,8,0.06), 0 2px 8px rgba(5,15,8,0.04);
+    --shadow-md: 0 4px 16px rgba(5,15,8,0.08), 0 2px 6px rgba(5,15,8,0.05);
+    --shadow-lg: 0 8px 30px rgba(5,15,8,0.12), 0 4px 12px rgba(5,15,8,0.06);
+    --shadow-glow: 0 0 30px rgba(34,197,94,0.2);
+    --shadow-gold-glow: 0 0 30px rgba(34,197,94,0.25);
     --container: 1140px;
     --font-display: 'Poppins', -apple-system, sans-serif;
     --font-body: 'Inter', -apple-system, sans-serif;
@@ -57,7 +66,7 @@ button, input, select, textarea { font: inherit; }
     position: fixed;
     inset: 0;
     z-index: 9999;
-    background: linear-gradient(135deg, #0d2218 0%, var(--green) 50%, #1a4d2e 100%);
+    background: linear-gradient(135deg, #020503 0%, #050a06 50%, #0b1f12 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -105,7 +114,7 @@ button, input, select, textarea { font: inherit; }
 }
 .preloader-fill {
     height: 100%;
-    background: linear-gradient(90deg, var(--gold), #d4a81a, var(--gold));
+    background: linear-gradient(90deg, #22c55e, #4ade80, #22c55e);
     background-size: 200% 100%;
     border-radius: 4px;
     animation: preloaderFill 0.8s ease forwards, shimmerBar 0.8s ease-in-out infinite;
@@ -141,16 +150,16 @@ button, input, select, textarea { font: inherit; }
     right: 0;
     z-index: 1000;
     padding: 0.9rem 0;
-    background: rgba(255,255,255,0.7);
+    background: rgba(240,245,241,0.85);
     backdrop-filter: blur(20px) saturate(1.8);
     -webkit-backdrop-filter: blur(20px) saturate(1.8);
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(34,197,94,0.1);
     transition: all 0.4s var(--transition-smooth);
 }
 .navbar.scrolled {
     padding: 0.6rem 0;
-    background: rgba(255,255,255,0.92);
-    border-bottom-color: rgba(0,0,0,0.06);
+    background: rgba(240,245,241,0.95);
+    border-bottom-color: rgba(34,197,94,0.15);
     box-shadow: 0 4px 30px rgba(0,0,0,0.04);
 }
 .nav-container {
@@ -201,7 +210,7 @@ button, input, select, textarea { font: inherit; }
 .nav-links a.active::after { width: 100%; }
 .btn-nav {
     padding: 0.5rem 1.3rem !important;
-    background: linear-gradient(135deg, var(--green), #2d5a3f) !important;
+    background: linear-gradient(135deg, #0b1f12, #14532d) !important;
     color: #fff !important;
     border-radius: 100px !important;
     font-size: 0.8rem !important;
@@ -249,7 +258,7 @@ button, input, select, textarea { font: inherit; }
 }
 .btn-lg { padding: 0.75rem 2rem; }
 .btn-gold {
-    background: linear-gradient(135deg, var(--green) 0%, #2d5a3f 100%);
+    background: linear-gradient(135deg, #0b1f12 0%, #14532d 50%, #166534 100%);
     color: #fff;
     position: relative;
     overflow: hidden;
@@ -268,9 +277,9 @@ button, input, select, textarea { font: inherit; }
     left: 100%;
 }
 .btn-gold:hover {
-    background: linear-gradient(135deg, #2d5a3f 0%, #3a7a55 100%);
+    background: linear-gradient(135deg, #14532d 0%, #15803d 100%);
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(26,60,40,0.3), 0 0 40px rgba(26,60,40,0.1);
+    box-shadow: 0 8px 25px rgba(5,46,22,0.4), 0 0 40px rgba(34,197,94,0.15);
 }
 .btn-glass {
     background: rgba(255,255,255,0.1);
@@ -311,9 +320,9 @@ button, input, select, textarea { font: inherit; }
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(135deg, rgba(13,34,24,0.8) 0%, rgba(26,60,40,0.5) 40%, rgba(0,0,0,0.25) 100%),
-        radial-gradient(ellipse at 20% 80%, rgba(184,150,12,0.15) 0%, transparent 60%),
-        radial-gradient(circle at 80% 20%, rgba(26,60,40,0.2) 0%, transparent 50%);
+        linear-gradient(135deg, rgba(5,10,6,0.82) 0%, rgba(11,31,18,0.5) 40%, rgba(0,0,0,0.3) 100%),
+        radial-gradient(ellipse at 20% 80%, rgba(34,197,94,0.1) 0%, transparent 60%),
+        radial-gradient(circle at 80% 20%, rgba(74,222,128,0.08) 0%, transparent 50%);
 }
 /* Floating particles */
 .hero-particles {
@@ -329,7 +338,7 @@ button, input, select, textarea { font: inherit; }
     top: var(--y);
     width: var(--s);
     height: var(--s);
-    background: radial-gradient(circle, rgba(184,150,12,0.6), rgba(184,150,12,0));
+    background: radial-gradient(circle, rgba(34,197,94,0.6), rgba(34,197,94,0));
     border-radius: 50%;
     animation: particleFloat var(--d) ease-in-out var(--delay) infinite;
 }
@@ -365,23 +374,23 @@ button, input, select, textarea { font: inherit; }
     display: inline-block;
     background: linear-gradient(
         90deg,
-        #b8960c 0%,
-        #f5ecd0 15%,
+        #059669 0%,
+        #a7f3d0 15%,
         #ffffff 20%,
-        #f5ecd0 25%,
-        #d4a81a 40%,
-        #b8960c 60%,
-        #f5ecd0 75%,
+        #a7f3d0 25%,
+        #22c55e 40%,
+        #4ade80 60%,
+        #a7f3d0 75%,
         #ffffff 80%,
-        #f5ecd0 85%,
-        #b8960c 100%
+        #a7f3d0 85%,
+        #059669 100%
     );
     background-size: 400% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: goldLiquid 5s ease-in-out infinite;
-    filter: drop-shadow(0 0 25px rgba(184,150,12,0.4)) drop-shadow(0 0 60px rgba(184,150,12,0.15));
+    filter: drop-shadow(0 0 25px rgba(34,197,94,0.5)) drop-shadow(0 0 60px rgba(74,222,128,0.2));
 }
 .hero-accent::after {
     content: 'El Oro Líquido';
@@ -511,7 +520,7 @@ button, input, select, textarea { font: inherit; }
     display: block;
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, var(--gold), var(--green));
+    background: linear-gradient(90deg, #22c55e, #059669, #0b1f12);
     border-radius: 2px;
     margin: 0.8rem auto 0;
 }
@@ -523,13 +532,13 @@ button, input, select, textarea { font: inherit; }
 }
 .section-header.light p { color: rgba(255,255,255,0.7); }
 .text-gold {
-    background: linear-gradient(135deg, var(--gold), #d4a81a);
+    background: linear-gradient(135deg, #22c55e, #4ade80);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 .text-gradient {
-    background: linear-gradient(135deg, var(--gold), #d4a81a, #c9a227);
+    background: linear-gradient(135deg, #059669, #22c55e, #4ade80);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
