@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── Parallax on scroll ────────────────────────────
     const heroBg = document.querySelector('.hero-bg');
-    const parallaxEls = document.querySelectorAll('.about-panorama-img, .benefits-hero-img, .process-bg-img');
+    const parallaxEls = document.querySelectorAll('.about-panorama-img, .process-bg-img');
     if (heroBg || parallaxEls.length) {
         window.addEventListener('scroll', () => {
             const sy = window.scrollY;
