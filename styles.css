@@ -344,10 +344,45 @@ button, input, select, textarea { font: inherit; }
     z-index: 2;
     padding: 8rem 0 6rem;
 }
+.hero-center {
+    position: relative;
+    z-index: 2;
+    padding: 10rem 0 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+}
+.hero-center .hero-text {
+    max-width: 720px;
+}
+.hero-center .hero-subtitle {
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.hero-center .hero-buttons {
+    justify-content: center;
+}
+.hero-center .hero-stats {
+    position: absolute;
+    bottom: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 100px;
+    padding: 1rem 2.5rem;
+    margin-top: 0;
+    border-top: none;
+}
 .hero-left { max-width: 640px; }
 .hero-text h1 {
     font-family: var(--font-display);
-    font-size: 3.8rem;
+    font-size: 4.5rem;
     font-weight: 700;
     color: #fff;
     line-height: 1.1;
@@ -1781,6 +1816,8 @@ a.c-card.c-link:hover {
     .hero-bg { inset: -10px; }
     .hero-split { padding: 6rem 0 4rem; }
     .hero-text h1 { font-size: 2.5rem; }
+    .hero-center { padding: 8rem 0 3rem; }
+    .hero-center .hero-stats { position: static; transform: none; border-radius: 16px; padding: 1rem 1.5rem; margin-top: 2rem; }
     .hero-stats { gap: 1rem; margin-top: 2rem; padding-top: 1.5rem; }
     .hero-stat strong { font-size: 1.3rem; }
     .hero-glow { display: none; }
@@ -1805,11 +1842,12 @@ a.c-card.c-link:hover {
     .section-header h2::after { width: 40px; height: 2px; }
     .hero-subtitle { font-size: 0.88rem; margin-bottom: 1.8rem; max-width: 100%; }
     .hero-badge { font-size: 0.65rem; padding: 0.4rem 1rem; }
-    .hero-stats { flex-wrap: wrap; gap: 1rem; }
-    .hero-stat strong { font-size: 1.2rem; }
-    .hero-stat-divider { height: 30px; }
+    .hero-center { padding: 6rem 0 2rem; min-height: 100dvh; }
+    .hero-center .hero-stats { position: static; transform: none; border-radius: 12px; padding: 0.8rem 1rem; margin-top: 1.5rem; flex-wrap: wrap; }
+    .hero-stats { flex-wrap: wrap; gap: 0.8rem; }
+    .hero-stat strong { font-size: 1.1rem; }
+    .hero-stat-divider { height: 25px; }
     .hero-scroll { display: none; }
-    .btn-hero-wa { padding: 0.75rem 1.4rem; font-size: 0.82rem; }
     .hero-buttons { width: 100%; }
     .hero-buttons .btn-gold {
         padding: 0.85rem 1.8rem;
