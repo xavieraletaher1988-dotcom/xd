@@ -42,8 +42,7 @@
         body{font-family:-apple-system,sans-serif;overflow-x:hidden}
         .preloader{position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#0d2218,#1a3c28,#1a4d2e);display:flex;align-items:center;justify-content:center}
         .preloader-logo-img{width:90px;height:auto;border-radius:18px;background:#fff;padding:10px}
-        .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:.9rem 0;background:rgba(255,255,255,.7);backdrop-filter:blur(20px);transition:top .3s ease}
-        .offer-banner{position:fixed;top:0;left:0;right:0;z-index:1100;background:linear-gradient(90deg,#052e16,#0f5132,#052e16);color:#fff;padding:.6rem 0}
+        .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:.9rem 0;background:rgba(255,255,255,.7);backdrop-filter:blur(20px)}
         .hero{position:relative;min-height:100vh;display:flex;align-items:center}
     </style>
 </head>
@@ -56,19 +55,6 @@
                 <img src="logo-oficial.png" alt="Berahass" class="preloader-logo-img">
             </div>
             <div class="preloader-bar"><div class="preloader-fill"></div></div>
-        </div>
-    </div>
-
-    <!-- Offer Banner -->
-    <div class="offer-banner" id="offerBanner">
-        <div class="container offer-banner-inner">
-            <span class="offer-text">🔥 <strong>Envío GRATIS</strong> en pedidos mayores a $100.000 &mdash; Oferta termina en:</span>
-            <div class="offer-countdown" id="countdown">
-                <div class="cd-item"><span id="cd-hours">00</span><small>Hrs</small></div>
-                <div class="cd-item"><span id="cd-mins">00</span><small>Min</small></div>
-                <div class="cd-item"><span id="cd-secs">00</span><small>Seg</small></div>
-            </div>
-            <button class="offer-close" id="offerClose">&times;</button>
         </div>
     </div>
 
@@ -281,7 +267,7 @@
                         <div class="prod-nutrients">
                             <span>Vitamina E</span><span>Fitosteroles</span><span>Ácido Oleico</span><span>Omega 3-6-9</span>
                         </div>
-                        <div class="prod-shipping">🚚 Envío gratis +$100.000</div>
+
                         <div class="prod-actions">
                             <a href="producto-refinado.html" class="btn btn-prod">Ver Producto</a>
                         </div>
@@ -301,7 +287,7 @@
                         <div class="prod-nutrients">
                             <span>Vitamina A, B1, B2, D, E</span><span>Fitoesteroles</span><span>Magnesio</span><span>Fósforo</span><span>Potasio</span><span>Calcio</span>
                         </div>
-                        <div class="prod-shipping gold">🚚 Envío gratis +$100.000</div>
+
                         <div class="prod-actions">
                             <a href="producto-extravirgen.html" class="btn btn-prod btn-prod-gold">Ver Producto</a>
                         </div>
@@ -321,7 +307,7 @@
                         <div class="prod-nutrients">
                             <span>891 kcal/100g</span><span>Calcio 490mg</span><span>Zinc 13mg</span><span>Grasa Sat. 13g</span>
                         </div>
-                        <div class="prod-shipping">🚚 Envío gratis +$100.000</div>
+
                         <div class="prod-actions">
                             <a href="producto-industrial.html" class="btn btn-prod">Ver Producto</a>
                         </div>
@@ -525,34 +511,74 @@
                 <div class="testimonial-track" id="testimonialTrack">
                     <div class="testimonial-card">
                         <div class="testimonial-stars">★★★★★</div>
-                        <p>"Desde que descubrí Berahass, no uso otro aceite. El sabor es increíble y saber que es 100% natural me da tranquilidad."</p>
+                        <p>"Yo era de los que compraba aceite de oliva importado carísimo. Un amigo me dijo 'probá este de aguacate' y la verdad quedé sorprendido. El sabor es suave, no pesa, y rinde bastante. Ya llevo 4 meses usándolo."</p>
                         <div class="testimonial-author">
-                            <div class="testimonial-avatar">MC</div>
-                            <div><strong>María C.</strong><span>Bogotá</span></div>
+                            <div class="testimonial-avatar">JL</div>
+                            <div><strong>Javier L.</strong><span>Bogotá</span></div>
                         </div>
                     </div>
                     <div class="testimonial-card">
                         <div class="testimonial-stars">★★★★★</div>
-                        <p>"Lo uso para cocinar y también para el cabello. Un producto versátil y de calidad superior. ¡100% recomendado!"</p>
+                        <p>"Lo compré porque vi que era colombiano y natural, y la verdad me encantó. Lo uso para todo: ensaladas, para freír, y hasta me echo unas goticas en el pelo. Mi mamá ya me pidió uno para ella."</p>
                         <div class="testimonial-author">
-                            <div class="testimonial-avatar">AR</div>
-                            <div><strong>Andrés R.</strong><span>Medellín</span></div>
+                            <div class="testimonial-avatar">ZL</div>
+                            <div><strong>Zulima L.</strong><span>Medellín</span></div>
                         </div>
                     </div>
                     <div class="testimonial-card">
                         <div class="testimonial-stars">★★★★★</div>
-                        <p>"El galón de 5L es perfecto para mi restaurante. Mis clientes notan la diferencia en el sabor de los platos."</p>
+                        <p>"Tengo 58 años y el médico me dijo que cuidara las grasas. Investigué y encontré que el aceite de aguacate es de los mejores. Lo pedí, llegó rápido, y el sabor es muy rico. Mi esposo también lo aprobó."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">ML</div>
+                            <div><strong>Martha Lucía</strong><span>Cali</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p>"Soy chef y en mi restaurante solo usamos Berahass. Los clientes nos preguntan qué le echamos a la comida porque queda con un toque diferente. El galón de 5 litros nos rinde como dos semanas."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">JF</div>
+                            <div><strong>Jhon Fredy</strong><span>Pereira</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p>"Al principio dudé porque no conocía la marca, pero me arriesgué. Qué bueno que lo hice. Es un aceite limpio, no deja olor en la cocina y las frituras quedan crujientes sin grasa extra."</p>
                         <div class="testimonial-author">
                             <div class="testimonial-avatar">LG</div>
-                            <div><strong>Laura G.</strong><span>Cali</span></div>
+                            <div><strong>Ligia Giraldo</strong><span>Manizales</span></div>
                         </div>
                     </div>
                     <div class="testimonial-card">
                         <div class="testimonial-stars">★★★★★</div>
-                        <p>"El Extra Virgen es espectacular en ensaladas. Se nota que es prensado en frío, el aroma y color son únicos."</p>
+                        <p>"Yo lo uso más que todo para la piel. Me pongo unas goticas después del baño y la piel queda suavecita. También lo mezclo con mi crema de noche. Muy bueno, de verdad."</p>
                         <div class="testimonial-author">
-                            <div class="testimonial-avatar">JP</div>
-                            <div><strong>Juan P.</strong><span>Barranquilla</span></div>
+                            <div class="testimonial-avatar">XB</div>
+                            <div><strong>Xiomara Bolaños</strong><span>Bucaramanga</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p>"Mi novia es vegetariana y buscábamos un aceite que fuera sano de verdad. Probamos Berahass y ahora es fijo en la casa. El extra virgen en las ensaladas queda brutal."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">JJ</div>
+                            <div><strong>Juan José</strong><span>Barranquilla</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p>"Les cuento que yo hacía pancakes con mantequilla y ahora las hago con este aceite. Quedan más doraditas y sin ese sabor pesado. Los niños ni notaron el cambio, jaja."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">LY</div>
+                            <div><strong>Liliana Yaneth</strong><span>Ibagué</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p>"Trabajo en el campo y conozco el aguacate Hass desde chiquito. Que alguien lo convierta en aceite así de bueno me llena de orgullo. Apoyo este producto colombiano al 100%."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">WM</div>
+                            <div><strong>William Mikeas</strong><span>Armenia</span></div>
                         </div>
                     </div>
                 </div>
