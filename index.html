@@ -42,7 +42,8 @@
         body{font-family:-apple-system,sans-serif;overflow-x:hidden}
         .preloader{position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#0d2218,#1a3c28,#1a4d2e);display:flex;align-items:center;justify-content:center}
         .preloader-logo-img{width:90px;height:auto;border-radius:18px;background:#fff;padding:10px}
-        .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:.9rem 0;background:rgba(255,255,255,.7);backdrop-filter:blur(20px)}
+        .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:.9rem 0;background:rgba(255,255,255,.7);backdrop-filter:blur(20px);transition:top .3s ease}
+        .offer-banner{position:fixed;top:0;left:0;right:0;z-index:1100;background:linear-gradient(90deg,#052e16,#0f5132,#052e16);color:#fff;padding:.6rem 0}
         .hero{position:relative;min-height:100vh;display:flex;align-items:center}
     </style>
 </head>
@@ -55,6 +56,19 @@
                 <img src="logo-oficial.png" alt="Berahass" class="preloader-logo-img">
             </div>
             <div class="preloader-bar"><div class="preloader-fill"></div></div>
+        </div>
+    </div>
+
+    <!-- Offer Banner -->
+    <div class="offer-banner" id="offerBanner">
+        <div class="container offer-banner-inner">
+            <span class="offer-text">🔥 <strong>Envío GRATIS</strong> en pedidos mayores a $100.000 &mdash; Oferta termina en:</span>
+            <div class="offer-countdown" id="countdown">
+                <div class="cd-item"><span id="cd-hours">00</span><small>Hrs</small></div>
+                <div class="cd-item"><span id="cd-mins">00</span><small>Min</small></div>
+                <div class="cd-item"><span id="cd-secs">00</span><small>Seg</small></div>
+            </div>
+            <button class="offer-close" id="offerClose">&times;</button>
         </div>
     </div>
 
@@ -116,6 +130,24 @@
             </div>
         </div>
     </section>
+
+    <!-- Ticker Marquee -->
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <span class="ticker-item">🛡️ Registro Sanitario INVIMA</span>
+            <span class="ticker-item">🌿 Sello Negocios Verdes</span>
+            <span class="ticker-item">🇨🇴 100% Colombiano</span>
+            <span class="ticker-item">❄️ Prensado en Frío</span>
+            <span class="ticker-item">💚 100% Natural</span>
+            <span class="ticker-item">🔬 Sin Químicos ni Aditivos</span>
+            <span class="ticker-item">🛡️ Registro Sanitario INVIMA</span>
+            <span class="ticker-item">🌿 Sello Negocios Verdes</span>
+            <span class="ticker-item">🇨🇴 100% Colombiano</span>
+            <span class="ticker-item">❄️ Prensado en Frío</span>
+            <span class="ticker-item">💚 100% Natural</span>
+            <span class="ticker-item">🔬 Sin Químicos ni Aditivos</span>
+        </div>
+    </div>
 
     <!-- About Section -->
     <section class="about-v2" id="nosotros">
@@ -249,6 +281,7 @@
                         <div class="prod-nutrients">
                             <span>Vitamina E</span><span>Fitosteroles</span><span>Ácido Oleico</span><span>Omega 3-6-9</span>
                         </div>
+                        <div class="prod-shipping">🚚 Envío gratis +$100.000</div>
                         <div class="prod-actions">
                             <a href="producto-refinado.html" class="btn btn-prod">Ver Producto</a>
                         </div>
@@ -268,6 +301,7 @@
                         <div class="prod-nutrients">
                             <span>Vitamina A, B1, B2, D, E</span><span>Fitoesteroles</span><span>Magnesio</span><span>Fósforo</span><span>Potasio</span><span>Calcio</span>
                         </div>
+                        <div class="prod-shipping gold">🚚 Envío gratis +$100.000</div>
                         <div class="prod-actions">
                             <a href="producto-extravirgen.html" class="btn btn-prod btn-prod-gold">Ver Producto</a>
                         </div>
@@ -287,6 +321,7 @@
                         <div class="prod-nutrients">
                             <span>891 kcal/100g</span><span>Calcio 490mg</span><span>Zinc 13mg</span><span>Grasa Sat. 13g</span>
                         </div>
+                        <div class="prod-shipping">🚚 Envío gratis +$100.000</div>
                         <div class="prod-actions">
                             <a href="producto-industrial.html" class="btn btn-prod">Ver Producto</a>
                         </div>
@@ -430,6 +465,112 @@
         </div>
     </section>
 
+
+    <!-- Comparison Section -->
+    <section class="section comparison" id="comparacion">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Compara</span>
+                <h2>Berahass vs <span class="text-gold">Otros Aceites</span></h2>
+                <p>Descubre por qué el aceite de aguacate Hass es superior.</p>
+            </div>
+            <div class="comparison-table">
+                <div class="comp-header">
+                    <div class="comp-feature">Característica</div>
+                    <div class="comp-bera">Berahass</div>
+                    <div class="comp-other">Aceite Común</div>
+                </div>
+                <div class="comp-row">
+                    <div class="comp-feature">Punto de humo</div>
+                    <div class="comp-bera"><span class="comp-check">✓</span> 280°C</div>
+                    <div class="comp-other"><span class="comp-x">✗</span> 160-200°C</div>
+                </div>
+                <div class="comp-row">
+                    <div class="comp-feature">Ácido oleico</div>
+                    <div class="comp-bera"><span class="comp-check">✓</span> 70%</div>
+                    <div class="comp-other"><span class="comp-x">✗</span> 20-40%</div>
+                </div>
+                <div class="comp-row">
+                    <div class="comp-feature">Vitamina E natural</div>
+                    <div class="comp-bera"><span class="comp-check">✓</span> Alta</div>
+                    <div class="comp-other"><span class="comp-x">✗</span> Baja</div>
+                </div>
+                <div class="comp-row">
+                    <div class="comp-feature">100% Natural</div>
+                    <div class="comp-bera"><span class="comp-check">✓</span> Sí</div>
+                    <div class="comp-other"><span class="comp-x">✗</span> Refinado químico</div>
+                </div>
+                <div class="comp-row">
+                    <div class="comp-feature">Registro INVIMA</div>
+                    <div class="comp-bera"><span class="comp-check">✓</span> Certificado</div>
+                    <div class="comp-other"><span class="comp-x">?</span> Variable</div>
+                </div>
+                <div class="comp-row">
+                    <div class="comp-feature">Uso cosmético</div>
+                    <div class="comp-bera"><span class="comp-check">✓</span> Piel y cabello</div>
+                    <div class="comp-other"><span class="comp-x">✗</span> No apto</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Testimonios</span>
+                <h2>Lo que dicen <span class="text-gold">nuestros clientes</span></h2>
+            </div>
+            <div class="testimonials-carousel" id="testimonialsCarousel">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p>"Desde que descubrí Berahass, no uso otro aceite. El sabor es increíble y saber que es 100% natural me da tranquilidad."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">MC</div>
+                            <div><strong>María C.</strong><span>Bogotá</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p>"Lo uso para cocinar y también para el cabello. Un producto versátil y de calidad superior. ¡100% recomendado!"</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">AR</div>
+                            <div><strong>Andrés R.</strong><span>Medellín</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p>"El galón de 5L es perfecto para mi restaurante. Mis clientes notan la diferencia en el sabor de los platos."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">LG</div>
+                            <div><strong>Laura G.</strong><span>Cali</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p>"El Extra Virgen es espectacular en ensaladas. Se nota que es prensado en frío, el aroma y color son únicos."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">JP</div>
+                            <div><strong>Juan P.</strong><span>Barranquilla</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-dots" id="testimonialDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Popup -->
+    <div class="social-proof" id="socialProof">
+        <div class="sp-icon">🛒</div>
+        <div class="sp-text">
+            <strong id="spName">María de Bogotá</strong>
+            <span id="spProduct">compró Aceite Extra Virgen</span>
+            <small id="spTime">hace 3 minutos</small>
+        </div>
+        <button class="sp-close" id="spClose">&times;</button>
+    </div>
 
     <!-- Contact Section -->
     <section class="section contact" id="contacto">
