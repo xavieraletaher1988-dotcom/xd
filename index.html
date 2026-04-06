@@ -18,7 +18,7 @@
     <meta name="twitter:description" content="Aceite de aguacate Hass 100% puro de Colombia.">
     <meta name="twitter:image" content="https://berahass.co/hero-cultivo.jpg">
     <!-- Theme color for mobile browsers -->
-    <meta name="theme-color" content="#1a4d2e">
+    <meta name="theme-color" content="#2A5C38">
     <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
     <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -33,16 +33,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Load fonts with display=swap for instant text render -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,800&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,800&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="styles.css">
     <!-- Inline critical CSS for instant first paint -->
     <style>
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-        body{font-family:-apple-system,sans-serif;overflow-x:hidden}
-        .preloader{position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#0d2218,#1a3c28,#1a4d2e);display:flex;align-items:center;justify-content:center}
-        .preloader-logo-img{width:90px;height:auto;border-radius:18px;background:#fff;padding:10px}
-        .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:.9rem 0;background:rgba(255,255,255,.7);backdrop-filter:blur(20px)}
+        body{font-family:'DM Sans',-apple-system,sans-serif;overflow-x:hidden;background:#F5F2E8}
+        .preloader{position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#1A3D25,#2A5C38,#1E4A2D);display:flex;align-items:center;justify-content:center}
+        .preloader-logo-img{width:90px;height:auto;border-radius:18px;background:#F5F2E8;padding:10px}
+        .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:.9rem 0;background:rgba(245,242,232,.85);backdrop-filter:blur(20px)}
         .hero{position:relative;min-height:100vh;display:flex;align-items:center}
     </style>
 </head>
@@ -96,28 +96,21 @@
             <div class="particle" style="--x:40%;--y:80%;--s:4px;--d:11s;--delay:4s"></div>
             <div class="particle" style="--x:60%;--y:15%;--s:5px;--d:13s;--delay:2.5s"></div>
             <div class="particle" style="--x:90%;--y:50%;--s:3px;--d:15s;--delay:1.5s"></div>
-            <div class="particle" style="--x:15%;--y:45%;--s:4px;--d:11s;--delay:3.5s"></div>
-            <div class="particle" style="--x:75%;--y:85%;--s:5px;--d:9s;--delay:1s"></div>
-            <div class="particle" style="--x:35%;--y:10%;--s:6px;--d:13s;--delay:0.5s"></div>
-            <div class="particle" style="--x:95%;--y:35%;--s:3px;--d:10s;--delay:2s"></div>
         </div>
         <!-- Glow orbs -->
         <div class="hero-glow hero-glow-1"></div>
         <div class="hero-glow hero-glow-2"></div>
         <div class="container hero-center">
             <div class="hero-text">
-                <div class="hero-badge">
-                    <span class="hero-badge-dot"></span>
-                    100% Natural &mdash; Hecho en Colombia 🇨🇴
-                </div>
                 <h1><span class="hero-accent">El Oro Líquido</span><br>de Colombia</h1>
+                <div class="hero-line"></div>
                 <p class="hero-subtitle">
                     Aceite de aguacate Hass 100% puro, prensado en frío.<br>
                     La riqueza del campo en cada gota.
                 </p>
                 <div class="hero-buttons">
                     <a href="#productos" class="btn btn-gold btn-lg">
-                        <span>Descubrir Productos</span>
+                        <span>Ver Productos</span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
                     </a>
                 </div>
@@ -147,7 +140,6 @@
         <!-- Scroll indicator -->
         <div class="hero-scroll">
             <div class="hero-scroll-line"></div>
-            <span>Descubre más</span>
         </div>
     </section>
 
