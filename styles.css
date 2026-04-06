@@ -297,7 +297,7 @@ button, input, select, textarea { font: inherit; }
 .hero-bg {
     position: absolute;
     inset: -20px;
-    background: url('hero-cultivo.jpg') center/cover;
+    background: url('hero-cultivo.jpg') center 20%/cover;
     animation: heroZoom 20s ease-in-out infinite alternate;
 }
 @keyframes heroZoom {
