@@ -165,6 +165,95 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     window.addEventListener('scroll', highlightNav, { passive: true });
 
+    // ── Offer Banner Countdown ──────────────────────────
+    const offerBanner = document.getElementById('offerBanner');
+    const offerClose = document.getElementById('offerClose');
+    if (offerBanner) {
+        // Set countdown to end of today
+        const setCountdown = () => {
+            const now = new Date();
+            const end = new Date(now);
+            end.setHours(23, 59, 59, 0);
+            const diff = end - now;
+            if (diff <= 0) return;
+            const h = Math.floor(diff / 3600000);
+            const m = Math.floor((diff % 3600000) / 60000);
+            const s = Math.floor((diff % 60000) / 1000);
+            const hEl = document.getElementById('cd-hours');
+            const mEl = document.getElementById('cd-mins');
+            const sEl = document.getElementById('cd-secs');
+            if (hEl) hEl.textContent = String(h).padStart(2, '0');
+            if (mEl) mEl.textContent = String(m).padStart(2, '0');
+            if (sEl) sEl.textContent = String(s).padStart(2, '0');
+        };
+        setCountdown();
+        setInterval(setCountdown, 1000);
+        navbar.classList.add('banner-active');
+        offerClose.addEventListener('click', () => {
+            offerBanner.classList.add('hidden');
+            navbar.classList.remove('banner-active');
+        });
+    }
+
+    // ── Testimonials Carousel ─────────────────────────
+    const track = document.getElementById('testimonialTrack');
+    const dotsContainer = document.getElementById('testimonialDots');
+    if (track && dotsContainer) {
+        const cards = track.querySelectorAll('.testimonial-card');
+        let currentSlide = 0;
+        // Create dots
+        cards.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.className = 'testimonial-dot' + (i === 0 ? ' active' : '');
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
+        });
+        const dots = dotsContainer.querySelectorAll('.testimonial-dot');
+        const goToSlide = (n) => {
+            currentSlide = n;
+            track.style.transform = `translateX(-${n * 100}%)`;
+            dots.forEach((d, i) => d.classList.toggle('active', i === n));
+        };
+        // Auto-advance every 5s
+        setInterval(() => {
+            goToSlide((currentSlide + 1) % cards.length);
+        }, 5000);
+    }
+
+    // ── Social Proof Popup ────────────────────────────
+    const socialProof = document.getElementById('socialProof');
+    const spClose = document.getElementById('spClose');
+    if (socialProof) {
+        const spData = [
+            { name: 'María de Bogotá', product: 'compró Aceite Extra Virgen', time: 'hace 3 minutos' },
+            { name: 'Carlos de Medellín', product: 'compró Galón de 5L', time: 'hace 7 minutos' },
+            { name: 'Ana de Cali', product: 'compró Aceite Refinado', time: 'hace 12 minutos' },
+            { name: 'Pedro de Barranquilla', product: 'compró Aceite Extra Virgen', time: 'hace 18 minutos' },
+            { name: 'Laura de Cartagena', product: 'compró Aceite Refinado x2', time: 'hace 25 minutos' },
+        ];
+        let spIndex = 0;
+        let spDismissed = false;
+        const showSP = () => {
+            if (spDismissed) return;
+            const d = spData[spIndex % spData.length];
+            document.getElementById('spName').textContent = d.name;
+            document.getElementById('spProduct').textContent = d.product;
+            document.getElementById('spTime').textContent = d.time;
+            socialProof.classList.add('show');
+            setTimeout(() => {
+                socialProof.classList.remove('show');
+                spIndex++;
+            }, 4000);
+        };
+        // First popup after 8s, then every 30s
+        setTimeout(showSP, 8000);
+        setInterval(showSP, 30000);
+        spClose.addEventListener('click', () => {
+            socialProof.classList.remove('show');
+            spDismissed = true;
+        });
+    }
+
     // ── Parallax on scroll ────────────────────────────
     const heroBg = document.querySelector('.hero-bg');
     const parallaxEls = document.querySelectorAll('.about-panorama-img, .process-bg-img');
