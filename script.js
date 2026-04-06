@@ -165,6 +165,21 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     window.addEventListener('scroll', highlightNav, { passive: true });
 
+    // ── Lazy load process video ──────────────────────────
+    const processVideo = document.querySelector('.process-bg-video');
+    if (processVideo) {
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    processVideo.preload = 'auto';
+                    processVideo.load();
+                    videoObserver.unobserve(processVideo);
+                }
+            });
+        }, { rootMargin: '200px' });
+        videoObserver.observe(processVideo);
+    }
+
     // ── Offer Banner Countdown ──────────────────────────
     const offerBanner = document.getElementById('offerBanner');
     const offerClose = document.getElementById('offerClose');
