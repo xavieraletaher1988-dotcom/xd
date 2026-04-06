@@ -23,7 +23,7 @@
     <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <!-- Preload critical resources -->
-    <link rel="preload" href="hero-cultivo.jpg" as="image" fetchpriority="high">
+    <link rel="preload" href="hero-cultivo.jpg" as="image" imagesrcset="hero-cultivo-mobile.jpg 900w, hero-cultivo.jpg 1920w" imagesizes="100vw" fetchpriority="high">
     <link rel="preload" href="styles.css" as="style">
     <link rel="preload" href="logo-oficial.png" as="image">
     <!-- DNS prefetch for external resources -->
@@ -83,7 +83,7 @@
     <!-- Hero Section -->
     <section class="hero" id="inicio">
         <div class="hero-bg">
-            <img src="hero-cultivo.jpg" alt="Aguacates Hass frescos colgando del árbol" class="hero-bg-img">
+            <img src="hero-cultivo.jpg" srcset="hero-cultivo-mobile.jpg 900w, hero-cultivo.jpg 1920w" sizes="100vw" alt="Aguacates Hass frescos colgando del árbol" class="hero-bg-img" fetchpriority="high">
         </div>
         <div class="hero-overlay"></div>
         <!-- Floating particles -->
