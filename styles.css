@@ -177,12 +177,12 @@ button, input, select, textarea { font: inherit; }
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    flex-shrink: 0;
+    gap: 1.2rem;
 }
 .nav-links a {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     font-weight: 500;
+    white-space: nowrap;
     color: var(--muted);
     letter-spacing: 0.02em;
     transition: color 0.3s ease;
