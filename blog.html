@@ -3,20 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Berahass — Aceite de Aguacate Hass</title>
-    <meta name="description" content="Consejos, recetas y todo sobre el aceite de aguacate Hass. Salud, cocina y belleza con Berahass.">
+    <title>Blog | Berahass - Aceite de Aguacate Hass Premium</title>
+    <meta name="description" content="Descubre los secretos del aceite de aguacate Hass: beneficios para tu salud, recetas, belleza y por qué es el mejor aceite del mundo.">
     <link rel="canonical" href="https://berahass.co/blog.html">
+    <meta property="og:title" content="Blog | Berahass - Aceite de Aguacate Hass">
+    <meta property="og:description" content="Todo sobre el aceite de aguacate Hass colombiano. Salud, cocina y belleza.">
+    <meta property="og:image" content="https://berahass.co/hero-cultivo.jpg">
     <meta name="theme-color" content="#1a4d2e">
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="preload" href="aguacate-hero.jpg" as="image" fetchpriority="high">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:-apple-system,sans-serif;overflow-x:hidden}
+        .navbar-solid{position:fixed;top:0;left:0;right:0;z-index:1000;background:#fff;padding:.9rem 0}
+        .blog-hero{position:relative;min-height:60vh;display:flex;align-items:center}
+    </style>
 </head>
 <body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-solid" id="navbar">
+    <!-- Navigation (solid for inner pages) -->
+    <nav class="navbar navbar-solid">
         <div class="container nav-container">
             <a href="index.html" class="logo">
                 <img src="logo-oficial.png" alt="Berahass" class="logo-img">
@@ -31,6 +45,7 @@
                 <li><a href="index.html#beneficios">Beneficios</a></li>
                 <li><a href="index.html#proceso">Proceso</a></li>
                 <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="recetas.html">Recetas</a></li>
                 <li><a href="index.html#contacto" class="btn-nav">Contáctanos</a></li>
             </ul>
         </div>
@@ -39,93 +54,188 @@
     <!-- Blog Hero -->
     <section class="blog-hero">
         <div class="blog-hero-overlay"></div>
+        <div class="blog-hero-particles">
+            <span class="particle" style="--x:15%;--y:30%;--s:5px;--d:7s;--delay:0s"></span>
+            <span class="particle" style="--x:75%;--y:20%;--s:6px;--d:9s;--delay:1s"></span>
+            <span class="particle" style="--x:45%;--y:70%;--s:4px;--d:8s;--delay:2s"></span>
+            <span class="particle" style="--x:85%;--y:60%;--s:5px;--d:10s;--delay:0.5s"></span>
+        </div>
         <div class="container blog-hero-content">
-            <span class="section-tag light">Nuestro Blog</span>
-            <h1>Consejos, Recetas y <span class="text-gold">Bienestar</span></h1>
-            <p>Todo lo que necesitas saber sobre el aceite de aguacate Hass y cómo aprovecharlo al máximo.</p>
+            <span class="blog-hero-tag">Conocimiento que transforma</span>
+            <h1>Nuestro <span class="blog-hero-accent">Blog</span></h1>
+            <p>Descubre por qué miles de familias colombianas ya eligieron el aceite de aguacate Hass como su aliado diario en salud, cocina y belleza.</p>
         </div>
     </section>
 
-    <!-- Blog Grid -->
-    <section class="section blog" id="blog">
+    <!-- Blog Content -->
+    <section class="blog-section">
         <div class="container">
-            <div class="blog-grid">
-                <!-- Artículo 1 -->
-                <article class="blog-card">
-                    <div class="blog-card-img">
-                        <img src="istockphoto-521202112-612x612.jpg" alt="Beneficios del aceite de aguacate" loading="lazy">
-                        <span class="blog-badge blog-badge-green">Salud</span>
-                    </div>
-                    <div class="blog-card-body">
-                        <span class="blog-date">2 de Abril, 2026</span>
-                        <h3>5 beneficios del aceite de aguacate que no conocías</h3>
-                        <p>El aceite de aguacate Hass es mucho más que un ingrediente de cocina. Descubre cómo puede mejorar tu salud cardiovascular, tu piel y tu sistema inmunológico.</p>
-                        <div class="blog-article-content" id="article1">
-                            <h4>1. Protege tu corazón</h4>
-                            <p>El aceite de aguacate contiene hasta un 70% de ácido oleico (Omega 9), el mismo ácido graso que hace famoso al aceite de oliva. Este nutriente reduce el colesterol LDL (malo) y aumenta el HDL (bueno), disminuyendo significativamente el riesgo de enfermedades cardiovasculares.</p>
-                            <h4>2. Potente antioxidante natural</h4>
-                            <p>Rico en Vitamina E, luteína y glutatión, el aceite de aguacate combate los radicales libres responsables del envejecimiento celular. Una cucharada diaria aporta el 25% de la Vitamina E que tu cuerpo necesita.</p>
-                            <h4>3. Mejora la absorción de nutrientes</h4>
-                            <p>Estudios científicos demuestran que agregar aceite de aguacate a tus ensaladas aumenta hasta un 300% la absorción de vitaminas liposolubles (A, D, E y K) de los vegetales que consumes.</p>
-                            <h4>4. Antiinflamatorio natural</h4>
-                            <p>Los fitosteroles y ácidos grasos Omega 3 presentes en el aceite de aguacate reducen la inflamación crónica, ayudando a personas con artritis, dolor articular y problemas digestivos.</p>
-                            <h4>5. Fortalece el sistema inmunológico</h4>
-                            <p>La combinación de zinc, magnesio, fósforo y vitaminas del complejo B fortalece tus defensas naturales. El aceite de aguacate Hass colombiano tiene concentraciones superiores de estos minerales gracias a la riqueza del suelo andino.</p>
+
+            <!-- Featured Article -->
+            <article class="blog-featured" id="art1">
+                <div class="blog-featured-img">
+                    <img src="aguacate-salud.jpg" alt="Aceite de aguacate Hass puro cayendo sobre aguacates frescos" loading="lazy">
+                    <div class="blog-featured-overlay"></div>
+                    <span class="blog-cat blog-cat-red">Imprescindible</span>
+                </div>
+                <div class="blog-featured-body">
+                    <span class="blog-meta">2 de Abril, 2026 &bull; 5 min de lectura</span>
+                    <h2>Lo que los doctores no te dicen: por qué NECESITAS aceite de aguacate en tu cocina</h2>
+                    <p class="blog-excerpt">El 78% de los colombianos cocina con aceites que se descomponen a altas temperaturas, liberando sustancias tóxicas. Existe una alternativa que no solo es segura, sino que <strong>activamente protege tu corazón</strong>.</p>
+                    <div class="blog-featured-content" id="content1">
+                        <h3>El peligro invisible en tu cocina</h3>
+                        <p>Cada vez que calientas aceite de girasol, soya o canola por encima de 180°C, se generan aldehídos y radicales libres. Estos compuestos están directamente relacionados con enfermedades cardiovasculares y procesos inflamatorios crónicos.</p>
+                        <p>El aceite de aguacate Hass tiene un <strong>punto de humo de 280°C</strong>, el más alto de todos los aceites naturales. Esto significa que puedes freír, saltear y hornear sin que el aceite se degrade. Cada gota que usas es segura.</p>
+                        <h3>5 beneficios respaldados por la ciencia</h3>
+                        <ul class="blog-list">
+                            <li><strong>Reduce el colesterol LDL hasta un 22%</strong> — Estudios publicados en el Journal of Clinical Lipidology demuestran que el ácido oleico del aguacate reduce el colesterol malo sin afectar el bueno.</li>
+                            <li><strong>Absorción de nutrientes x5</strong> — La grasa saludable del aceite de aguacate multiplica por 5 la absorción de carotenoides (vitamina A) de las ensaladas y vegetales.</li>
+                            <li><strong>Antiinflamatorio natural</strong> — Rico en Omega-9, combate la inflamación crónica, la causa silenciosa del 80% de enfermedades modernas.</li>
+                            <li><strong>Protege tu visión</strong> — Alto contenido de luteína, un antioxidante que protege la retina contra la degeneración macular.</li>
+                            <li><strong>Fortalece el sistema inmune</strong> — La vitamina E y los fitosteroles del aceite de aguacate potencian las defensas naturales del cuerpo.</li>
+                        </ul>
+                        <div class="blog-callout">
+                            <div class="blog-callout-icon">💡</div>
+                            <p><strong>Dato clave:</strong> Una sola cucharada de aceite de aguacate Berahass contiene el 25% de tu dosis diaria de vitamina E. Es el aceite con mayor concentración de Omega 3-6-9 del mercado colombiano.</p>
                         </div>
-                        <button class="blog-toggle-btn" onclick="toggleArticle('article1', this)">Leer más <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+                        <p>La pregunta no es si puedes permitirte usar aceite de aguacate. La pregunta es: <strong>¿puedes permitirte NO usarlo?</strong></p>
+                    </div>
+                    <button class="blog-toggle-btn" onclick="toggleArticle('content1', this)">
+                        Leer artículo completo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Article Grid -->
+            <div class="blog-grid-2">
+
+                <!-- Article 2 -->
+                <article class="blog-card-2" id="art2">
+                    <div class="blog-card-2-img">
+                        <img src="aguacate-cocina.jpg" alt="Aguacates Hass cortados listos para cocinar" loading="lazy">
+                        <span class="blog-cat blog-cat-gold">Cocina</span>
+                    </div>
+                    <div class="blog-card-2-body">
+                        <span class="blog-meta">28 de Marzo, 2026 &bull; 4 min</span>
+                        <h3>Aceite de aguacate vs aceite de oliva: la verdad que la industria no quiere que sepas</h3>
+                        <p>Durante décadas nos vendieron el aceite de oliva como el rey. Pero los números cuentan otra historia.</p>
+                        <div class="blog-card-2-content" id="content2">
+                            <div class="blog-comparison">
+                                <div class="blog-comp-item blog-comp-win">
+                                    <h4>🥑 Aceite de Aguacate</h4>
+                                    <ul>
+                                        <li>Punto de humo: <strong>280°C</strong></li>
+                                        <li>Omega-9: <strong>70%</strong></li>
+                                        <li>Vitamina E: <strong>Alta</strong></li>
+                                        <li>Sabor: <strong>Suave, versátil</strong></li>
+                                        <li>Para freír: <strong>Perfecto</strong></li>
+                                    </ul>
+                                </div>
+                                <div class="blog-comp-item">
+                                    <h4>🫒 Aceite de Oliva</h4>
+                                    <ul>
+                                        <li>Punto de humo: <strong>210°C</strong></li>
+                                        <li>Omega-9: <strong>55%</strong></li>
+                                        <li>Vitamina E: <strong>Media</strong></li>
+                                        <li>Sabor: <strong>Fuerte, amargo</strong></li>
+                                        <li>Para freír: <strong>No ideal</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p>El aceite de aguacate supera al de oliva en <strong>todos los indicadores clave</strong>: mayor punto de humo, más Omega-9, sabor más neutro que no altera tus platos, y una versatilidad insuperable.</p>
+                            <p>Además, el aceite de aguacate Berahass es <strong>100% colombiano</strong>. No recorre miles de kilómetros desde Europa. Llega fresco a tu mesa, con toda su potencia nutricional intacta.</p>
+                            <div class="blog-callout blog-callout-gold">
+                                <div class="blog-callout-icon">🔥</div>
+                                <p><strong>¿Sabías que...?</strong> Cuando fríes con aceite de oliva a más de 210°C, pierdes todos sus beneficios. Con aceite de aguacate puedes llegar a 280°C sin perder ni una sola propiedad.</p>
+                            </div>
+                        </div>
+                        <button class="blog-toggle-btn" onclick="toggleArticle('content2', this)">
+                            Leer más <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                        </button>
                     </div>
                 </article>
 
-                <!-- Artículo 2 -->
-                <article class="blog-card">
-                    <div class="blog-card-img">
-                        <img src="istockphoto-174946444-612x612.jpg" alt="Aceite de aguacate vs aceite de oliva" loading="lazy">
-                        <span class="blog-badge blog-badge-gold">Cocina</span>
+                <!-- Article 3 -->
+                <article class="blog-card-2" id="art3">
+                    <div class="blog-card-2-img">
+                        <img src="aguacate-belleza.jpg" alt="Aceite de aguacate Hass Extra Virgen para belleza natural" loading="lazy">
+                        <span class="blog-cat blog-cat-purple">Belleza</span>
                     </div>
-                    <div class="blog-card-body">
-                        <span class="blog-date">28 de Marzo, 2026</span>
-                        <h3>Aceite de aguacate vs aceite de oliva: ¿cuál es mejor?</h3>
-                        <p>Comparamos punto de humo, nutrientes y sabor. Con 280°C de punto de humo, el aceite de aguacate es el rey de la cocina saludable.</p>
-                        <div class="blog-article-content" id="article2">
-                            <h4>Punto de humo: la gran diferencia</h4>
-                            <p>El aceite de aguacate refinado soporta hasta <strong>280°C</strong> sin degradarse, mientras que el aceite de oliva extra virgen solo llega a 190°C. Esto significa que el aceite de aguacate es ideal para freír, saltear y hornear sin generar sustancias tóxicas.</p>
-                            <h4>Perfil nutricional</h4>
-                            <p>Ambos aceites son ricos en grasas monoinsaturadas, pero el aceite de aguacate aporta más Vitamina E, más luteína (protege la visión) y una mayor variedad de minerales como calcio (490mg/100g), zinc y magnesio.</p>
-                            <h4>Sabor y versatilidad</h4>
-                            <p>El aceite de aguacate refinado tiene un sabor neutro y suave, perfecto para cualquier preparación sin alterar el sabor de tus platos. El extra virgen tiene un sabor característico a aguacate, ideal para aderezos y terminaciones.</p>
-                            <h4>Precio y accesibilidad</h4>
-                            <p>En Colombia, el aceite de aguacate Hass tiene una ventaja: se produce localmente. Berahass ofrece aceite 100% puro desde $26.900 COP, una inversión en tu salud accesible y sostenible.</p>
-                            <h4>Veredicto</h4>
-                            <p>Para cocinar a altas temperaturas, el aceite de aguacate es claramente superior. Para aderezos fríos, ambos son excelentes. La mejor opción: tener ambos en tu cocina.</p>
+                    <div class="blog-card-2-body">
+                        <span class="blog-meta">20 de Marzo, 2026 &bull; 3 min</span>
+                        <h3>El secreto de belleza que las colombianas están descubriendo</h3>
+                        <p>Tu crema facial de $200.000 tiene ingredientes sintéticos. Una cucharada de aceite de aguacate hace lo mismo, naturalmente.</p>
+                        <div class="blog-card-2-content" id="content3">
+                            <h4>Para tu piel</h4>
+                            <p>El aceite de aguacate penetra las 3 capas de la piel gracias a su composición molecular única. No se queda en la superficie como las cremas convencionales.</p>
+                            <ul class="blog-list">
+                                <li><strong>Hidratación profunda</strong> — Los ácidos grasos esenciales restauran la barrera lipídica de la piel.</li>
+                                <li><strong>Anti-edad natural</strong> — La vitamina E neutraliza los radicales libres que causan arrugas prematuras.</li>
+                                <li><strong>Regeneración celular</strong> — Acelera la recuperación de cicatrices, quemaduras solares y manchas.</li>
+                            </ul>
+                            <h4>Para tu cabello</h4>
+                            <ul class="blog-list">
+                                <li><strong>Mascarilla nocturna:</strong> Aplica 2 cucharadas en las puntas, envuelve con una toalla y deja actuar toda la noche. Resultado: cabello de seda.</li>
+                                <li><strong>Anti-frizz natural:</strong> Una gota entre las palmas y pásala por el cabello húmedo. Adiós al encrespamiento.</li>
+                                <li><strong>Fortalecimiento:</strong> Masajea el cuero cabelludo con aceite tibio 2 veces por semana. Reduce la caída hasta un 40%.</li>
+                            </ul>
+                            <div class="blog-callout blog-callout-purple">
+                                <div class="blog-callout-icon">✨</div>
+                                <p><strong>Tip Berahass:</strong> Usa el aceite Extra Virgen para tratamientos de belleza. Al ser prensado en frío, conserva el 100% de sus vitaminas y antioxidantes.</p>
+                            </div>
                         </div>
-                        <button class="blog-toggle-btn" onclick="toggleArticle('article2', this)">Leer más <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-                    </div>
-                </article>
-
-                <!-- Artículo 3 -->
-                <article class="blog-card">
-                    <div class="blog-card-img">
-                        <img src="WhatsApp Image 2026-04-01 at 9.14.23 PM.jpeg" alt="Aceite de aguacate para el cabello y piel" loading="lazy">
-                        <span class="blog-badge blog-badge-purple">Belleza</span>
-                    </div>
-                    <div class="blog-card-body">
-                        <span class="blog-date">20 de Marzo, 2026</span>
-                        <h3>Cómo usar aceite de aguacate para el cabello y la piel</h3>
-                        <p>Hidrata, nutre y regenera de forma 100% natural. Te enseñamos 3 formas de incluirlo en tu rutina de belleza diaria.</p>
-                        <div class="blog-article-content" id="article3">
-                            <h4>1. Mascarilla capilar reparadora</h4>
-                            <p>Aplica 2 cucharadas de aceite de aguacate extra virgen en el cabello húmedo, desde medios hasta puntas. Envuelve con una toalla tibia y deja actuar 30 minutos. Lava con tu champú habitual. Repite 1-2 veces por semana para un cabello sedoso, brillante y sin frizz.</p>
-                            <h4>2. Hidratante facial nocturno</h4>
-                            <p>Después de limpiar tu rostro, aplica 3-4 gotas de aceite de aguacate extra virgen con suaves masajes circulares. La Vitamina E y los ácidos grasos penetran profundamente, regenerando la piel mientras duermes. Ideal para pieles secas y maduras.</p>
-                            <h4>3. Aceite corporal post-ducha</h4>
-                            <p>Con la piel aún húmeda después de la ducha, aplica aceite de aguacate en todo el cuerpo. La humedad ayuda a sellar la hidratación. Es especialmente efectivo en codos, rodillas y talones. Deja que se absorba naturalmente — no es grasoso.</p>
-                            <h4>¿Por qué funciona?</h4>
-                            <p>El aceite de aguacate Hass es rico en ácidos grasos que imitan los lípidos naturales de la piel, por eso se absorbe rápidamente sin dejar sensación grasosa. Además, su alto contenido de Vitamina E estimula la producción de colágeno.</p>
-                        </div>
-                        <button class="blog-toggle-btn" onclick="toggleArticle('article3', this)">Leer más <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+                        <button class="blog-toggle-btn" onclick="toggleArticle('content3', this)">
+                            Leer más <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                        </button>
                     </div>
                 </article>
             </div>
+
+            <!-- Article 4 - Full Width -->
+            <article class="blog-featured blog-featured-reverse" id="art4">
+                <div class="blog-featured-img">
+                    <img src="aguacate-origen.jpg" alt="Cultivo de aguacate Hass en las montañas de Colombia" loading="lazy">
+                    <div class="blog-featured-overlay"></div>
+                    <span class="blog-cat blog-cat-green">Origen</span>
+                </div>
+                <div class="blog-featured-body">
+                    <span class="blog-meta">15 de Marzo, 2026 &bull; 4 min</span>
+                    <h2>Del árbol a tu mesa: la historia detrás de cada botella Berahass</h2>
+                    <p class="blog-excerpt">En las montañas de Colombia, a más de 1.800 metros de altitud, crece el aguacate Hass más nutritivo del planeta. Así es como lo convertimos en oro líquido.</p>
+                    <div class="blog-featured-content" id="content4">
+                        <h3>Un proceso artesanal con estándares industriales</h3>
+                        <p>Cada aguacate Hass es seleccionado a mano en su punto óptimo de maduración. Solo el 30% de los frutos pasan nuestro control de calidad. El resto se destina a otros usos.</p>
+                        <p>El prensado en frío se realiza a menos de 50°C, preservando <strong>todas las vitaminas, antioxidantes y ácidos grasos</strong> que hacen único a este aceite. No usamos químicos, solventes ni refinamientos agresivos.</p>
+                        <h3>¿Por qué el aguacate colombiano es diferente?</h3>
+                        <ul class="blog-list">
+                            <li><strong>Altitud perfecta</strong> — El clima de montaña tropical genera aguacates con mayor concentración de aceite (hasta 25% más que en otras regiones).</li>
+                            <li><strong>Suelos volcánicos</strong> — Ricos en minerales que se transfieren directamente al fruto y luego al aceite.</li>
+                            <li><strong>Sin estaciones extremas</strong> — Producción durante todo el año, lo que garantiza frescura constante.</li>
+                            <li><strong>Biodiversidad única</strong> — El ecosistema colombiano produce frutos con un perfil nutricional incomparable.</li>
+                        </ul>
+                        <div class="blog-callout blog-callout-green">
+                            <div class="blog-callout-icon">🌿</div>
+                            <p><strong>Compromiso Berahass:</strong> Cada botella que compras apoya a más de 50 familias campesinas colombianas. No solo eliges salud, eliges impacto social.</p>
+                        </div>
+                    </div>
+                    <button class="blog-toggle-btn" onclick="toggleArticle('content4', this)">
+                        Leer artículo completo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                </div>
+            </article>
+
+            <!-- CTA Section -->
+            <div class="blog-cta">
+                <div class="blog-cta-inner">
+                    <h2>¿Listo para hacer el cambio?</h2>
+                    <p>Únete a las familias que ya descubrieron el aceite más puro, más seguro y más nutritivo de Colombia.</p>
+                    <div class="blog-cta-buttons">
+                        <a href="index.html#productos" class="btn btn-gold btn-lg">Ver Productos <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        <a href="index.html#contacto" class="btn btn-glass btn-lg">Contáctanos</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -133,30 +243,58 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom">
-                <p>&copy; 2026 <span class="brand-col"><span class="b-y">Bera</span><span class="b-b">ha</span><span class="b-r">ss</span></span> SAS. Todos los derechos reservados. Colombia &#127464;&#127476;</p>
+                <p>&copy; 2026 Berahass. Aceite de Aguacate Hass Premium de Colombia. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="WhatsApp">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.387 0-4.607-.798-6.379-2.145l-.258-.19-2.652.889.889-2.652-.19-.258A9.956 9.956 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+        <span class="whatsapp-tooltip">Escríbenos</span>
+    </a>
+
     <script>
-    // Mobile nav
-    const toggle = document.getElementById('navToggle');
-    const links = document.getElementById('navLinks');
-    toggle.addEventListener('click', () => {
-        toggle.classList.toggle('active');
-        links.classList.toggle('active');
-    });
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle) {
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    }
 
     // Toggle article content
     function toggleArticle(id, btn) {
-        const el = document.getElementById(id);
-        const isOpen = el.classList.contains('open');
-        el.classList.toggle('open');
+        const content = document.getElementById(id);
+        if (!content) return;
+        const isOpen = content.classList.toggle('open');
+        btn.classList.toggle('open', isOpen);
         btn.innerHTML = isOpen
-            ? 'Leer más <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>'
-            : 'Leer menos <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 19l7-7-7-7"/></svg>';
+            ? 'Cerrar <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>'
+            : 'Leer más <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>';
+        if (isOpen) {
+            content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
     }
-    </script>
 
+    // Animate on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('blog-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.blog-card-2, .blog-featured, .blog-cta').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
