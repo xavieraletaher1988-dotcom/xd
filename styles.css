@@ -1254,7 +1254,7 @@ button, input, select, textarea { font: inherit; }
 }
 
 /* ─── BENEFITS ─── */
-.benefits { background: linear-gradient(180deg, #f0fdf4 0%, #dcfce7 100%); padding: 0; }
+.benefits { background: transparent; padding: 0; }
 .benefits-hero-bg {
     position: relative;
     min-height: 35vh;
@@ -1300,81 +1300,182 @@ button, input, select, textarea { font: inherit; }
 .benefits-hero-content h2::after {
     background: linear-gradient(90deg, #22c55e, #4ade80);
 }
-.ben-grid {
+
+/* ─── BENEFITS BENTO DARK SECTION ─── */
+.ben-dark {
+    position: relative;
+    background: linear-gradient(180deg, #041a0e 0%, #071f12 50%, #0a2818 100%);
+    padding: 5rem 0 6rem;
+    overflow: hidden;
+}
+.ben-dark-glow {
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(34,197,94,0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Bento Grid */
+.ben-bento {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
     gap: 1.2rem;
-    padding: 4rem 0;
 }
-.ben-card-v2 {
-    background: #fff;
-    border-radius: var(--radius);
-    padding: 2rem 1.5rem;
-    transition: all 0.4s var(--transition-smooth);
-    border: 1px solid rgba(34,197,94,0.1);
+.ben-featured {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+}
+
+/* Cards */
+.ben-card-new {
     position: relative;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 2rem 1.8rem;
+    backdrop-filter: blur(12px);
+    transition: all 0.45s var(--transition-smooth);
     overflow: hidden;
-    box-shadow: 0 2px 10px rgba(5,46,22,0.04);
 }
-.ben-card-v2::after {
+.ben-card-new::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #059669, #22c55e, #4ade80);
+    inset: 0;
+    border-radius: 20px;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(184,150,12,0.25), rgba(34,197,94,0.15), transparent 60%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
     opacity: 0;
-    transition: opacity 0.4s var(--transition-smooth);
+    transition: opacity 0.45s var(--transition-smooth);
 }
-.ben-card-v2:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 50px rgba(5,46,22,0.12), 0 0 30px rgba(34,197,94,0.08);
-    border-color: rgba(34,197,94,0.25);
-    background: linear-gradient(135deg, #fff 0%, #f0fdf4 100%);
+.ben-card-new:hover {
+    transform: translateY(-6px);
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(184,150,12,0.2);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(34,197,94,0.06);
 }
-.ben-card-v2:hover::after {
-    opacity: 1;
-}
-.ben-icon-wrap {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-    transition: all 0.3s var(--transition-smooth);
-}
-.ben-card-v2:hover .ben-icon-wrap {
-    transform: scale(1.1) rotate(-3deg);
-}
-.ben-coral { background: #fef0ed; color: #e25c3a; }
-.ben-amber { background: #fef7e0; color: #d4930d; }
-.ben-red { background: #fdeeed; color: #dc3545; }
-.ben-green { background: var(--green-light); color: var(--green); }
-.ben-teal { background: #e6f7f1; color: #1a9a6a; }
-.ben-purple { background: #f3eef8; color: #7c3aed; }
-.ben-card-v2 h3 {
-    font-family: var(--font-display);
-    font-size: 1.05rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-}
-.ben-card-v2 p {
-    font-size: 0.82rem;
-    color: var(--muted);
-    line-height: 1.7;
-    margin-bottom: 0.8rem;
-}
-.ben-stat {
-    font-size: 0.72rem;
-    color: #059669;
+.ben-card-new:hover::before { opacity: 1; }
+
+/* Label */
+.ben-label {
+    display: inline-block;
+    font-size: 0.65rem;
     font-weight: 600;
-    padding-top: 0.6rem;
-    border-top: 1px solid rgba(34,197,94,0.15);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--gold-2);
+    background: rgba(184,150,12,0.12);
+    border: 1px solid rgba(184,150,12,0.2);
+    padding: 0.35rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
 }
-.ben-stat strong { font-weight: 700; }
+
+/* Big number stat */
+.ben-big-num {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #d4a81a 0%, #f0d060 40%, #b8960c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.ben-featured .ben-big-num {
+    font-size: 5rem;
+    margin-bottom: 0.3rem;
+}
+.ben-unit {
+    font-size: 0.5em;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+/* Card text */
+.ben-card-new h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.45rem;
+}
+.ben-featured h3 { font-size: 1.35rem; }
+.ben-card-new p {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+}
+.ben-featured p { font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-bottom: 1.8rem; }
+
+/* Comparison bars (featured card) */
+.ben-bars { display: flex; flex-direction: column; gap: 0.7rem; }
+.ben-bar-row {
+    display: grid;
+    grid-template-columns: 120px 1fr 48px;
+    align-items: center;
+    gap: 0.8rem;
+}
+.ben-bar-name {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.5);
+    font-weight: 500;
+    white-space: nowrap;
+}
+.ben-bar-track {
+    height: 8px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 100px;
+    overflow: hidden;
+}
+.ben-bar-fill {
+    height: 100%;
+    width: var(--w);
+    border-radius: 100px;
+    background: rgba(255,255,255,0.15);
+    transition: width 1.2s var(--transition-smooth);
+}
+.ben-bar-gold {
+    background: linear-gradient(90deg, #b8960c, #d4a81a, #f0d060);
+    box-shadow: 0 0 12px rgba(184,150,12,0.3);
+}
+.ben-bar-val {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.7);
+    text-align: right;
+}
+.ben-bar-gold ~ .ben-bar-val,
+.ben-bar-row:first-child .ben-bar-val {
+    color: var(--gold-2);
+}
+
+/* Benefit pills */
+.ben-tag-row {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    margin-top: 0.8rem;
+}
+.ben-pill {
+    font-size: 0.62rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 0.25rem 0.7rem;
+    border-radius: 100px;
+}
 
 /* ─── PROCESS ─── */
 .process {
@@ -1763,7 +1864,10 @@ a.c-card.c-link:hover {
 /* ─── TABLET ─── */
 @media (max-width: 1024px) {
     .products-grid { grid-template-columns: repeat(2, 1fr); }
-    .ben-grid { grid-template-columns: repeat(2, 1fr); }
+    .ben-bento { grid-template-columns: repeat(2, 1fr); }
+    .ben-featured { grid-column: 1 / -1; grid-row: auto; }
+    .ben-featured .ben-big-num { font-size: 3.5rem; }
+    .ben-bar-row { grid-template-columns: 100px 1fr 42px; }
     .process-steps { grid-template-columns: repeat(2, 1fr); }
     .about-story { grid-template-columns: 1fr; gap: 2.5rem; }
     .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
@@ -1881,8 +1985,9 @@ a.c-card.c-link:hover {
     .section-header { margin-bottom: 2.5rem; }
     .section-header h2 { font-size: 1.5rem; }
     .section-header p { font-size: 0.88rem; }
-    .ben-grid { grid-template-columns: 1fr; gap: 1rem; }
-    .ben-card-v2 { padding: 1.5rem 1.2rem; }
+    .ben-bento { grid-template-columns: 1fr; gap: 1rem; }
+    .ben-featured { grid-column: auto; grid-row: auto; }
+    .ben-card-new { padding: 1.5rem 1.2rem; }
     .process-steps { grid-template-columns: 1fr; gap: 1rem; }
     .p-step { padding: 1.5rem 1rem; }
     .form-row { grid-template-columns: 1fr; }
@@ -1935,10 +2040,13 @@ a.c-card.c-link:hover {
     .benefits-hero-content { padding: 3rem 0; }
     .benefits-hero-content h2 { font-size: 1.6rem; }
     .benefits-hero-content p { font-size: 0.85rem; }
-    .ben-icon-wrap { width: 42px; height: 42px; border-radius: 10px; }
-    .ben-card-v2 h3 { font-size: 1rem; }
-    .ben-card-v2 p { font-size: 0.8rem; }
-    .ben-stat { font-size: 0.7rem; }
+    .ben-big-num { font-size: 2.2rem; }
+    .ben-featured .ben-big-num { font-size: 3rem; }
+    .ben-card-new h3 { font-size: 1rem; }
+    .ben-card-new p { font-size: 0.8rem; }
+    .ben-dark { padding: 3rem 0 4rem; }
+    .ben-bar-row { grid-template-columns: 80px 1fr 38px; gap: 0.5rem; }
+    .ben-bar-name { font-size: 0.65rem; }
     .process-visual { max-height: 220px; border-radius: 12px; }
     .process-bg-video { height: 220px; }
     .p-num { font-size: 1.5rem; }
@@ -1979,7 +2087,7 @@ a.c-card.c-link:hover {
     .about-counters { flex-direction: column; }
     .price-amount { font-size: 1.25rem; }
     .prod-info h3 { font-size: 1rem; }
-    .ben-card-v2 { padding: 1.2rem 1rem; }
+    .ben-card-new { padding: 1.2rem 1rem; }
     .footer-social a { width: 40px; height: 40px; }
     .nav-links { width: 260px; padding: 4.5rem 1.2rem 2rem; }
     .container { width: min(calc(100% - 1rem), var(--container)); }
@@ -3083,13 +3191,6 @@ a.c-card.c-link:hover {
 }
 
 /* ─── GLASSMORPHISM ENHANCEMENT ON CARDS ─── */
-.ben-card-v2 {
-    backdrop-filter: blur(10px);
-    background: rgba(255,255,255,0.85);
-}
-.ben-card-v2:hover {
-    backdrop-filter: blur(15px);
-}
 .testimonial-card {
     backdrop-filter: blur(10px);
     background: rgba(255,255,255,0.9);
