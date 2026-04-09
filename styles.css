@@ -159,6 +159,7 @@ button, input, select, textarea { font: inherit; }
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: nowrap;
 }
 .logo {
     display: flex;
@@ -176,7 +177,8 @@ button, input, select, textarea { font: inherit; }
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
+    flex-shrink: 0;
 }
 .nav-links a {
     font-size: 0.82rem;
