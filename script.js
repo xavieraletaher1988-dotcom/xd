@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     };
-    window.addEventListener('load', () => setTimeout(hidePreloader, 1800));
-    setTimeout(hidePreloader, 3500);
+    window.addEventListener('load', () => setTimeout(hidePreloader, 800));
+    setTimeout(hidePreloader, 2000);
 
     // ── Navbar scroll ──────────────────────────────────
     const navbar = document.getElementById('navbar');
@@ -165,34 +165,126 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     window.addEventListener('scroll', highlightNav, { passive: true });
 
-    // ── Parallax hero + panorama (connected depth) ─────
-    const heroImg = document.querySelector('.hero-bg-img');
-    const panoramaImg = document.querySelector('.about-panorama-img');
-    const bridgeLine = document.querySelector('.bridge-gold-line');
-    window.addEventListener('scroll', () => {
-        const sy = window.scrollY;
-        // Hero parallax
-        if (heroImg && sy < window.innerHeight * 1.2) {
-            heroImg.style.transform = `scale(1.08) translateY(${sy * 0.18}px)`;
-        }
-        // Panorama counter-parallax (slower, creates depth connection)
-        if (panoramaImg) {
-            const rect = panoramaImg.parentElement.getBoundingClientRect();
-            if (rect.top < window.innerHeight && rect.bottom > 0) {
-                const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
-                panoramaImg.style.transform = `scale(1.06) translateY(${(progress - 0.5) * -40}px)`;
-            }
-        }
-        // Bridge gold line rotates subtly with scroll
-        if (bridgeLine) {
-            const bridgeRect = bridgeLine.parentElement.getBoundingClientRect();
-            if (bridgeRect.top < window.innerHeight && bridgeRect.bottom > 0) {
-                const p = (window.innerHeight - bridgeRect.top) / window.innerHeight;
-                bridgeLine.style.transform = `rotate(${-2.5 + p * 1.5}deg)`;
-            }
-        }
-    }, { passive: true });
-    // ── Parallax (fixed bg handled by CSS) ──────────────
+    // ── Lazy load process video ──────────────────────────
+    const processVideo = document.querySelector('.process-bg-video');
+    if (processVideo) {
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    processVideo.preload = 'auto';
+                    processVideo.load();
+                    videoObserver.unobserve(processVideo);
+                }
+            });
+        }, { rootMargin: '200px' });
+        videoObserver.observe(processVideo);
+    }
+
+    // ── Offer Banner Countdown ──────────────────────────
+    const offerBanner = document.getElementById('offerBanner');
+    const offerClose = document.getElementById('offerClose');
+    if (offerBanner) {
+        // Set countdown to end of today
+        const setCountdown = () => {
+            const now = new Date();
+            const end = new Date(now);
+            end.setHours(23, 59, 59, 0);
+            const diff = end - now;
+            if (diff <= 0) return;
+            const h = Math.floor(diff / 3600000);
+            const m = Math.floor((diff % 3600000) / 60000);
+            const s = Math.floor((diff % 60000) / 1000);
+            const hEl = document.getElementById('cd-hours');
+            const mEl = document.getElementById('cd-mins');
+            const sEl = document.getElementById('cd-secs');
+            if (hEl) hEl.textContent = String(h).padStart(2, '0');
+            if (mEl) mEl.textContent = String(m).padStart(2, '0');
+            if (sEl) sEl.textContent = String(s).padStart(2, '0');
+        };
+        setCountdown();
+        setInterval(setCountdown, 1000);
+        navbar.classList.add('banner-active');
+        offerClose.addEventListener('click', () => {
+            offerBanner.classList.add('hidden');
+            navbar.classList.remove('banner-active');
+        });
+    }
+
+    // ── Testimonials Carousel ─────────────────────────
+    const track = document.getElementById('testimonialTrack');
+    const dotsContainer = document.getElementById('testimonialDots');
+    if (track && dotsContainer) {
+        const cards = track.querySelectorAll('.testimonial-card');
+        let currentSlide = 0;
+        // Create dots
+        cards.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.className = 'testimonial-dot' + (i === 0 ? ' active' : '');
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
+        });
+        const dots = dotsContainer.querySelectorAll('.testimonial-dot');
+        const goToSlide = (n) => {
+            currentSlide = n;
+            track.style.transform = `translateX(-${n * 100}%)`;
+            dots.forEach((d, i) => d.classList.toggle('active', i === n));
+        };
+        // Auto-advance every 5s
+        setInterval(() => {
+            goToSlide((currentSlide + 1) % cards.length);
+        }, 5000);
+    }
+
+    // ── Social Proof Popup ────────────────────────────
+    const socialProof = document.getElementById('socialProof');
+    const spClose = document.getElementById('spClose');
+    if (socialProof) {
+        const spData = [
+            { name: 'María de Bogotá', product: 'compró Aceite Extra Virgen', time: 'hace 3 minutos' },
+            { name: 'Carlos de Medellín', product: 'compró Galón de 5L', time: 'hace 7 minutos' },
+            { name: 'Ana de Cali', product: 'compró Aceite Refinado', time: 'hace 12 minutos' },
+            { name: 'Pedro de Barranquilla', product: 'compró Aceite Extra Virgen', time: 'hace 18 minutos' },
+            { name: 'Laura de Cartagena', product: 'compró Aceite Refinado x2', time: 'hace 25 minutos' },
+        ];
+        let spIndex = 0;
+        let spDismissed = false;
+        const showSP = () => {
+            if (spDismissed) return;
+            const d = spData[spIndex % spData.length];
+            document.getElementById('spName').textContent = d.name;
+            document.getElementById('spProduct').textContent = d.product;
+            document.getElementById('spTime').textContent = d.time;
+            socialProof.classList.add('show');
+            setTimeout(() => {
+                socialProof.classList.remove('show');
+                spIndex++;
+            }, 4000);
+        };
+        // First popup after 8s, then every 30s
+        setTimeout(showSP, 8000);
+        setInterval(showSP, 30000);
+        spClose.addEventListener('click', () => {
+            socialProof.classList.remove('show');
+            spDismissed = true;
+        });
+    }
+
+    // ── Parallax on scroll ────────────────────────────
+    const heroBg = document.querySelector('.hero-bg');
+    const parallaxEls = document.querySelectorAll('.about-panorama-img, .process-bg-img');
+    if (heroBg || parallaxEls.length) {
+        window.addEventListener('scroll', () => {
+            const sy = window.scrollY;
+            if (heroBg) heroBg.style.transform = `translateY(${sy * 0.3}px)`;
+            parallaxEls.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    const offset = (rect.top - window.innerHeight / 2) * 0.08;
+                    el.style.transform = `translateY(${offset}px) scale(0.85)`;
+                }
+            });
+        }, { passive: true });
+    }
 
     // ── Product card hover effect ──────────────────────
     document.querySelectorAll('.prod-card').forEach(card => {
