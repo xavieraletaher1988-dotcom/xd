@@ -77,19 +77,19 @@ button, input, select, textarea { font: inherit; }
     margin-bottom: 2rem;
 }
 .preloader-logo-img {
-    width: 90px;
+    width: 110px;
     height: auto;
-    border-radius: 18px;
+    border-radius: 22px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.35);
     animation: floatSoft 3s ease-in-out infinite, preloaderGlow 2s ease-in-out infinite alternate;
-    filter: drop-shadow(0 0 20px rgba(184,150,12,0.3));
 }
 @keyframes floatSoft {
     0%, 100% { transform: translateY(0) scale(1); }
     50% { transform: translateY(-8px) scale(1.03); }
 }
 @keyframes preloaderGlow {
-    from { filter: drop-shadow(0 0 15px rgba(184,150,12,0.2)); }
-    to { filter: drop-shadow(0 0 30px rgba(184,150,12,0.5)); }
+    from { filter: drop-shadow(0 0 18px rgba(132,204,22,0.25)); }
+    to { filter: drop-shadow(0 0 32px rgba(132,204,22,0.55)); }
 }
 .preloader-brand {
     display: none;
@@ -167,8 +167,9 @@ button, input, select, textarea { font: inherit; }
     z-index: 10;
 }
 .logo-img {
-    width: 38px;
+    width: 44px;
     height: auto;
+    border-radius: 9px;
     transition: transform 0.3s ease;
 }
 .logo:hover .logo-img {
@@ -1644,11 +1645,9 @@ a.c-card.c-link:hover {
     margin-bottom: 0.5rem;
 }
 .footer-logo .logo-img {
-    width: 40px;
-    filter: brightness(1.1);
-    background: #fff;
-    border-radius: 8px;
-    padding: 4px;
+    width: 52px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
 }
 .footer-social {
     display: flex;
@@ -1851,6 +1850,8 @@ a.c-card.c-link:hover {
     .about-panorama { min-height: 40vh; }
     .trust-badges { gap: 0.8rem; }
     .trust-badge-item { font-size: 0.65rem; padding: 0.35rem 0.8rem; }
+    .logo-img { width: 40px; border-radius: 8px; }
+    .footer-logo .logo-img { width: 48px; }
 }
 
 /* ─── MOBILE SMALL ─── */
@@ -1975,6 +1976,9 @@ a.c-card.c-link:hover {
     .container { width: min(calc(100% - 1.5rem), var(--container)); }
     .navbar { padding-top: max(0.6rem, env(safe-area-inset-top)); }
     .footer-bottom { padding-bottom: max(1.5rem, env(safe-area-inset-bottom)); }
+    .logo-img { width: 38px; border-radius: 8px; }
+    .footer-logo .logo-img { width: 46px; border-radius: 9px; }
+    .comp-v2-logo { width: 36px; border-radius: 8px; }
 }
 
 /* ─── EXTRA SMALL PHONES ─── */
@@ -1992,6 +1996,8 @@ a.c-card.c-link:hover {
     .footer-social a { width: 40px; height: 40px; }
     .nav-links { width: 260px; padding: 4.5rem 1.2rem 2rem; }
     .container { width: min(calc(100% - 1rem), var(--container)); }
+    .logo-img { width: 34px; border-radius: 7px; }
+    .preloader-logo-img { width: 88px; border-radius: 18px; }
 }
 
 /* ─── LANDSCAPE MOBILE ─── */
@@ -2894,11 +2900,10 @@ a.c-card.c-link:hover {
     border-bottom-color: rgba(34,197,94,0.12);
 }
 .comp-v2-logo {
-    width: 36px;
+    width: 42px;
     height: auto;
-    border-radius: 8px;
-    background: #fff;
-    padding: 4px;
+    border-radius: 9px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.18);
 }
 .comp-v2-label {
     font-family: var(--font-display);
