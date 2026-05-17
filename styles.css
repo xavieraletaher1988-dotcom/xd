@@ -1850,6 +1850,8 @@ a.c-card.c-link:hover {
     .about-panorama { min-height: 40vh; }
     .trust-badges { gap: 0.8rem; }
     .trust-badge-item { font-size: 0.65rem; padding: 0.35rem 0.8rem; }
+    .logo-img { width: 40px; border-radius: 8px; }
+    .footer-logo .logo-img { width: 48px; }
 }
 
 /* ─── MOBILE SMALL ─── */
@@ -1974,6 +1976,9 @@ a.c-card.c-link:hover {
     .container { width: min(calc(100% - 1.5rem), var(--container)); }
     .navbar { padding-top: max(0.6rem, env(safe-area-inset-top)); }
     .footer-bottom { padding-bottom: max(1.5rem, env(safe-area-inset-bottom)); }
+    .logo-img { width: 38px; border-radius: 8px; }
+    .footer-logo .logo-img { width: 46px; border-radius: 9px; }
+    .comp-v2-logo { width: 36px; border-radius: 8px; }
 }
 
 /* ─── EXTRA SMALL PHONES ─── */
@@ -1991,6 +1996,8 @@ a.c-card.c-link:hover {
     .footer-social a { width: 40px; height: 40px; }
     .nav-links { width: 260px; padding: 4.5rem 1.2rem 2rem; }
     .container { width: min(calc(100% - 1rem), var(--container)); }
+    .logo-img { width: 34px; border-radius: 7px; }
+    .preloader-logo-img { width: 88px; border-radius: 18px; }
 }
 
 /* ─── LANDSCAPE MOBILE ─── */
