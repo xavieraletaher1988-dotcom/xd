@@ -95,11 +95,6 @@
 .prod-gallery-img-refinado {
     max-height: 460px;
     max-width: 88%;
-    mix-blend-mode: multiply;
-    filter: drop-shadow(0 22px 30px rgba(0,0,0,0.18));
-}
-.prod-gallery-main:hover .prod-gallery-img-refinado {
-    filter: drop-shadow(0 28px 38px rgba(0,0,0,0.22));
 }
 .prod-gallery-features {
     display: flex;
