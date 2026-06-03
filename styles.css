@@ -1136,6 +1136,9 @@ button, input, select, textarea { font: inherit; }
     transition: transform 0.4s ease;
 }
 .prod-img-garrafa { max-height: 200px; }
+.prod-img-refinado {
+    max-height: 230px;
+}
 .prod-card:hover .prod-img { transform: scale(1.05); }
 .prod-badge {
     position: absolute;
@@ -1970,6 +1973,7 @@ a.c-card.c-link:hover {
     .prod-header { height: 200px; }
     .prod-img { max-height: 150px; }
     .prod-img-garrafa { max-height: 170px; }
+    .prod-img-refinado { max-height: 190px; }
     .prod-info { padding: 1.2rem; }
     .prod-info h3 { font-size: 1.05rem; }
     .prod-info > p { font-size: 0.8rem; line-height: 1.6; }

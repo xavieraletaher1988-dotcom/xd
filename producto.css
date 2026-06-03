@@ -92,6 +92,10 @@
     transform: scale(1.06) translateY(-10px);
     filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1));
 }
+.prod-gallery-img-refinado {
+    max-height: 460px;
+    max-width: 88%;
+}
 .prod-gallery-features {
     display: flex;
     gap: 0.8rem;
@@ -414,6 +418,10 @@
     .prod-gallery-img {
         max-height: 260px;
     }
+    .prod-gallery-img-refinado {
+        max-height: 320px;
+        max-width: 90%;
+    }
     .prod-gallery-features {
         flex-direction: column;
     }
@@ -464,6 +472,9 @@
     .prod-gallery-main {
         min-height: 220px;
         border-radius: 12px;
+    }
+    .prod-gallery-img-refinado {
+        max-height: 260px;
     }
     .prod-detail-info h1 {
         font-size: 1.4rem;
