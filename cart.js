@@ -9,7 +9,7 @@
             name: 'Aceite Refinado',
             desc: 'Aceite de Aguacate Hass Refinado 250ml',
             price: 26900,
-            image: 'aceite-refinado-bottle.jpeg',
+            image: 'aceite-refinado-bottle-v2.jpeg',
             size: '250 ml',
             tag: 'Cocina'
         },
