@@ -2676,6 +2676,21 @@ a.c-card.c-link:hover {
     font-weight: 700;
 }
 .receta-ingredientes li strong { color: var(--green); }
+/* Contextual product links inside recipes / blog articles */
+.inline-prod-link {
+    color: var(--gold);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: rgba(184, 150, 12, 0.4);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1.5px;
+    transition: color 0.2s var(--transition-smooth), text-decoration-color 0.2s var(--transition-smooth);
+}
+.inline-prod-link:hover {
+    color: var(--green);
+    text-decoration-color: currentColor;
+}
+.inline-prod-link strong { color: inherit; }
 .receta-pasos ol {
     padding-left: 1.3rem;
 }
