@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     };
-    window.addEventListener('load', () => setTimeout(hidePreloader, 800));
-    setTimeout(hidePreloader, 2000);
+    window.addEventListener('load', () => setTimeout(hidePreloader, 120));
+    setTimeout(hidePreloader, 700);
 
     // ── Navbar scroll ──────────────────────────────────
     const navbar = document.getElementById('navbar');

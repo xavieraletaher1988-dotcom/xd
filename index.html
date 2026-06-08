@@ -3,6 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+      ANALITICA Y PIXELES — plantilla lista para activar (remarketing en Instagram/Facebook + medicion de conversiones).
+      Pasos: 1) Reemplaza GTM-XXXXXXX y TU_PIXEL_ID por tus IDs reales.
+             2) Borra esta linea de apertura del comentario y la linea de cierre de abajo para activarlo.
+             3) Copia el mismo bloque en las demas paginas (.html) para medir todo el sitio.
+
+      GOOGLE TAG MANAGER:
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+
+      META (FACEBOOK) PIXEL:
+      <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init','TU_PIXEL_ID');fbq('track','PageView');</script>
+    -->
     <title>Berahass | Aceite de Aguacate Hass Premium - Colombia</title>
     <meta name="description" content="Berahass - Aceite de aguacate Hass 100% puro de Colombia. Refinado y Extra-Virgen. Rico en Omega 3-6-9, Vitamina E y antioxidantes naturales.">
     <link rel="canonical" href="https://berahass.co/">
@@ -124,7 +145,7 @@
     <!-- Hero Section -->
     <section class="hero" id="inicio">
         <div class="hero-bg">
-            <img src="hero-cultivo.jpg" srcset="hero-cultivo-mobile.jpg 900w, hero-cultivo.jpg 1920w" sizes="100vw" alt="Aguacates Hass frescos colgando del árbol" class="hero-bg-img" fetchpriority="high">
+            <img src="hero-cultivo.jpg" srcset="hero-cultivo-mobile.jpg 900w, hero-cultivo.jpg 1920w" sizes="100vw" alt="Aguacates Hass frescos colgando del árbol" class="hero-bg-img" width="1920" height="1088" fetchpriority="high" decoding="async">
         </div>
         <div class="hero-overlay"></div>
         <!-- Floating particles -->
@@ -151,7 +172,7 @@
                 </p>
                 <div class="hero-buttons">
                     <a href="#productos" class="btn btn-gold btn-lg">
-                        <span>Ver Productos</span>
+                        <span>Probar el Oro Líquido</span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
                     </a>
                 </div>
@@ -207,7 +228,7 @@
     <section class="about-v2" id="nosotros">
         <!-- Panoramic Hero -->
         <div class="about-panorama">
-            <img src="sandid-hass-avocados-5537945_1920.jpg" alt="Plantación de aguacate Hass en Colombia" class="about-panorama-img" loading="lazy">
+            <img src="sandid-hass-avocados-5537945_1920.jpg" alt="Plantación de aguacate Hass en Colombia" class="about-panorama-img" width="1200" height="1689" loading="lazy" decoding="async">
             <div class="about-panorama-overlay"></div>
             <div class="container about-panorama-content">
                 <div class="panorama-badge">
@@ -275,21 +296,21 @@
                 </div>
                 <div class="about-mosaic">
                     <div class="mosaic-item mosaic-tall">
-                        <img src="istockphoto-521202112-612x612.jpg" alt="Aguacates Hass en el árbol" loading="lazy">
+                        <img src="istockphoto-521202112-612x612.jpg" alt="Aguacates Hass en el árbol" width="612" height="612" loading="lazy" decoding="async">
                         <div class="mosaic-label">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M9 12l2 2 4-4"/></svg>
                             Cultivo Sostenible
                         </div>
                     </div>
                     <div class="mosaic-item mosaic-wide">
-                        <img src="WhatsApp Image 2026-04-01 at 9.13.30 PM.jpeg" alt="Aguacates Hass con aceite" loading="lazy">
+                        <img src="WhatsApp Image 2026-04-01 at 9.13.30 PM.jpeg" alt="Aguacates Hass con aceite" width="736" height="913" loading="lazy" decoding="async">
                         <div class="mosaic-label">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
                             Calidad Premium
                         </div>
                     </div>
                     <div class="mosaic-item">
-                        <img src="istockphoto-174946444-612x612.jpg" alt="Aguacate Hass cortado" loading="lazy">
+                        <img src="istockphoto-174946444-612x612.jpg" alt="Aguacate Hass cortado" width="612" height="612" loading="lazy" decoding="async">
                         <div class="mosaic-label">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                             100% Natural
@@ -324,7 +345,7 @@
                 <!-- Refinado -->
                 <div class="prod-card">
                     <div class="prod-header refinado-bg">
-                        <img src="aceite-refinado-bottle-v2.jpeg" alt="Aceite de Aguacate Hass Refinado 250ml" class="prod-img prod-img-refinado" loading="lazy">
+                        <img src="aceite-refinado-bottle-v2.jpeg" alt="Aceite de Aguacate Hass Refinado 250ml" class="prod-img prod-img-refinado" width="1122" height="1402" loading="lazy" decoding="async">
                         <div class="prod-badge">250 ml</div>
                         <span class="prod-tag">Cocina</span>
                     </div>
@@ -344,7 +365,7 @@
                 <!-- Extra Virgen -->
                 <div class="prod-card featured">
                     <div class="prod-header extravirgen-bg">
-                        <img src="PHOTO-2026-04-01-22-43-53.jpg" alt="Aceite de Aguacate Hass Extra Virgen 250ml" class="prod-img" loading="lazy">
+                        <img src="PHOTO-2026-04-01-22-43-53.jpg" alt="Aceite de Aguacate Hass Extra Virgen 250ml" class="prod-img" width="853" height="1280" loading="lazy" decoding="async">
                         <div class="prod-badge gold">250 ml</div>
                         <span class="prod-tag gold">Premium</span>
                     </div>
@@ -364,7 +385,7 @@
                 <!-- Industrial -->
                 <div class="prod-card">
                     <div class="prod-header industrial-bg">
-                        <img src="garrafa.png" alt="Galón 5L Aceite de Aguacate Hass Bera" class="prod-img prod-img-garrafa" loading="lazy">
+                        <img src="garrafa.png" alt="Galón 5L Aceite de Aguacate Hass Bera" class="prod-img prod-img-garrafa" width="494" height="556" loading="lazy" decoding="async">
                         <div class="prod-badge">5 Litros</div>
                         <span class="prod-tag">Mayorista</span>
                     </div>
@@ -389,7 +410,7 @@
     <!-- Benefits Section -->
     <section class="section benefits" id="beneficios">
         <div class="benefits-hero-bg">
-            <img src="WhatsApp Image 2026-04-01 at 9.14.23 PM.jpeg" alt="Aguacates Hass cortados" class="benefits-hero-img" loading="lazy">
+            <img src="WhatsApp Image 2026-04-01 at 9.14.23 PM.jpeg" alt="Aguacates Hass cortados" class="benefits-hero-img" width="1280" height="719" loading="lazy" decoding="async">
             <div class="benefits-hero-overlay"></div>
             <div class="container benefits-hero-content">
                 <span class="section-tag light">Beneficios</span>
