@@ -62,8 +62,10 @@
     <style>
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
         body{font-family:-apple-system,sans-serif;overflow-x:hidden}
-        .preloader{position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#0d2218,#1a3c28,#1a4d2e);display:flex;align-items:center;justify-content:center}
-        .preloader-logo-img{width:110px;height:auto;border-radius:22px;box-shadow:0 10px 40px rgba(0,0,0,.35)}
+        .preloader{position:fixed;inset:0;z-index:9999;background:radial-gradient(120% 120% at 50% 28%,#1f5236,#143726 46%,#0b2016);display:flex;align-items:center;justify-content:center;overflow:hidden}
+        .pl-logo-wrap{position:relative;width:200px;height:200px;margin:0 auto;display:flex;align-items:center;justify-content:center}
+        .preloader-logo{width:130px;height:130px;border-radius:30px;overflow:hidden}
+        .preloader-logo-img{width:100%;height:100%;object-fit:cover;border-radius:30px}
         .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:.9rem 0;background:rgba(255,255,255,.7);backdrop-filter:blur(20px)}
         .nav-container{display:flex;align-items:center;justify-content:space-between;flex-wrap:nowrap}
         .nav-links{display:flex;align-items:center;gap:1.2rem}
@@ -112,10 +114,29 @@
 
     <!-- Preloader -->
     <div class="preloader" id="preloader">
+        <div class="preloader-aura"></div>
+        <div class="preloader-grain"></div>
+        <div class="pl-particles">
+            <span style="--x:8%;--d:6s;--delay:0s"></span>
+            <span style="--x:20%;--d:7.5s;--delay:1.2s"></span>
+            <span style="--x:34%;--d:6.8s;--delay:.5s"></span>
+            <span style="--x:48%;--d:8s;--delay:2s"></span>
+            <span style="--x:62%;--d:7s;--delay:.9s"></span>
+            <span style="--x:76%;--d:6.4s;--delay:1.7s"></span>
+            <span style="--x:88%;--d:7.8s;--delay:.3s"></span>
+            <span style="--x:55%;--d:6.6s;--delay:3s"></span>
+            <span style="--x:28%;--d:8.2s;--delay:2.6s"></span>
+        </div>
         <div class="preloader-inner">
-            <div class="preloader-logo">
-                <img src="BERAHASS1.png" alt="Berahass" class="preloader-logo-img">
+            <div class="pl-logo-wrap">
+                <div class="pl-ring"></div>
+                <div class="pl-ring pl-ring-2"></div>
+                <div class="preloader-logo">
+                    <img src="BERAHASS1.png" alt="Berahass" class="preloader-logo-img">
+                    <span class="pl-shine"></span>
+                </div>
             </div>
+            <span class="pl-tagline">El Oro Líquido de Colombia</span>
             <div class="preloader-bar"><div class="preloader-fill"></div></div>
         </div>
     </div>

@@ -3,7 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── Preloader ──────────────────────────────────────
     const preloader = document.getElementById('preloader');
+    let preloaderDone = false;
     const hidePreloader = () => {
+        if (preloaderDone || !preloader) return;
+        preloaderDone = true;
         preloader.classList.add('hidden');
         // Trigger hero animations after preloader
         document.querySelectorAll('.hero-text h1, .hero-subtitle, .hero-buttons').forEach((el, i) => {
@@ -16,8 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     };
-    window.addEventListener('load', () => setTimeout(hidePreloader, 120));
-    setTimeout(hidePreloader, 700);
+    // Let the brand intro play (~2s) but never block longer than needed
+    let plLoaded = false, plMinElapsed = false;
+    const maybeHidePreloader = () => { if (plLoaded && plMinElapsed) hidePreloader(); };
+    window.addEventListener('load', () => { plLoaded = true; maybeHidePreloader(); });
+    setTimeout(() => { plMinElapsed = true; maybeHidePreloader(); }, 2000);
+    setTimeout(hidePreloader, 3200); // safety cap
 
     // ── Navbar scroll ──────────────────────────────────
     const navbar = document.getElementById('navbar');
