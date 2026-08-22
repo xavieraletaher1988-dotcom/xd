@@ -29,13 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggle = document.getElementById('navToggle');
     const links = document.getElementById('navLinks');
     toggle.addEventListener('click', () => {
-        toggle.classList.toggle('active');
-        links.classList.toggle('active');
+        const abierto = links.classList.toggle('active');
+        toggle.classList.toggle('active', abierto);
+        toggle.setAttribute('aria-expanded', abierto ? 'true' : 'false');
     });
     links.querySelectorAll('a').forEach(a => {
         a.addEventListener('click', () => {
             toggle.classList.remove('active');
             links.classList.remove('active');
+            toggle.setAttribute('aria-expanded', 'false');
         });
     });
 

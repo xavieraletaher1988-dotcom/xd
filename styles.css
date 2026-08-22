@@ -153,8 +153,6 @@ button, input, select, textarea { font: inherit; }
     border-bottom-color: rgba(0,0,0,0.06);
     box-shadow: 0 4px 30px rgba(0,0,0,0.04);
 }
-    box-shadow: 0 8px 32px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04);
-}
 .nav-container {
     display: flex;
     align-items: center;
@@ -1809,7 +1807,11 @@ a.c-card.c-link:hover {
     .nav-links {
         position: fixed;
         top: 0;
-        right: -100%;
+        /* Se desplaza con transform, no con `right: -100%`: un elemento fijo
+           fuera de pantalla ensancha el documento y `overflow-x:hidden` del
+           body no lo recorta, lo que provocaba scroll horizontal. */
+        right: 0;
+        transform: translateX(100%);
         width: 280px;
         height: 100dvh;
         background: #fff;
@@ -1817,12 +1819,12 @@ a.c-card.c-link:hover {
         align-items: stretch;
         padding: 5rem 1.5rem 2rem;
         box-shadow: var(--shadow-lg);
-        transition: right 0.35s var(--transition-smooth);
+        transition: transform 0.35s var(--transition-smooth);
         z-index: 5;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
     }
-    .nav-links.active { right: 0; }
+    .nav-links.active { transform: translateX(0); }
     .nav-links a {
         font-size: 1rem;
         padding: 0.9rem 0;

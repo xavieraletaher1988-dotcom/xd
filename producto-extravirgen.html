@@ -66,8 +66,11 @@
     <nav class="navbar navbar-solid" id="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <img src="BERAHASS1.png" alt="Berahass" class="logo-img">
+                <img src="BERAHASS1.png" alt="Berahass" class="logo-img" width="1080" height="1080">
             </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+                <span></span><span></span><span></span>
+            </button>
             <ul class="nav-links" id="navLinks"><li><a href="index.html">Inicio</a></li><li><a href="index.html#productos">Productos</a></li><li><a href="index.html#contacto" class="btn-nav">Contáctanos</a></li></ul>
         </div>
     </nav>
@@ -108,7 +111,7 @@
                         <div class="spec-row"><span class="spec-label">Registro INVIMA</span><span class="spec-value">PSA-0005936-2025</span></div>
                         <div class="spec-row spec-row-green"><span class="spec-label">Certificación</span><span class="spec-value">Negocios Verdes</span></div>
                     </div>
-                    <div class="prod-detail-nutrients"><h4>Contenido nutricional</h4><div class="detail-nutrients-list"><span>Vitamina A, B1, B2, D, E</span><span>Fitoesteroles</span><span>Magnesio</span><span>Fósforo</span><span>Potasio</span><span>Calcio</span></div></div>
+                    <div class="prod-detail-nutrients"><h2>Contenido nutricional</h2><div class="detail-nutrients-list"><span>Vitamina A, B1, B2, D, E</span><span>Fitoesteroles</span><span>Magnesio</span><span>Fósforo</span><span>Potasio</span><span>Calcio</span></div></div>
                     <div class="prod-detail-cta">
                         <a href="https://wa.me/573173823744?text=Hola%2C%20quiero%20comprar%20el%20Aceite%20Extra%20Virgen%20250ml%20%28%2431.900%29" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg btn-full">
                             <svg width="20" height="20" viewBox="0 0 32 32" fill="#fff"><path d="M16.004 0h-.008C7.174 0 0 7.176 0 16.004c0 3.5 1.128 6.744 3.046 9.378L1.054 31.29l6.118-1.958A15.9 15.9 0 0 0 16.004 32C24.826 32 32 24.826 32 16.004S24.826 0 16.004 0zm9.302 22.602c-.388 1.096-2.28 2.094-3.15 2.172-.792.07-1.788.1-2.886-.182a26.3 26.3 0 0 1-2.612-.968c-4.594-1.98-7.594-6.63-7.824-6.938-.228-.308-1.866-2.484-1.866-4.738s1.18-3.362 1.6-3.822c.42-.46.916-.576 1.222-.576.304 0 .61.002.876.016.282.014.66-.106 1.032.788.388.928 1.302 3.18 1.416 3.41.114.23.19.498.038.806-.152.308-.228.498-.456.768s-.48.604-.686.81c-.228.228-.466.476-.2.934.266.458 1.182 1.95 2.538 3.16 1.742 1.554 3.21 2.036 3.668 2.264.458.228.726.19.992-.114.266-.306 1.142-1.332 1.446-1.79.304-.458.608-.382 1.028-.228.42.152 2.67 1.26 3.13 1.488.458.228.764.344.878.534.114.19.114 1.104-.274 2.2z"/></svg>
@@ -122,15 +125,16 @@
                 </div>
             </div>
             <div class="related-products">
-                <h3>También te puede interesar</h3>
+                <h2>También te puede interesar</h2>
                 <div class="related-grid related-grid-3">
-                    <a href="producto-virgen.html" class="related-card"><div class="related-img virgen-bg"><img src="aceite-virgen-bottle.jpg" alt="Aceite Virgen" width="376" height="1200" loading="lazy" decoding="async"></div><div class="related-info"><h4>Aceite Virgen</h4><span class="related-price">$28.900 COP</span></div></a>
-                    <a href="producto-refinado.html" class="related-card"><div class="related-img refinado-bg"><img src="aceite-refinado-bottle-v2.jpeg" alt="Aceite Refinado" width="376" height="1200" loading="lazy" decoding="async"></div><div class="related-info"><h4>Aceite Refinado</h4><span class="related-price">$26.900 COP</span></div></a>
+                    <a href="producto-virgen.html" class="related-card"><div class="related-img virgen-bg"><img src="aceite-virgen-bottle.jpg" alt="Aceite Virgen" width="376" height="1200" loading="lazy" decoding="async"></div><div class="related-info"><h3>Aceite Virgen</h3><span class="related-price">$28.900 COP</span></div></a>
+                    <a href="producto-refinado.html" class="related-card"><div class="related-img refinado-bg"><img src="aceite-refinado-bottle-v2.jpeg" alt="Aceite Refinado" width="376" height="1200" loading="lazy" decoding="async"></div><div class="related-info"><h3>Aceite Refinado</h3><span class="related-price">$26.900 COP</span></div></a>
                 </div>
             </div>
         </div>
     </section>
     <footer class="footer"><div class="container"><div class="footer-bottom"><p>&copy; 2026 <span class="brand-col"><span class="b-y">Bera</span><span class="b-b">ha</span><span class="b-r">ss</span></span> SAS. Todos los derechos reservados. Colombia &#127464;&#127476;</p></div></div></footer>
     <script src="cart.js" defer></script>
+    <script src="nav.js" defer></script>
 </body>
 </html>

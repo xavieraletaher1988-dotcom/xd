@@ -67,8 +67,11 @@
     <nav class="navbar navbar-solid" id="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <img src="BERAHASS1.png" alt="Berahass" class="logo-img">
+                <img src="BERAHASS1.png" alt="Berahass" class="logo-img" width="1080" height="1080">
             </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+                <span></span><span></span><span></span>
+            </button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="index.html#productos">Productos</a></li>
@@ -164,7 +167,7 @@
 
                     <!-- Nutrients -->
                     <div class="prod-detail-nutrients">
-                        <h4>Contenido nutricional</h4>
+                        <h2>Contenido nutricional</h2>
                         <div class="detail-nutrients-list">
                             <span>Vitamina E</span><span>Omega 3-6-9</span><span>Antioxidantes</span><span>Fitoesteroles</span><span>0 Trans</span><span>0 Sodio</span><span>0 Carbohidratos</span>
                         </div>
@@ -194,14 +197,14 @@
 
             <!-- Related Products -->
             <div class="related-products">
-                <h3>También te puede interesar</h3>
+                <h2>También te puede interesar</h2>
                 <div class="related-grid related-grid-3">
                     <a href="producto-extravirgen.html" class="related-card">
                         <div class="related-img extravirgen-bg">
                             <img src="aceite-extravirgen-bottle.jpg" alt="Aceite Extra Virgen" width="376" height="1200" loading="lazy" decoding="async">
                         </div>
                         <div class="related-info">
-                            <h4>Aceite Extra Virgen</h4>
+                            <h3>Aceite Extra Virgen</h3>
                             <span class="related-price">$31.900 COP</span>
                         </div>
                     </a>
@@ -210,7 +213,7 @@
                             <img src="aceite-refinado-bottle-v2.jpeg" alt="Aceite Refinado" width="376" height="1200" loading="lazy" decoding="async">
                         </div>
                         <div class="related-info">
-                            <h4>Aceite Refinado</h4>
+                            <h3>Aceite Refinado</h3>
                             <span class="related-price">$26.900 COP</span>
                         </div>
                     </a>
@@ -228,5 +231,6 @@
         </div>
     </footer>
     <script src="cart.js" defer></script>
+    <script src="nav.js" defer></script>
 </body>
 </html>
