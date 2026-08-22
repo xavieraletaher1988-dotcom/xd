@@ -57,8 +57,9 @@ button, input, select, textarea { font: inherit; }
     position: fixed;
     inset: 0;
     z-index: 9999;
-    /* Fondo quieto: la maduración ocurre dentro del fruto, no en la pantalla */
-    background: radial-gradient(120% 120% at 50% 42%, #111608 0%, #0a0d05 58%, #050702 100%);
+    /* Campo verde vivo: del verde aguacate joven en el centro al follaje profundo */
+    background: radial-gradient(120% 120% at 50% 40%,
+        #8cc63f 0%, #5aa233 42%, #33792a 72%, #1f5720 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -70,95 +71,79 @@ button, input, select, textarea { font: inherit; }
     visibility: hidden;
     pointer-events: none;
 }
+/* Rayos de luz muy tenues: dan profundidad sin ensuciar el verde */
+.pl-rays {
+    position: absolute;
+    width: 190vmax;
+    height: 190vmax;
+    left: 50%;
+    top: 50%;
+    margin: -95vmax 0 0 -95vmax;
+    background: conic-gradient(from 0deg,
+        rgba(255,255,255,0.10) 0deg, transparent 26deg,
+        rgba(255,255,255,0.08) 52deg, transparent 78deg,
+        rgba(255,255,255,0.10) 104deg, transparent 130deg,
+        rgba(255,255,255,0.07) 156deg, transparent 182deg,
+        rgba(255,255,255,0.10) 208deg, transparent 234deg,
+        rgba(255,255,255,0.08) 260deg, transparent 286deg,
+        rgba(255,255,255,0.09) 312deg, transparent 338deg);
+    /* Muy desenfocado: buscamos atmósfera, no rayos marcados */
+    filter: blur(60px);
+    opacity: 0;
+    pointer-events: none;
+    animation: plRaysIn 1.1s ease 0.1s forwards, plRaysSpin 30s linear infinite;
+}
+@keyframes plRaysIn { to { opacity: 0.55; } }
+@keyframes plRaysSpin { to { transform: rotate(360deg); } }
+/* Halo claro que respira detrás de la marca */
+.pl-bloom {
+    position: absolute;
+    width: 560px;
+    height: 560px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(215,240,150,0.55) 0%, rgba(160,215,90,0.22) 38%, transparent 68%);
+    pointer-events: none;
+    animation: plBloomIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) both,
+               plBreathe 3.4s ease-in-out 0.9s infinite;
+}
+@keyframes plBloomIn {
+    from { opacity: 0; transform: scale(0.7); }
+    to   { opacity: 1; transform: scale(1); }
+}
+@keyframes plBreathe {
+    0%, 100% { transform: scale(1);    opacity: 1; }
+    50%      { transform: scale(1.07); opacity: 0.88; }
+}
 .preloader-inner { text-align: center; position: relative; z-index: 2; }
 .pl-stage {
     position: relative;
     width: 170px;
     height: 170px;
-    margin: 0 auto 1.4rem;
+    margin: 0 auto 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
-/* ── El fruto madura: verde vivo → verde profundo → morado → casi negro.
-      El morado se sostiene, que es el tono que identifica al Hass.      ── */
-.pl-avo {
-    position: absolute;
-    width: 96px;
-    height: 134px;
-    filter: drop-shadow(0 16px 30px rgba(0,0,0,0.55));
-    animation: plAvoIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) both,
-               plAvoOut 0.28s ease 0.80s forwards;
-}
-@keyframes plAvoIn {
-    from { opacity: 0; transform: scale(0.86) translateY(8px); }
-    to   { opacity: 1; transform: none; }
-}
-@keyframes plAvoOut {
-    to { opacity: 0; transform: scale(1.12); }
-}
-.pl-avo-body {
-    fill: #6f9e3f;
-    animation: plRipen 0.8s cubic-bezier(0.4, 0, 0.35, 1) both;
-}
-.pl-avo-stem {
-    stroke: #6b5a2a;
-    animation: plStem 0.8s cubic-bezier(0.4, 0, 0.35, 1) both;
-}
-.pl-avo-shine { fill: rgba(255,255,255,0.10); }
-@keyframes plRipen {
-    0%   { fill: #6f9e3f; }   /* recién cosechado */
-    16%  { fill: #4d7a33; }
-    34%  { fill: #2f5233; }   /* verde profundo */
-    50%  { fill: #4a2545; }   /* morado: el Hass en punto */
-    76%  { fill: #4a2545; }   /* se sostiene */
-    100% { fill: #1a1216; }   /* maduro */
-}
-@keyframes plStem {
-    0%   { stroke: #7d6a30; }
-    50%  { stroke: #5c4a24; }
-    100% { stroke: #2a2018; }
-}
-
-/* ── De la gota brota la marca ── */
-.pl-drop {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 12px;
-    height: 12px;
-    margin-left: -6px;
-    background: linear-gradient(165deg, #f6e6a8 0%, #d4a81a 55%, #a8850a 100%);
-    border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
-    box-shadow: 0 0 16px rgba(212,168,26,0.75);
-    opacity: 0;
-    animation: plDrop 0.34s cubic-bezier(0.5, 0.02, 0.72, 0.16) 0.52s forwards;
-}
-@keyframes plDrop {
-    0%   { transform: translateY(-92px) scaleY(1.6) scaleX(0.8); opacity: 0; }
-    22%  { opacity: 1; }
-    80%  { transform: translateY(72px) scaleY(1.25) scaleX(0.9); opacity: 1; }
-    100% { transform: translateY(82px) scaleY(0.25) scaleX(2.1); opacity: 0; }
-}
+/* Una onda clara que se abre una sola vez al entrar la marca */
 .pl-ring {
     position: absolute;
-    width: 104px;
-    height: 104px;
-    border-radius: 50%;
-    border: 1px solid rgba(212,168,26,0.5);
+    width: 118px;
+    height: 118px;
+    border-radius: 26px;
+    border: 1.5px solid rgba(255,255,255,0.55);
     opacity: 0;
-    animation: plRing 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.84s forwards;
+    animation: plRing 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.34s forwards;
 }
 .pl-ring-b {
-    animation-delay: 0.95s;
-    border-color: rgba(212,168,26,0.26);
+    animation-delay: 0.5s;
+    border-color: rgba(255,255,255,0.3);
 }
 @keyframes plRing {
-    0%   { transform: scale(0.5); opacity: 0; }
-    22%  { opacity: 1; }
-    100% { transform: scale(3.1); opacity: 0; }
+    0%   { transform: scale(0.9); opacity: 0; }
+    20%  { opacity: 1; }
+    100% { transform: scale(2.5); opacity: 0; }
 }
+/* ── La marca, al centro ── */
 .preloader-logo {
     position: relative;
     display: flex;
@@ -166,32 +151,33 @@ button, input, select, textarea { font: inherit; }
     justify-content: center;
 }
 .preloader-logo-img {
-    width: 104px;
+    width: 118px;
     height: auto;
-    border-radius: 24px;
+    border-radius: 26px;
     box-shadow:
-        0 0 0 1px rgba(212,168,26,0.35),
-        0 18px 44px rgba(0,0,0,0.6),
-        0 0 40px rgba(212,168,26,0.18);
+        0 0 0 1px rgba(255,255,255,0.28),
+        0 20px 46px rgba(20,60,20,0.42),
+        0 0 60px rgba(230,255,170,0.28);
     opacity: 0;
-    animation: plLogo 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.86s forwards;
+    animation: plLogo 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.24s forwards;
 }
 @keyframes plLogo {
-    from { opacity: 0; transform: scale(0.82); }
+    from { opacity: 0; transform: scale(0.84); }
     to   { opacity: 1; transform: none; }
 }
 .pl-word {
     display: block;
     font-family: var(--font-display);
-    font-size: 0.6rem;
+    font-size: 0.62rem;
     font-weight: 600;
     letter-spacing: 0.42em;
     text-transform: uppercase;
-    color: rgba(212,168,26,0.85);
+    color: rgba(255,255,255,0.92);
+    text-shadow: 0 1px 10px rgba(20,60,20,0.4);
     margin-bottom: 1.1rem;
     padding-left: 0.42em;
     opacity: 0;
-    animation: plWord 0.45s ease 1.0s forwards;
+    animation: plWord 0.55s ease 0.72s forwards;
 }
 @keyframes plWord {
     from { opacity: 0; transform: translateY(6px); }
@@ -199,9 +185,9 @@ button, input, select, textarea { font: inherit; }
 }
 .preloader-brand { display: none; }
 .preloader-bar {
-    width: 120px;
+    width: 124px;
     height: 2px;
-    background: rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.28);
     border-radius: 4px;
     overflow: hidden;
     margin: 0 auto;
@@ -209,10 +195,10 @@ button, input, select, textarea { font: inherit; }
 .preloader-fill {
     height: 100%;
     width: 0;
-    background: linear-gradient(90deg, var(--gold), #f0d97a, var(--gold));
+    background: linear-gradient(90deg, #f3ecc4, #ffffff, #f3ecc4);
     border-radius: 4px;
-    box-shadow: 0 0 10px rgba(212,168,26,0.5);
-    animation: preloaderFill 1.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    box-shadow: 0 0 12px rgba(255,255,255,0.65);
+    animation: preloaderFill 1.25s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 @keyframes preloaderFill {
     from { width: 0; }
@@ -2115,9 +2101,9 @@ a.c-card.c-link:hover {
     .hero-text h1 { font-size: 1.8rem; }
     .hero-subtitle { font-size: 0.82rem; margin-bottom: 1rem; }
     .about-panorama { min-height: 60vh; }
-    .preloader-logo-img { width: 82px; border-radius: 20px; }
-    .pl-stage { width: 140px; height: 140px; }
-    .pl-avo { width: 80px; height: 112px; }
+    .preloader-logo-img { width: 92px; border-radius: 22px; }
+    .pl-stage { width: 148px; height: 148px; }
+    .pl-bloom { width: 380px; height: 380px; }
 }
 
 /* ─── REDUCED MOTION ─── */
