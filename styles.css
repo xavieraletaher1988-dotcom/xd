@@ -2018,7 +2018,7 @@ a.c-card.c-link:hover {
     .preloader-logo-img { width: 76px; border-radius: 18px; }
     .pl-word { font-size: 1.5rem; }
     .pl-break { display: inline; }
-    .pl-bg { inset: -8px; }
+    .pl-escena-wrap { inset: -12px; }
     .preloader-bar { bottom: 2.4rem; }
     .products { padding: 3.5rem 0; }
     .products-grid { max-width: 100%; }
