@@ -57,72 +57,123 @@ button, input, select, textarea { font: inherit; }
     position: fixed;
     inset: 0;
     z-index: 9999;
-    background: linear-gradient(165deg, #ffffff 0%, #fbf9f4 48%, #f1ede1 100%);
+    /* Luz cenital dorada sobre fondo profundo, como un set de foto de producto */
+    background:
+        radial-gradient(90% 60% at 50% 0%, rgba(212,168,26,0.16) 0%, transparent 60%),
+        radial-gradient(120% 120% at 50% 45%, #14180d 0%, #0a0c06 62%, #050603 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     transition: opacity 0.7s var(--transition-smooth), visibility 0.7s var(--transition-smooth);
-}
-/* Halo dorado muy tenue detrás del logo */
-.preloader::after {
-    content: '';
-    position: absolute;
-    width: 460px;
-    height: 460px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(184,150,12,0.10) 0%, transparent 68%);
-    pointer-events: none;
 }
 .preloader.hidden {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
 }
-.preloader-inner {
-    text-align: center;
+.preloader-inner { text-align: center; }
+
+/* ── Escena: la gota cae, ondea y de ahí emerge la marca ── */
+.pl-stage {
     position: relative;
-    z-index: 1;
-}
-.preloader-logo {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.9rem;
+}
+.pl-drop {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    margin-left: -6px;
+    background: linear-gradient(165deg, #f6e6a8 0%, #d4a81a 55%, #a8850a 100%);
+    border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
+    box-shadow: 0 0 16px rgba(212,168,26,0.7);
+    opacity: 0;
+    animation: plDrop 0.4s cubic-bezier(0.5, 0.02, 0.72, 0.16) 0.04s forwards;
+}
+@keyframes plDrop {
+    0%   { transform: translateY(-84px) scaleY(1.6) scaleX(0.8); opacity: 0; }
+    22%  { opacity: 1; }
+    80%  { transform: translateY(63px) scaleY(1.25) scaleX(0.9); opacity: 1; }
+    100% { transform: translateY(72px) scaleY(0.25) scaleX(2.1); opacity: 0; }
+}
+.pl-ring {
+    position: absolute;
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    border: 1px solid rgba(212,168,26,0.5);
+    opacity: 0;
+    animation: plRing 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.38s forwards;
+}
+.pl-ring-b {
+    animation-delay: 0.52s;
+    border-color: rgba(212,168,26,0.26);
+}
+@keyframes plRing {
+    0%   { transform: scale(0.5); opacity: 0; }
+    22%  { opacity: 1; }
+    100% { transform: scale(3.1); opacity: 0; }
+}
+.preloader-logo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .preloader-logo-img {
     width: 104px;
     height: auto;
     border-radius: 24px;
-    box-shadow: 0 20px 44px rgba(26,60,40,0.20), 0 4px 12px rgba(0,0,0,0.06);
-    animation: plRise 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+    box-shadow:
+        0 0 0 1px rgba(212,168,26,0.35),
+        0 18px 44px rgba(0,0,0,0.6),
+        0 0 40px rgba(212,168,26,0.18);
+    opacity: 0;
+    animation: plLogo 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.42s forwards;
 }
-@keyframes plRise {
-    from { opacity: 0; transform: translateY(16px) scale(0.94); }
+@keyframes plLogo {
+    from { opacity: 0; transform: scale(0.82); }
     to   { opacity: 1; transform: none; }
 }
-.preloader-brand {
-    display: none;
+.pl-word {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: rgba(212,168,26,0.85);
+    margin-bottom: 1.1rem;
+    padding-left: 0.42em;
+    opacity: 0;
+    animation: plWord 0.55s ease 0.78s forwards;
 }
+@keyframes plWord {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: none; }
+}
+.preloader-brand { display: none; }
 .preloader-bar {
-    width: 132px;
+    width: 120px;
     height: 2px;
-    background: rgba(26,60,40,0.10);
+    background: rgba(255,255,255,0.09);
     border-radius: 4px;
     overflow: hidden;
     margin: 0 auto;
-    position: relative;
-    animation: plFadeIn 0.5s ease 0.25s both;
-}
-@keyframes plFadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
 }
 .preloader-fill {
     height: 100%;
     width: 0;
-    background: linear-gradient(90deg, var(--gold), var(--gold-2));
+    background: linear-gradient(90deg, var(--gold), #f0d97a, var(--gold));
     border-radius: 4px;
-    animation: preloaderFill 1.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    box-shadow: 0 0 10px rgba(212,168,26,0.5);
+    animation: preloaderFill 1.15s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 @keyframes preloaderFill {
     from { width: 0; }
@@ -1132,7 +1183,7 @@ button, input, select, textarea { font: inherit; }
 }
 .prod-header {
     position: relative;
-    height: 240px;
+    height: 268px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1148,11 +1199,11 @@ button, input, select, textarea { font: inherit; }
     object-fit: contain;
     transition: transform 0.4s ease;
 }
-.prod-img-garrafa { max-height: 200px; }
+.prod-img-garrafa { max-height: 228px; }
 /* Fotos de botella recortadas (virgen y extra virgen): la botella ocupa el
    92% del encuadre, así que se limitan a 200px para que se vea del mismo
    tamaño que la del refinado. */
-.prod-img-botella { max-height: 200px; }
+.prod-img-botella { max-height: 252px; }
 .prod-img-refinado {
     max-height: 230px;
     filter: drop-shadow(0 14px 22px rgba(0,0,0,0.18));
@@ -1951,11 +2002,11 @@ a.c-card.c-link:hover {
     .products { padding: 3.5rem 0; }
     .products-grid { max-width: 100%; }
     .prod-card { border-radius: 12px; }
-    .prod-header { height: 200px; }
+    .prod-header { height: 226px; }
     .prod-img { max-height: 150px; }
-    .prod-img-garrafa { max-height: 170px; }
+    .prod-img-garrafa { max-height: 192px; }
     .prod-img-refinado { max-height: 190px; }
-    .prod-img-botella { max-height: 170px; }
+    .prod-img-botella { max-height: 212px; }
     .prod-info { padding: 1.2rem; }
     .prod-info h3 { font-size: 1.05rem; }
     .prod-info > p { font-size: 0.8rem; line-height: 1.6; }
@@ -2035,7 +2086,8 @@ a.c-card.c-link:hover {
     .hero-text h1 { font-size: 1.8rem; }
     .hero-subtitle { font-size: 0.82rem; margin-bottom: 1rem; }
     .about-panorama { min-height: 60vh; }
-    .preloader-logo-img { width: 76px; border-radius: 18px; }
+    .preloader-logo-img { width: 82px; border-radius: 20px; }
+    .pl-stage { width: 124px; height: 124px; }
 }
 
 /* ─── REDUCED MOTION ─── */
