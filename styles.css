@@ -1028,12 +1028,19 @@ button, input, select, textarea { font: inherit; }
     border-radius: 50%;
     pointer-events: none;
 }
+/* 4 productos: la sección usa un contenedor un poco más ancho para que
+   cada tarjeta conserve un ancho cómodo en la fila de cuatro. */
+.products .container { --container: 1280px; }
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
     position: relative;
     z-index: 1;
+}
+/* Por debajo de 1100px cuatro columnas quedan estrechas: pasamos a 2x2 */
+@media (max-width: 1100px) {
+    .products-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
 }
 .trust-badges {
     display: flex;
@@ -1077,6 +1084,10 @@ button, input, select, textarea { font: inherit; }
     transition: all 0.4s var(--transition-smooth);
     position: relative;
     border: 1px solid rgba(255,255,255,0.1);
+    /* Columna flex para que las 4 tarjetas alineen el botón abajo
+       aunque la descripción tenga distinto largo */
+    display: flex;
+    flex-direction: column;
 }
 .prod-card::before {
     content: '';
@@ -1119,6 +1130,7 @@ button, input, select, textarea { font: inherit; }
     overflow: hidden;
 }
 .refinado-bg { background: #ffffff; }
+.virgen-bg { background: #ffffff; }
 .extravirgen-bg { background: #ffffff; }
 .industrial-bg { background: #ffffff; }
 .prod-img {
@@ -1128,6 +1140,10 @@ button, input, select, textarea { font: inherit; }
     transition: transform 0.4s ease;
 }
 .prod-img-garrafa { max-height: 200px; }
+/* Fotos de botella recortadas (virgen y extra virgen): la botella ocupa el
+   92% del encuadre, así que se limitan a 200px para que se vea del mismo
+   tamaño que la del refinado. */
+.prod-img-botella { max-height: 200px; }
 .prod-img-refinado {
     max-height: 230px;
     filter: drop-shadow(0 14px 22px rgba(0,0,0,0.18));
@@ -1162,6 +1178,9 @@ button, input, select, textarea { font: inherit; }
 .prod-tag.gold { background: var(--gold); }
 .prod-info {
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 .prod-info h3 {
     font-family: var(--font-display);
@@ -1224,7 +1243,7 @@ button, input, select, textarea { font: inherit; }
 .prod-price-gold .price-amount {
     color: var(--gold);
 }
-.prod-actions { display: flex; gap: 0.6rem; }
+.prod-actions { display: flex; gap: 0.6rem; margin-top: auto; }
 .btn-prod {
     flex: 1;
     text-align: center;
@@ -1927,6 +1946,7 @@ a.c-card.c-link:hover {
     .prod-img { max-height: 150px; }
     .prod-img-garrafa { max-height: 170px; }
     .prod-img-refinado { max-height: 190px; }
+    .prod-img-botella { max-height: 170px; }
     .prod-info { padding: 1.2rem; }
     .prod-info h3 { font-size: 1.05rem; }
     .prod-info > p { font-size: 0.8rem; line-height: 1.6; }

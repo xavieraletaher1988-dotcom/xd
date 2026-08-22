@@ -92,6 +92,20 @@
     transform: scale(1.06) translateY(-10px);
     filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1));
 }
+/* Fotos de botella recortadas (virgen y extra virgen): la botella ocupa el
+   92% del encuadre, por eso van algo más contenidas que el refinado.
+   El multiply funde el fondo blanco de la foto con el degradado del marco;
+   sin él se vería el rectángulo de la imagen. */
+.prod-gallery-img-botella {
+    max-height: 430px;
+    max-width: 62%;
+    mix-blend-mode: multiply;
+}
+/* El drop-shadow genérico del hover dibujaría la sombra del rectángulo
+   de la foto, no de la botella: la anulamos. */
+.prod-gallery-main:hover .prod-gallery-img-botella {
+    filter: none;
+}
 .prod-gallery-img-refinado {
     max-height: 460px;
     max-width: 88%;
@@ -352,6 +366,11 @@
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
 }
+/* Con 4 productos, cada ficha muestra los otros tres */
+.related-grid-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) {
+    .related-grid-3 { grid-template-columns: 1fr 1fr; }
+}
 .related-card {
     background: white;
     border-radius: var(--radius);
@@ -427,6 +446,10 @@
         max-height: 320px;
         max-width: 90%;
     }
+    .prod-gallery-img-botella {
+        max-height: 290px;
+        max-width: 70%;
+    }
     .prod-gallery-features {
         flex-direction: column;
     }
@@ -452,7 +475,8 @@
     .spec-row {
         font-size: 0.85rem;
     }
-    .related-grid {
+    .related-grid,
+    .related-grid-3 {
         grid-template-columns: 1fr;
     }
     .related-img {
@@ -480,6 +504,9 @@
     }
     .prod-gallery-img-refinado {
         max-height: 260px;
+    }
+    .prod-gallery-img-botella {
+        max-height: 235px;
     }
     .prod-detail-info h1 {
         font-size: 1.4rem;
