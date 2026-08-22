@@ -16,7 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     };
-    window.addEventListener('load', () => setTimeout(hidePreloader, 800));
+    // La intro dura ~1,45s. Se mantiene ese minimo para que no se corte a
+    // media animacion en conexiones rapidas. El tope absoluto (2s) queda
+    // igual que antes, para no alargar el peor caso.
+    const preloaderStart = Date.now();
+    const MIN_INTRO = 1500;
+    window.addEventListener('load', () => {
+        setTimeout(hidePreloader, Math.max(0, MIN_INTRO - (Date.now() - preloaderStart)));
+    });
     setTimeout(hidePreloader, 2000);
 
     // ── Navbar scroll ──────────────────────────────────

@@ -57,8 +57,8 @@ button, input, select, textarea { font: inherit; }
     position: fixed;
     inset: 0;
     z-index: 9999;
-    /* Etapa 1 — Hass recién cosechado: verde vivo */
-    background: radial-gradient(120% 120% at 50% 35%, #6f9e3f 0%, #47702c 55%, #2c4a1e 100%);
+    /* Fondo quieto: la maduración ocurre dentro del fruto, no en la pantalla */
+    background: radial-gradient(120% 120% at 50% 42%, #111608 0%, #0a0d05 58%, #050702 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -70,50 +70,58 @@ button, input, select, textarea { font: inherit; }
     visibility: hidden;
     pointer-events: none;
 }
-/* El Hass madura: cada capa funde a la siguiente etapa de color */
-.pl-hue {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    pointer-events: none;
-}
-/* Etapa 2 — verde profundo */
-.pl-hue-2 {
-    background: radial-gradient(120% 120% at 50% 35%, #3f6b30 0%, #24401f 55%, #16290f 100%);
-    animation: plHue 0.5s ease 0.16s forwards;
-}
-/* Etapa 3 — morado, el Hass en punto */
-.pl-hue-3 {
-    background: radial-gradient(120% 120% at 50% 35%, #4a2545 0%, #2b142a 55%, #190d19 100%);
-    animation: plHue 0.42s ease 0.44s forwards;
-}
-/* Etapa 4 — maduro: casi negro, con la luz dorada del aceite */
-.pl-hue-4 {
-    background:
-        radial-gradient(100% 70% at 50% 22%, rgba(212,168,26,0.16) 0%, transparent 55%),
-        radial-gradient(120% 120% at 50% 40%, #241a20 0%, #140f13 55%, #0b080a 100%);
-    animation: plHue 0.55s ease 0.8s forwards;
-}
-@keyframes plHue {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-.preloader-inner {
-    text-align: center;
-    position: relative;
-    z-index: 2;
-}
-
-/* ── Del fruto maduro brota el aceite ── */
+.preloader-inner { text-align: center; position: relative; z-index: 2; }
 .pl-stage {
     position: relative;
-    width: 150px;
-    height: 150px;
-    margin: 0 auto 1.5rem;
+    width: 170px;
+    height: 170px;
+    margin: 0 auto 1.4rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
+/* ── El fruto madura: verde vivo → verde profundo → morado → casi negro.
+      El morado se sostiene, que es el tono que identifica al Hass.      ── */
+.pl-avo {
+    position: absolute;
+    width: 96px;
+    height: 134px;
+    filter: drop-shadow(0 16px 30px rgba(0,0,0,0.55));
+    animation: plAvoIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) both,
+               plAvoOut 0.28s ease 0.80s forwards;
+}
+@keyframes plAvoIn {
+    from { opacity: 0; transform: scale(0.86) translateY(8px); }
+    to   { opacity: 1; transform: none; }
+}
+@keyframes plAvoOut {
+    to { opacity: 0; transform: scale(1.12); }
+}
+.pl-avo-body {
+    fill: #6f9e3f;
+    animation: plRipen 0.8s cubic-bezier(0.4, 0, 0.35, 1) both;
+}
+.pl-avo-stem {
+    stroke: #6b5a2a;
+    animation: plStem 0.8s cubic-bezier(0.4, 0, 0.35, 1) both;
+}
+.pl-avo-shine { fill: rgba(255,255,255,0.10); }
+@keyframes plRipen {
+    0%   { fill: #6f9e3f; }   /* recién cosechado */
+    16%  { fill: #4d7a33; }
+    34%  { fill: #2f5233; }   /* verde profundo */
+    50%  { fill: #4a2545; }   /* morado: el Hass en punto */
+    76%  { fill: #4a2545; }   /* se sostiene */
+    100% { fill: #1a1216; }   /* maduro */
+}
+@keyframes plStem {
+    0%   { stroke: #7d6a30; }
+    50%  { stroke: #5c4a24; }
+    100% { stroke: #2a2018; }
+}
+
+/* ── De la gota brota la marca ── */
 .pl-drop {
     position: absolute;
     top: 0;
@@ -125,13 +133,13 @@ button, input, select, textarea { font: inherit; }
     border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
     box-shadow: 0 0 16px rgba(212,168,26,0.75);
     opacity: 0;
-    animation: plDrop 0.42s cubic-bezier(0.5, 0.02, 0.72, 0.16) 0.32s forwards;
+    animation: plDrop 0.34s cubic-bezier(0.5, 0.02, 0.72, 0.16) 0.52s forwards;
 }
 @keyframes plDrop {
-    0%   { transform: translateY(-84px) scaleY(1.6) scaleX(0.8); opacity: 0; }
+    0%   { transform: translateY(-92px) scaleY(1.6) scaleX(0.8); opacity: 0; }
     22%  { opacity: 1; }
-    80%  { transform: translateY(63px) scaleY(1.25) scaleX(0.9); opacity: 1; }
-    100% { transform: translateY(72px) scaleY(0.25) scaleX(2.1); opacity: 0; }
+    80%  { transform: translateY(72px) scaleY(1.25) scaleX(0.9); opacity: 1; }
+    100% { transform: translateY(82px) scaleY(0.25) scaleX(2.1); opacity: 0; }
 }
 .pl-ring {
     position: absolute;
@@ -140,10 +148,10 @@ button, input, select, textarea { font: inherit; }
     border-radius: 50%;
     border: 1px solid rgba(212,168,26,0.5);
     opacity: 0;
-    animation: plRing 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards;
+    animation: plRing 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.84s forwards;
 }
 .pl-ring-b {
-    animation-delay: 0.84s;
+    animation-delay: 0.95s;
     border-color: rgba(212,168,26,0.26);
 }
 @keyframes plRing {
@@ -166,7 +174,7 @@ button, input, select, textarea { font: inherit; }
         0 18px 44px rgba(0,0,0,0.6),
         0 0 40px rgba(212,168,26,0.18);
     opacity: 0;
-    animation: plLogo 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.74s forwards;
+    animation: plLogo 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.86s forwards;
 }
 @keyframes plLogo {
     from { opacity: 0; transform: scale(0.82); }
@@ -183,7 +191,7 @@ button, input, select, textarea { font: inherit; }
     margin-bottom: 1.1rem;
     padding-left: 0.42em;
     opacity: 0;
-    animation: plWord 0.55s ease 1.02s forwards;
+    animation: plWord 0.45s ease 1.0s forwards;
 }
 @keyframes plWord {
     from { opacity: 0; transform: translateY(6px); }
@@ -193,7 +201,7 @@ button, input, select, textarea { font: inherit; }
 .preloader-bar {
     width: 120px;
     height: 2px;
-    background: rgba(255,255,255,0.14);
+    background: rgba(255,255,255,0.12);
     border-radius: 4px;
     overflow: hidden;
     margin: 0 auto;
@@ -204,7 +212,7 @@ button, input, select, textarea { font: inherit; }
     background: linear-gradient(90deg, var(--gold), #f0d97a, var(--gold));
     border-radius: 4px;
     box-shadow: 0 0 10px rgba(212,168,26,0.5);
-    animation: preloaderFill 1.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: preloaderFill 1.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 @keyframes preloaderFill {
     from { width: 0; }
@@ -1119,19 +1127,12 @@ button, input, select, textarea { font: inherit; }
     border-radius: 50%;
     pointer-events: none;
 }
-/* 4 productos: la sección usa un contenedor un poco más ancho para que
-   cada tarjeta conserve un ancho cómodo en la fila de cuatro. */
-.products .container { --container: 1280px; }
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.25rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
     position: relative;
     z-index: 1;
-}
-/* Por debajo de 1100px cuatro columnas quedan estrechas: pasamos a 2x2 */
-@media (max-width: 1100px) {
-    .products-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
 }
 .trust-badges {
     display: flex;
@@ -1223,14 +1224,12 @@ button, input, select, textarea { font: inherit; }
 .refinado-bg { background: #ffffff; }
 .virgen-bg { background: #ffffff; }
 .extravirgen-bg { background: #ffffff; }
-.industrial-bg { background: #ffffff; }
 .prod-img {
     max-height: 180px;
     width: auto;
     object-fit: contain;
     transition: transform 0.4s ease;
 }
-.prod-img-garrafa { max-height: 228px; }
 /* Fotos de botella recortadas (virgen y extra virgen): la botella ocupa el
    92% del encuadre, así que se limitan a 200px para que se vea del mismo
    tamaño que la del refinado. */
@@ -2035,8 +2034,7 @@ a.c-card.c-link:hover {
     .prod-card { border-radius: 12px; }
     .prod-header { height: 226px; }
     .prod-img { max-height: 150px; }
-    .prod-img-garrafa { max-height: 192px; }
-    .prod-img-refinado { max-height: 190px; }
+        .prod-img-refinado { max-height: 190px; }
     .prod-img-botella { max-height: 212px; }
     .prod-info { padding: 1.2rem; }
     .prod-info h3 { font-size: 1.05rem; }
@@ -2118,7 +2116,8 @@ a.c-card.c-link:hover {
     .hero-subtitle { font-size: 0.82rem; margin-bottom: 1rem; }
     .about-panorama { min-height: 60vh; }
     .preloader-logo-img { width: 82px; border-radius: 20px; }
-    .pl-stage { width: 124px; height: 124px; }
+    .pl-stage { width: 140px; height: 140px; }
+    .pl-avo { width: 80px; height: 112px; }
 }
 
 /* ─── REDUCED MOTION ─── */

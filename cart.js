@@ -30,15 +30,6 @@
             image: 'aceite-extravirgen-bottle.jpg',
             size: '250 ml',
             tag: 'Premium'
-        },
-        'industrial-5l': {
-            id: 'industrial-5l',
-            name: 'Garrafa Industrial',
-            desc: 'Aceite de Aguacate Hass 5 Litros',
-            price: 509900,
-            image: 'garrafa.png',
-            size: '5 Litros',
-            tag: 'Mayorista'
         }
     };
 

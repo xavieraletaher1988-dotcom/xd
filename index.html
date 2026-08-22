@@ -9,7 +9,7 @@
     <!-- Open Graph / WhatsApp / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Berahass | Aceite de Aguacate Hass Premium">
-    <meta property="og:description" content="Aceite de aguacate Hass 100% puro, prensado en fr&iacute;o desde Colombia. Refinado, Virgen, Extra Virgen y Gal&oacute;n de 5 Litros.">
+    <meta property="og:description" content="Aceite de aguacate Hass 100% puro, prensado en fr&iacute;o desde Colombia. Refinado, Virgen y Extra Virgen.">
     <meta property="og:image" content="https://berahass.co/hero-cultivo.jpg">
     <meta property="og:url" content="https://berahass.co/">
     <meta property="og:locale" content="es_CO">
@@ -41,7 +41,7 @@
     <style>
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
         body{font-family:-apple-system,sans-serif;overflow-x:hidden}
-        .preloader{position:fixed;inset:0;z-index:9999;background:radial-gradient(120% 120% at 50% 35%,#6f9e3f,#47702c 55%,#2c4a1e);display:flex;align-items:center;justify-content:center;overflow:hidden}
+        .preloader{position:fixed;inset:0;z-index:9999;background:radial-gradient(120% 120% at 50% 42%,#111608,#0a0d05 58%,#050702);display:flex;align-items:center;justify-content:center;overflow:hidden}
         .preloader-logo-img{width:104px;height:auto;border-radius:24px;opacity:0}
         .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:.9rem 0;background:rgba(255,255,255,.7);backdrop-filter:blur(20px)}
         .nav-container{display:flex;align-items:center;justify-content:space-between;flex-wrap:nowrap}
@@ -57,7 +57,7 @@
       "legalName": "Berahass SAS",
       "url": "https://berahass.co",
       "logo": "https://berahass.co/BERAHASS1.png",
-      "description": "Aceite de aguacate Hass 100% puro de Colombia. Refinado, Virgen, Extra Virgen y Galón industrial.",
+      "description": "Aceite de aguacate Hass 100% puro de Colombia. Refinado, Virgen y Extra Virgen.",
       "foundingDate": "2025",
       "address": {
         "@type": "PostalAddress",
@@ -89,13 +89,15 @@
 </head>
 <body>
 
-    <!-- Preloader: el Hass madura (verde -> morado -> casi negro) y de ahi brota el aceite -->
+    <!-- Preloader: el Hass madura dentro de la silueta del fruto y de ahi brota el aceite -->
     <div class="preloader" id="preloader">
-        <span class="pl-hue pl-hue-2"></span>
-        <span class="pl-hue pl-hue-3"></span>
-        <span class="pl-hue pl-hue-4"></span>
         <div class="preloader-inner">
             <div class="pl-stage">
+                <svg class="pl-avo" viewBox="0 0 100 140" aria-hidden="true" focusable="false">
+                    <path class="pl-avo-stem" d="M50 16 C50 10 49 6 46 2" fill="none" stroke-width="4" stroke-linecap="round"/>
+                    <path class="pl-avo-body" d="M50 14 C60 14 68 26 68 42 C68 56 84 70 84 94 C84 120 69 134 50 134 C31 134 16 120 16 94 C16 70 32 56 32 42 C32 26 40 14 50 14 Z"/>
+                    <ellipse class="pl-avo-shine" cx="38" cy="62" rx="9" ry="16" transform="rotate(-18 38 62)"/>
+                </svg>
                 <span class="pl-drop"></span>
                 <span class="pl-ring"></span>
                 <span class="pl-ring pl-ring-b"></span>
@@ -316,7 +318,7 @@
         <div class="container">
             <div class="section-header light">
                 <span class="section-tag light">Nuestros Productos</span>
-                <h2>Cuatro Presentaciones,<br><span class="text-gold">Una Sola Calidad</span></h2>
+                <h2>Tres Presentaciones,<br><span class="text-gold">Una Sola Calidad</span></h2>
                 <p>Cada gota de aceite <span class="brand-col"><span class="b-y">Bera</span><span class="b-b">ha</span><span class="b-r">ss</span></span> es sinónimo de pureza, nutrición y sabor excepcional.</p>
                 <div class="trust-badges">
                     <div class="trust-badge-item">
@@ -387,26 +389,6 @@
 
                         <div class="prod-actions">
                             <a href="producto-extravirgen.html" class="btn btn-prod btn-prod-gold">Ver Producto</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Industrial -->
-                <div class="prod-card">
-                    <div class="prod-header industrial-bg">
-                        <img src="garrafa.png" alt="Galón 5L Aceite de Aguacate Hass Bera" class="prod-img prod-img-garrafa" loading="lazy">
-                        <div class="prod-badge">5 Litros</div>
-                        <span class="prod-tag">Mayorista</span>
-                    </div>
-                    <div class="prod-info">
-                        <h3>Galón de 5 Litros</h3>
-                        <p class="prod-sub">5L &mdash; 500 porciones por envase</p>
-                        <p>Presentación para restaurantes, hoteles, industria alimenticia y distribuidores. La misma calidad en formato de alto rendimiento.</p>
-                        <div class="prod-nutrients">
-                            <span>891 kcal/100g</span><span>Calcio 490mg</span><span>Zinc 13mg</span><span>Grasa Sat. 13g</span>
-                        </div>
-
-                        <div class="prod-actions">
-                            <a href="producto-industrial.html" class="btn btn-prod">Ver Producto</a>
                         </div>
                     </div>
                 </div>
@@ -648,7 +630,6 @@
                                     <option value="refinado">Aceite Refinado 250ml</option>
                                     <option value="virgen">Aceite Virgen 250ml</option>
                                     <option value="extravirgen">Aceite Extra Virgen 250ml</option>
-                                    <option value="industrial">Galón de 5 Litros</option>
                                     <option value="distribucion">Distribución</option>
                                     <option value="exportacion">Exportación</option>
                                     <option value="otro">Otro</option>
@@ -700,7 +681,6 @@
                 <div class="footer-nav">
                     <h4>Productos</h4>
                     <ul>
-                        <li><a href="producto-industrial.html">Galón de 5 Litros</a></li>
                         <li><a href="producto-virgen.html">Aceite Virgen 250ml</a></li>
                         <li><a href="producto-extravirgen.html">Aceite Extra Virgen 250ml</a></li>
                         <li><a href="producto-refinado.html">Aceite Refinado 250ml</a></li>
