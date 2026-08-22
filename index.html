@@ -19,7 +19,7 @@
     <meta name="twitter:description" content="Aceite de aguacate Hass 100% puro de Colombia.">
     <meta name="twitter:image" content="https://berahass.co/hero-cultivo.jpg">
     <!-- Theme color for mobile browsers -->
-    <meta name="theme-color" content="#5aa233">
+    <meta name="theme-color" content="#0d2218">
     <link rel="icon" type="image/png" sizes="48x48" href="favicon-48-v2.png">
     <link rel="icon" type="image/png" sizes="192x192" href="favicon-192-v2.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-v2.png">
@@ -41,8 +41,8 @@
     <style>
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
         body{font-family:-apple-system,sans-serif;overflow-x:hidden}
-        .preloader{position:fixed;inset:0;z-index:9999;background:radial-gradient(120% 120% at 50% 40%,#8cc63f,#5aa233 42%,#33792a 72%,#1f5720);display:flex;align-items:center;justify-content:center;overflow:hidden}
-        .preloader-logo-img{width:118px;height:auto;border-radius:26px;opacity:0}
+        .preloader{position:fixed;inset:0;z-index:9999;background:#0d2218;display:flex;align-items:center;justify-content:center;overflow:hidden}
+        .preloader-logo-img{width:96px;height:auto;border-radius:22px;opacity:0}
         .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:.9rem 0;background:rgba(255,255,255,.7);backdrop-filter:blur(20px)}
         .nav-container{display:flex;align-items:center;justify-content:space-between;flex-wrap:nowrap}
         .nav-links{display:flex;align-items:center;gap:1.2rem}
@@ -89,21 +89,26 @@
 </head>
 <body>
 
-    <!-- Preloader: campo verde vivo con la marca al centro -->
+    <!-- Preloader: el hero destilado. Misma foto y mismo velo, para que
+         al desvanecerse la intro se disuelva dentro de la portada. -->
     <div class="preloader" id="preloader">
-        <span class="pl-rays"></span>
-        <span class="pl-bloom"></span>
-        <div class="preloader-inner">
-            <div class="pl-stage">
-                <span class="pl-ring"></span>
-                <span class="pl-ring pl-ring-b"></span>
-                <div class="preloader-logo">
-                    <img src="BERAHASS1.png" alt="Berahass" class="preloader-logo-img">
-                </div>
-            </div>
-            <span class="pl-word">Aceite de Aguacate Hass</span>
-            <div class="preloader-bar"><div class="preloader-fill"></div></div>
+        <div class="pl-bg"></div>
+        <div class="pl-overlay"></div>
+        <div class="pl-motes">
+            <span style="--x:14%;--y:24%;--s:5px;--d:9s;--delay:0s"></span>
+            <span style="--x:30%;--y:72%;--s:4px;--d:12s;--delay:1.4s"></span>
+            <span style="--x:52%;--y:18%;--s:6px;--d:10s;--delay:.6s"></span>
+            <span style="--x:73%;--y:64%;--s:3px;--d:13s;--delay:2.1s"></span>
+            <span style="--x:88%;--y:31%;--s:5px;--d:11s;--delay:.9s"></span>
         </div>
+        <div class="preloader-inner">
+            <div class="preloader-logo">
+                <img src="BERAHASS1.png" alt="Berahass" class="preloader-logo-img">
+            </div>
+            <span class="pl-line"></span>
+            <span class="pl-word">El Oro L&iacute;quido <br class="pl-break">de Colombia</span>
+        </div>
+        <div class="preloader-bar"><div class="preloader-fill"></div></div>
     </div>
 
     <!-- Navigation -->
