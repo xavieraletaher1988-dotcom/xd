@@ -19,7 +19,7 @@
     <meta name="twitter:description" content="Aceite de aguacate Hass 100% puro de Colombia.">
     <meta name="twitter:image" content="https://berahass.co/hero-cultivo.jpg">
     <!-- Theme color for mobile browsers -->
-    <meta name="theme-color" content="#0a0c06">
+    <meta name="theme-color" content="#0b080a">
     <link rel="icon" type="image/png" sizes="48x48" href="favicon-48-v2.png">
     <link rel="icon" type="image/png" sizes="192x192" href="favicon-192-v2.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-v2.png">
@@ -41,7 +41,7 @@
     <style>
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
         body{font-family:-apple-system,sans-serif;overflow-x:hidden}
-        .preloader{position:fixed;inset:0;z-index:9999;background:radial-gradient(90% 60% at 50% 0%,rgba(212,168,26,.16),transparent 60%),radial-gradient(120% 120% at 50% 45%,#14180d,#0a0c06 62%,#050603);display:flex;align-items:center;justify-content:center}
+        .preloader{position:fixed;inset:0;z-index:9999;background:radial-gradient(120% 120% at 50% 35%,#6f9e3f,#47702c 55%,#2c4a1e);display:flex;align-items:center;justify-content:center;overflow:hidden}
         .preloader-logo-img{width:104px;height:auto;border-radius:24px;opacity:0}
         .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:.9rem 0;background:rgba(255,255,255,.7);backdrop-filter:blur(20px)}
         .nav-container{display:flex;align-items:center;justify-content:space-between;flex-wrap:nowrap}
@@ -89,8 +89,11 @@
 </head>
 <body>
 
-    <!-- Preloader -->
+    <!-- Preloader: el Hass madura (verde -> morado -> casi negro) y de ahi brota el aceite -->
     <div class="preloader" id="preloader">
+        <span class="pl-hue pl-hue-2"></span>
+        <span class="pl-hue pl-hue-3"></span>
+        <span class="pl-hue pl-hue-4"></span>
         <div class="preloader-inner">
             <div class="pl-stage">
                 <span class="pl-drop"></span>
