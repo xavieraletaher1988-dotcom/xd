@@ -89,10 +89,152 @@
 </head>
 <body>
 
-    <!-- Preloader: el hero destilado. Misma foto y mismo velo, para que
-         al desvanecerse la intro se disuelva dentro de la portada. -->
+    <!-- Preloader: ilustracion propia (cultivo en siluetas al amanecer),
+         para no repetir la fotografia de la portada. -->
     <div class="preloader" id="preloader">
-        <div class="pl-bg"></div>
+        <div class="pl-escena-wrap">
+        <svg class="pl-escena" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="plCielo" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#06130c"/>
+              <stop offset="30%"  stop-color="#0b2116"/>
+              <stop offset="54%"  stop-color="#123120"/>
+              <stop offset="72%"  stop-color="#245026"/>
+              <stop offset="85%"  stop-color="#5c7020"/>
+              <stop offset="95%"  stop-color="#98801a"/>
+              <stop offset="100%" stop-color="#b08e16"/>
+            </linearGradient>
+            <!-- Sol bajo y de nucleo suave: ilumina sin quemar el texto -->
+            <radialGradient id="plSol" cx="50%" cy="50%" r="50%">
+              <stop offset="0%"   stop-color="#ffeeb8" stop-opacity=".72"/>
+              <stop offset="22%"  stop-color="#f8d478" stop-opacity=".52"/>
+              <stop offset="46%"  stop-color="#e0ac35" stop-opacity=".30"/>
+              <stop offset="72%"  stop-color="#b5840f" stop-opacity=".13"/>
+              <stop offset="100%" stop-color="#8a6a06" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="plBruma" cx="50%" cy="50%" r="50%">
+              <stop offset="0%"   stop-color="#e8f0b0" stop-opacity=".26"/>
+              <stop offset="55%"  stop-color="#cfe08a" stop-opacity=".11"/>
+              <stop offset="100%" stop-color="#cfe08a" stop-opacity="0"/>
+            </radialGradient>
+            <g id="arb">
+              <rect x="-1.7" y="-15" width="3.4" height="16" rx="1.5"/>
+              <circle cx="0" cy="-27" r="11.5"/>
+              <circle cx="-8.5" cy="-20" r="8.5"/>
+              <circle cx="8.5" cy="-20" r="8.5"/>
+              <circle cx="0" cy="-16" r="9.5"/>
+            </g>
+          </defs>
+        
+          <rect width="1440" height="900" fill="url(#plCielo)"/>
+          <circle cx="720" cy="592" r="392" fill="url(#plSol)"/>
+          <ellipse cx="720" cy="626" rx="920" ry="140" fill="url(#plBruma)"/>
+        
+          <g fill="#3f6b40" opacity=".5">
+            <path d="M -60 1100 L -60 632 C 90 632, 90 627, 180 627 C 270 627, 270 644, 360 644 C 450 644, 450 622, 540 622 C 630 622, 630 624, 720 624 C 810 624, 810 628, 900 628 C 990 628, 990 609, 1080 609 C 1170 609, 1170 625, 1260 625 C 1350 625, 1350 628, 1440 628 L 1500 1100 Z"/>
+            <g>
+              <use href="#arb" transform="translate(-20 630) scale(0.56)"/>
+              <use href="#arb" transform="translate(17 634) scale(0.51)"/>
+              <use href="#arb" transform="translate(72 632) scale(0.60)"/>
+              <use href="#arb" transform="translate(121 631) scale(0.59)"/>
+              <use href="#arb" transform="translate(162 629) scale(0.63)"/>
+              <use href="#arb" transform="translate(208 632) scale(0.64)"/>
+              <use href="#arb" transform="translate(256 636) scale(0.65)"/>
+              <use href="#arb" transform="translate(298 640) scale(0.51)"/>
+              <use href="#arb" transform="translate(333 644) scale(0.63)"/>
+              <use href="#arb" transform="translate(368 645) scale(0.61)"/>
+              <use href="#arb" transform="translate(416 640) scale(0.49)"/>
+              <use href="#arb" transform="translate(467 633) scale(0.48)"/>
+              <use href="#arb" transform="translate(521 627) scale(0.65)"/>
+              <use href="#arb" transform="translate(557 625) scale(0.63)"/>
+              <use href="#arb" transform="translate(607 625) scale(0.50)"/>
+              <use href="#arb" transform="translate(656 626) scale(0.50)"/>
+              <use href="#arb" transform="translate(711 626) scale(0.62)"/>
+              <use href="#arb" transform="translate(768 627) scale(0.49)"/>
+              <use href="#arb" transform="translate(807 628) scale(0.61)"/>
+              <use href="#arb" transform="translate(854 629) scale(0.51)"/>
+              <use href="#arb" transform="translate(908 629) scale(0.65)"/>
+              <use href="#arb" transform="translate(947 625) scale(0.51)"/>
+              <use href="#arb" transform="translate(995 620) scale(0.56)"/>
+              <use href="#arb" transform="translate(1043 615) scale(0.58)"/>
+              <use href="#arb" transform="translate(1085 611) scale(0.48)"/>
+              <use href="#arb" transform="translate(1119 614) scale(0.57)"/>
+              <use href="#arb" transform="translate(1169 619) scale(0.56)"/>
+              <use href="#arb" transform="translate(1219 623) scale(0.59)"/>
+              <use href="#arb" transform="translate(1273 627) scale(0.61)"/>
+              <use href="#arb" transform="translate(1313 627) scale(0.50)"/>
+              <use href="#arb" transform="translate(1345 628) scale(0.48)"/>
+              <use href="#arb" transform="translate(1399 629) scale(0.66)"/>
+              <use href="#arb" transform="translate(1449 630) scale(0.50)"/>
+            </g>
+          </g>
+          <g fill="#1e4225" opacity=".94">
+            <path d="M -60 1100 L -60 711 C 103 711, 103 729, 206 729 C 309 729, 309 725, 411 725 C 514 725, 514 673, 617 673 C 720 673, 720 706, 823 706 C 926 706, 926 695, 1029 695 C 1131 695, 1131 702, 1234 702 C 1337 702, 1337 705, 1440 705 L 1500 1100 Z"/>
+            <g>
+              <use href="#arb" transform="translate(-20 708) scale(0.99)"/>
+              <use href="#arb" transform="translate(46 718) scale(0.94)"/>
+              <use href="#arb" transform="translate(106 723) scale(1.10)"/>
+              <use href="#arb" transform="translate(161 728) scale(1.03)"/>
+              <use href="#arb" transform="translate(222 731) scale(1.07)"/>
+              <use href="#arb" transform="translate(262 731) scale(0.84)"/>
+              <use href="#arb" transform="translate(331 730) scale(1.03)"/>
+              <use href="#arb" transform="translate(378 729) scale(1.03)"/>
+              <use href="#arb" transform="translate(421 726) scale(0.90)"/>
+              <use href="#arb" transform="translate(474 712) scale(0.86)"/>
+              <use href="#arb" transform="translate(517 702) scale(0.95)"/>
+              <use href="#arb" transform="translate(575 687) scale(0.89)"/>
+              <use href="#arb" transform="translate(634 679) scale(1.11)"/>
+              <use href="#arb" transform="translate(675 685) scale(0.87)"/>
+              <use href="#arb" transform="translate(716 692) scale(1.01)"/>
+              <use href="#arb" transform="translate(768 700) scale(0.93)"/>
+              <use href="#arb" transform="translate(814 707) scale(1.04)"/>
+              <use href="#arb" transform="translate(876 706) scale(0.93)"/>
+              <use href="#arb" transform="translate(940 703) scale(0.86)"/>
+              <use href="#arb" transform="translate(989 700) scale(1.11)"/>
+              <use href="#arb" transform="translate(1035 698) scale(0.83)"/>
+              <use href="#arb" transform="translate(1075 700) scale(1.01)"/>
+              <use href="#arb" transform="translate(1138 702) scale(0.80)"/>
+              <use href="#arb" transform="translate(1192 704) scale(0.91)"/>
+              <use href="#arb" transform="translate(1240 705) scale(0.86)"/>
+              <use href="#arb" transform="translate(1291 706) scale(0.83)"/>
+              <use href="#arb" transform="translate(1358 707) scale(0.85)"/>
+              <use href="#arb" transform="translate(1413 707) scale(1.00)"/>
+            </g>
+          </g>
+          <g fill="#0f2716">
+            <path d="M -60 1100 L -60 792 C 120 792, 120 760, 240 760 C 360 760, 360 776, 480 776 C 600 776, 600 792, 720 792 C 840 792, 840 762, 960 762 C 1080 762, 1080 760, 1200 760 C 1320 760, 1320 786, 1440 786 L 1500 1100 Z"/>
+            <g>
+              <use href="#arb" transform="translate(-20 790) scale(1.23)"/>
+              <use href="#arb" transform="translate(80 785) scale(1.70)"/>
+              <use href="#arb" transform="translate(164 774) scale(1.68)"/>
+              <use href="#arb" transform="translate(249 765) scale(1.51)"/>
+              <use href="#arb" transform="translate(356 772) scale(1.30)"/>
+              <use href="#arb" transform="translate(423 776) scale(1.28)"/>
+              <use href="#arb" transform="translate(490 781) scale(1.42)"/>
+              <use href="#arb" transform="translate(561 785) scale(1.24)"/>
+              <use href="#arb" transform="translate(640 791) scale(1.40)"/>
+              <use href="#arb" transform="translate(745 793) scale(1.20)"/>
+              <use href="#arb" transform="translate(840 781) scale(1.66)"/>
+              <use href="#arb" transform="translate(939 768) scale(1.27)"/>
+              <use href="#arb" transform="translate(1011 765) scale(1.38)"/>
+              <use href="#arb" transform="translate(1076 765) scale(1.69)"/>
+              <use href="#arb" transform="translate(1177 764) scale(1.61)"/>
+              <use href="#arb" transform="translate(1271 772) scale(1.70)"/>
+              <use href="#arb" transform="translate(1354 781) scale(1.21)"/>
+              <use href="#arb" transform="translate(1436 790) scale(1.42)"/>
+            </g>
+          </g>
+          <g fill="#061109">
+            <path d="M -60 1100 L -60 862 C 240 834, 470 886, 720 876 C 980 866, 1200 830, 1500 856 L 1500 1100 Z"/>
+            <g>
+              <use href="#arb" transform="translate(110 876) scale(3.0)"/>
+              <use href="#arb" transform="translate(1340 862) scale(3.3)"/>
+              <use href="#arb" transform="translate(276 888) scale(2.1)"/>
+              <use href="#arb" transform="translate(1176 880) scale(2.4)"/>
+            </g>
+          </g>
+        </svg>
+        </div>
         <div class="pl-overlay"></div>
         <div class="pl-motes">
             <span style="--x:14%;--y:24%;--s:5px;--d:9s;--delay:0s"></span>

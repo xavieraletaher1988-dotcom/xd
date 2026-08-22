@@ -71,25 +71,31 @@ button, input, select, textarea { font: inherit; }
 }
 /* Misma foto, mismo encuadre y mismo zoom que la portada: al desvanecerse
    la intro, la imagen no salta — la página ya está debajo, idéntica. */
-.pl-bg {
+/* Ilustracion vectorial: cultivo de aguacate en siluetas al amanecer.
+   Es dibujo, no foto, para no repetir la imagen de la portada. */
+.pl-escena-wrap {
     position: absolute;
-    inset: -20px;
-    background: url('hero-cultivo.jpg') center 20%/cover;
-    filter: saturate(0.92) brightness(0.86);
-    animation: heroZoom 20s ease-in-out infinite alternate;
+    inset: -30px;
+    animation: plDeriva 24s ease-in-out infinite alternate;
+}
+.pl-escena {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+@keyframes plDeriva {
+    from { transform: scale(1); }
+    to   { transform: scale(1.07); }
 }
 /* El mismo velo verde con luz dorada del hero */
 .pl-overlay {
     position: absolute;
     inset: 0;
     background:
-        /* foco: oscurece el centro para que la marca no pelee con el cultivo */
-        radial-gradient(58% 48% at 50% 46%, rgba(5,16,10,0.62) 0%, transparent 72%),
-        linear-gradient(135deg, rgba(13,34,24,0.90) 0%, rgba(26,60,40,0.74) 42%, rgba(4,14,9,0.80) 100%),
-        radial-gradient(ellipse at 18% 86%, rgba(184,150,12,0.22) 0%, transparent 58%),
-        radial-gradient(circle at 82% 16%, rgba(26,60,40,0.30) 0%, transparent 52%),
-        /* viñeta */
-        radial-gradient(125% 105% at 50% 50%, transparent 32%, rgba(3,10,6,0.78) 100%);
+        /* asienta el resplandor justo detras del bloque de marca */
+        radial-gradient(46% 34% at 50% 47%, rgba(4,14,9,0.46) 0%, transparent 74%),
+        /* viñeta suave para cerrar los bordes */
+        radial-gradient(130% 110% at 50% 52%, transparent 40%, rgba(3,10,6,0.62) 100%);
 }
 /* Motas de luz, como las del hero */
 .pl-motes { position: absolute; inset: 0; pointer-events: none; }
@@ -166,7 +172,7 @@ button, input, select, textarea { font: inherit; }
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    filter: drop-shadow(0 2px 18px rgba(0,0,0,0.55)) drop-shadow(0 0 34px rgba(184,150,12,0.4));
+    filter: drop-shadow(0 2px 10px rgba(0,0,0,0.75)) drop-shadow(0 3px 26px rgba(0,0,0,0.5)) drop-shadow(0 0 34px rgba(184,150,12,0.35));
     opacity: 0;
     animation: plRise 0.85s cubic-bezier(0.4, 0, 0.2, 1) 0.52s both,
                goldLiquid 5s ease-in-out 0.52s infinite;
@@ -2008,6 +2014,7 @@ a.c-card.c-link:hover {
     .about-mosaic { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
     .mosaic-label { font-size: 0.6rem; padding: 0.25rem 0.5rem; }
     .mosaic-label svg { width: 10px; height: 10px; }
+    .preloader-inner { transform: translateY(-7%); }
     .preloader-logo-img { width: 76px; border-radius: 18px; }
     .pl-word { font-size: 1.5rem; }
     .pl-break { display: inline; }
