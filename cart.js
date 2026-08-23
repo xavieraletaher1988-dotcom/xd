@@ -9,27 +9,27 @@
             name: 'Aceite Refinado',
             desc: 'Aceite de Aguacate Hass Refinado 250ml',
             price: 26900,
-            image: 'aceite-refinado-bottle.jpeg',
+            image: 'aceite-refinado-bottle-v2.jpeg',
             size: '250 ml',
             tag: 'Cocina'
+        },
+        'virgen-250': {
+            id: 'virgen-250',
+            name: 'Aceite Virgen',
+            desc: 'Aceite de Aguacate Hass Virgen 250ml',
+            price: 28900,
+            image: 'aceite-virgen-bottle.jpg',
+            size: '250 ml',
+            tag: 'Natural'
         },
         'extravirgen-250': {
             id: 'extravirgen-250',
             name: 'Aceite Extra Virgen',
             desc: 'Aceite de Aguacate Hass Extra Virgen 250ml',
             price: 31900,
-            image: 'PHOTO-2026-04-01-22-43-53.jpg',
+            image: 'aceite-extravirgen-bottle.jpg',
             size: '250 ml',
             tag: 'Premium'
-        },
-        'industrial-5l': {
-            id: 'industrial-5l',
-            name: 'Garrafa Industrial',
-            desc: 'Aceite de Aguacate Hass 5 Litros',
-            price: 509900,
-            image: 'garrafa.png',
-            size: '5 Litros',
-            tag: 'Mayorista'
         }
     };
 

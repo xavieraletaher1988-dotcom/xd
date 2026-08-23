@@ -153,8 +153,6 @@ button, input, select, textarea { font: inherit; }
     border-bottom-color: rgba(0,0,0,0.06);
     box-shadow: 0 4px 30px rgba(0,0,0,0.04);
 }
-    box-shadow: 0 8px 32px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04);
-}
 .nav-container {
     display: flex;
     align-items: center;
@@ -1077,6 +1075,10 @@ button, input, select, textarea { font: inherit; }
     transition: all 0.4s var(--transition-smooth);
     position: relative;
     border: 1px solid rgba(255,255,255,0.1);
+    /* Columna flex para que las 4 tarjetas alineen el botón abajo
+       aunque la descripción tenga distinto largo */
+    display: flex;
+    flex-direction: column;
 }
 .prod-card::before {
     content: '';
@@ -1112,22 +1114,25 @@ button, input, select, textarea { font: inherit; }
 }
 .prod-header {
     position: relative;
-    height: 240px;
+    height: 268px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
 }
 .refinado-bg { background: #ffffff; }
+.virgen-bg { background: #ffffff; }
 .extravirgen-bg { background: #ffffff; }
-.industrial-bg { background: #ffffff; }
 .prod-img {
     max-height: 180px;
     width: auto;
     object-fit: contain;
     transition: transform 0.4s ease;
 }
-.prod-img-garrafa { max-height: 200px; }
+/* Fotos de botella recortadas (virgen y extra virgen): la botella ocupa el
+   92% del encuadre, así que se limitan a 200px para que se vea del mismo
+   tamaño que la del refinado. */
+.prod-img-botella { max-height: 252px; }
 .prod-img-refinado {
     max-height: 230px;
     filter: drop-shadow(0 14px 22px rgba(0,0,0,0.18));
@@ -1162,6 +1167,9 @@ button, input, select, textarea { font: inherit; }
 .prod-tag.gold { background: var(--gold); }
 .prod-info {
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 .prod-info h3 {
     font-family: var(--font-display);
@@ -1224,7 +1232,7 @@ button, input, select, textarea { font: inherit; }
 .prod-price-gold .price-amount {
     color: var(--gold);
 }
-.prod-actions { display: flex; gap: 0.6rem; }
+.prod-actions { display: flex; gap: 0.6rem; margin-top: auto; }
 .btn-prod {
     flex: 1;
     text-align: center;
@@ -1799,7 +1807,11 @@ a.c-card.c-link:hover {
     .nav-links {
         position: fixed;
         top: 0;
-        right: -100%;
+        /* Se desplaza con transform, no con `right: -100%`: un elemento fijo
+           fuera de pantalla ensancha el documento y `overflow-x:hidden` del
+           body no lo recorta, lo que provocaba scroll horizontal. */
+        right: 0;
+        transform: translateX(100%);
         width: 280px;
         height: 100dvh;
         background: #fff;
@@ -1807,12 +1819,12 @@ a.c-card.c-link:hover {
         align-items: stretch;
         padding: 5rem 1.5rem 2rem;
         box-shadow: var(--shadow-lg);
-        transition: right 0.35s var(--transition-smooth);
+        transition: transform 0.35s var(--transition-smooth);
         z-index: 5;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
     }
-    .nav-links.active { right: 0; }
+    .nav-links.active { transform: translateX(0); }
     .nav-links a {
         font-size: 1rem;
         padding: 0.9rem 0;
@@ -1923,10 +1935,10 @@ a.c-card.c-link:hover {
     .products { padding: 3.5rem 0; }
     .products-grid { max-width: 100%; }
     .prod-card { border-radius: 12px; }
-    .prod-header { height: 200px; }
+    .prod-header { height: 226px; }
     .prod-img { max-height: 150px; }
-    .prod-img-garrafa { max-height: 170px; }
-    .prod-img-refinado { max-height: 190px; }
+        .prod-img-refinado { max-height: 190px; }
+    .prod-img-botella { max-height: 212px; }
     .prod-info { padding: 1.2rem; }
     .prod-info h3 { font-size: 1.05rem; }
     .prod-info > p { font-size: 0.8rem; line-height: 1.6; }

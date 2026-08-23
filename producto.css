@@ -92,6 +92,20 @@
     transform: scale(1.06) translateY(-10px);
     filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1));
 }
+/* Fotos de botella recortadas (virgen y extra virgen): la botella ocupa el
+   92% del encuadre, por eso van algo más contenidas que el refinado.
+   El multiply funde el fondo blanco de la foto con el degradado del marco;
+   sin él se vería el rectángulo de la imagen. */
+.prod-gallery-img-botella {
+    max-height: 430px;
+    max-width: 62%;
+    mix-blend-mode: multiply;
+}
+/* El drop-shadow genérico del hover dibujaría la sombra del rectángulo
+   de la foto, no de la botella: la anulamos. */
+.prod-gallery-main:hover .prod-gallery-img-botella {
+    filter: none;
+}
 .prod-gallery-img-refinado {
     max-height: 460px;
     max-width: 88%;
@@ -266,7 +280,7 @@
 .prod-detail-nutrients {
     margin-bottom: 1.5rem;
 }
-.prod-detail-nutrients h4 {
+.prod-detail-nutrients h2 {
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -342,7 +356,7 @@
     padding-top: 3rem;
     border-top: 1px solid var(--line);
 }
-.related-products h3 {
+.related-products h2 {
     font-family: var(--font-display);
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
@@ -351,6 +365,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
+}
+/* Con 4 productos, cada ficha muestra los otros tres */
+.related-grid-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) {
+    .related-grid-3 { grid-template-columns: 1fr 1fr; }
 }
 .related-card {
     background: white;
@@ -398,7 +417,7 @@
 .related-info {
     padding: 1.2rem 1.5rem;
 }
-.related-info h4 {
+.related-info h3 {
     font-size: 1rem;
     font-weight: 700;
     margin-bottom: 0.3rem;
@@ -408,6 +427,20 @@
     font-size: 1.1rem;
     font-weight: 700;
     color: var(--green);
+}
+
+/* En movil la barra vuelve a ser fija, como en el resto del sitio.
+   Con `position: sticky` queda en flujo y el panel del menu cerrado
+   (desplazado fuera de pantalla) ensanchaba el documento: la ficha
+   media 670px de ancho en una pantalla de 390 y se podia hacer scroll
+   lateral. Al ser fija, el panel se ancla al viewport y no cuenta. */
+@media (max-width: 820px) {
+    .navbar-solid {
+        position: fixed;
+        left: 0;
+        right: 0;
+    }
+    .prod-detail { padding-top: 5.4rem; }
 }
 
 /* Responsive */
@@ -426,6 +459,10 @@
     .prod-gallery-img-refinado {
         max-height: 320px;
         max-width: 90%;
+    }
+    .prod-gallery-img-botella {
+        max-height: 290px;
+        max-width: 70%;
     }
     .prod-gallery-features {
         flex-direction: column;
@@ -452,7 +489,8 @@
     .spec-row {
         font-size: 0.85rem;
     }
-    .related-grid {
+    .related-grid,
+    .related-grid-3 {
         grid-template-columns: 1fr;
     }
     .related-img {
@@ -480,6 +518,9 @@
     }
     .prod-gallery-img-refinado {
         max-height: 260px;
+    }
+    .prod-gallery-img-botella {
+        max-height: 235px;
     }
     .prod-detail-info h1 {
         font-size: 1.4rem;
