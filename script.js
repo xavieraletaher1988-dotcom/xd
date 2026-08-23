@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hidePreloader = () => {
         preloader.classList.add('hidden');
         // Trigger hero animations after preloader
-        document.querySelectorAll('.hero-text h1, .hero-buttons, .hero-claim').forEach((el, i) => {
+        document.querySelectorAll('.hero-text h1, .hero-subtitle, .hero-buttons').forEach((el, i) => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = `opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${0.2 + i * 0.15}s, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${0.2 + i * 0.15}s`;
