@@ -359,14 +359,8 @@ button, input, select, textarea { font: inherit; }
     text-align: center;
     gap: 3rem;
 }
-.hero-center {
-    gap: 2.2rem;
-}
 .hero-center .hero-text {
     max-width: 720px;
-}
-.hero-center .hero-line {
-    margin-bottom: 0;
 }
 .hero-center .hero-subtitle {
     max-width: 520px;
