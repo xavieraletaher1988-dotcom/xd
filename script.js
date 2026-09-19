@@ -240,11 +240,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const spClose = document.getElementById('spClose');
     if (socialProof) {
         const spData = [
-            { name: 'María de Bogotá', product: 'compró Galón de 5L', time: 'hace 3 minutos' },
-            { name: 'Carlos de Medellín', product: 'compró Galón de 5L', time: 'hace 7 minutos' },
-            { name: 'Ana de Cali', product: 'compró Galón de 5L', time: 'hace 12 minutos' },
-            { name: 'Pedro de Barranquilla', product: 'compró Galón de 5L', time: 'hace 18 minutos' },
-            { name: 'Laura de Cartagena', product: 'compró Galón de 5L x2', time: 'hace 25 minutos' },
+            { name: 'María de Bogotá', product: 'compró Bidón de 5L', time: 'hace 3 minutos' },
+            { name: 'Carlos de Medellín', product: 'compró Bidón de 5L', time: 'hace 7 minutos' },
+            { name: 'Ana de Cali', product: 'compró Bidón de 5L', time: 'hace 12 minutos' },
+            { name: 'Pedro de Barranquilla', product: 'compró Bidón de 5L', time: 'hace 18 minutos' },
+            { name: 'Laura de Cartagena', product: 'compró 2 Bidones de 5L', time: 'hace 25 minutos' },
         ];
         let spIndex = 0;
         let spDismissed = false;

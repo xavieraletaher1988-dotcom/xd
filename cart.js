@@ -6,9 +6,8 @@
     const PRODUCTS = {
         'industrial-5l': {
             id: 'industrial-5l',
-            name: 'Garrafa Industrial',
+            name: 'Bidón de 5 Litros',
             desc: 'Aceite de Aguacate Hass 5 Litros',
-            price: 509900,
             image: 'garrafa.png',
             size: '5 Litros',
             tag: 'Mayorista'
@@ -52,13 +51,6 @@
         if (item) { item.qty = qty; saveCart(); }
     }
 
-    function getCartTotal() {
-        return cart.reduce((sum, item) => {
-            const product = PRODUCTS[item.id];
-            return sum + (product ? product.price * item.qty : 0);
-        }, 0);
-    }
-
     function getCartCount() {
         return cart.reduce((sum, item) => sum + item.qty, 0);
     }
@@ -66,10 +58,6 @@
     function clearCart() {
         cart = [];
         saveCart();
-    }
-
-    function formatPrice(n) {
-        return '$' + n.toLocaleString('es-CO');
     }
 
     // ── Badge del carrito en navbar ─────────────────────
@@ -179,7 +167,6 @@
                     <div class="cart-item-info">
                         <h4>${p.name}</h4>
                         <span class="cart-item-size">${p.size}</span>
-                        <span class="cart-item-price">${formatPrice(p.price)}</span>
                     </div>
                     <div class="cart-item-actions">
                         <div class="cart-qty-control">
@@ -187,7 +174,6 @@
                             <span class="qty-value">${item.qty}</span>
                             <button class="qty-btn qty-plus" data-id="${item.id}">+</button>
                         </div>
-                        <span class="cart-item-subtotal">${formatPrice(p.price * item.qty)}</span>
                         <button class="cart-item-remove" data-id="${item.id}" title="Eliminar">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
                         </button>
@@ -196,22 +182,18 @@
             `;
         }).join('');
 
-        const total = getCartTotal();
         const count = getCartCount();
         footer.innerHTML = `
             <div class="cart-summary">
-                <div class="cart-summary-row">
-                    <span>Productos (${count})</span>
-                    <span>${formatPrice(total)}</span>
-                </div>
                 <div class="cart-summary-row cart-summary-total">
-                    <span>Total</span>
-                    <span>${formatPrice(total)}</span>
+                    <span>Productos</span>
+                    <span>${count}</span>
                 </div>
+                <div class="cart-summary-note">El precio y el envío se confirman con un asesor.</div>
             </div>
             <a href="checkout.html" class="btn btn-gold btn-lg btn-full cart-checkout-btn">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                <span>Ir a Pagar</span>
+                <span>Solicitar Pedido</span>
             </a>
             <button class="cart-clear-btn" id="cartClearBtn">Vaciar carrito</button>
         `;
@@ -283,6 +265,6 @@
     });
 
     // Expose globally
-    window.BeraCart = { addToCart, removeFromCart, updateQty, getCartTotal, getCartCount, clearCart, openCartSidebar, closeCartSidebar, PRODUCTS, cart: () => cart, formatPrice };
+    window.BeraCart = { addToCart, removeFromCart, updateQty, getCartCount, clearCart, openCartSidebar, closeCartSidebar, PRODUCTS, cart: () => cart };
 
 })();

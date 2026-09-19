@@ -1,6 +1,6 @@
 // BERA HASS — Checkout 2026
 document.addEventListener('DOMContentLoaded', () => {
-    const { PRODUCTS, formatPrice, getCartTotal, getCartCount, clearCart, cart: getCart, updateQty, removeFromCart } = window.BeraCart;
+    const { PRODUCTS, getCartCount, clearCart, cart: getCart, updateQty, removeFromCart } = window.BeraCart;
 
     let currentStep = 1;
     const steps = ['stepCart', 'stepShipping', 'stepPayment'];
@@ -37,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="ck-cart-info">
                         <h4>${p.name}</h4>
                         <span class="ck-cart-size">${p.size} &mdash; ${p.tag}</span>
-                        <span class="ck-cart-unit-price">${formatPrice(p.price)} c/u</span>
                     </div>
                     <div class="ck-cart-qty">
                         <button class="ck-qty-btn" data-action="minus" data-id="${item.id}">
@@ -49,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         </button>
                     </div>
                     <div class="ck-cart-subtotal">
-                        <span class="ck-subtotal-amount">${formatPrice(p.price * item.qty)}</span>
                         <button class="ck-remove-btn" data-id="${item.id}" title="Eliminar">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
                         </button>
@@ -89,8 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderSummary() {
         const items = getCart();
         const summaryItems = document.getElementById('summaryItems');
-        const subtotal = getCartTotal();
-        const shipping = subtotal >= 150000 ? 0 : 12000;
 
         summaryItems.innerHTML = items.map(item => {
             const p = PRODUCTS[item.id];
@@ -102,48 +98,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span class="summary-item-name">${p.name}</span>
                         <span class="summary-item-qty">x${item.qty} &mdash; ${p.size}</span>
                     </div>
-                    <span class="summary-item-price">${formatPrice(p.price * item.qty)}</span>
                 </div>
             `;
         }).join('');
 
-        document.getElementById('summarySubtotal').textContent = formatPrice(subtotal);
-
-        const shippingEl = document.getElementById('summaryShipping');
-        if (items.length === 0) {
-            shippingEl.textContent = 'Por calcular';
-            shippingEl.className = 'summary-shipping-value';
-        } else if (shipping === 0) {
-            shippingEl.innerHTML = '<span class="free-shipping">GRATIS</span>';
-        } else {
-            shippingEl.textContent = formatPrice(shipping);
-            shippingEl.className = 'summary-shipping-value';
-        }
-
-        document.getElementById('summaryTotal').textContent = formatPrice(subtotal + (items.length > 0 ? shipping : 0));
-
-        // Free shipping progress
-        if (subtotal > 0 && subtotal < 150000) {
-            const remaining = 150000 - subtotal;
-            const pct = Math.min((subtotal / 150000) * 100, 100);
-            const freeShipMsg = document.getElementById('freeShipMsg');
-            if (!freeShipMsg) {
-                const msg = document.createElement('div');
-                msg.id = 'freeShipMsg';
-                msg.className = 'free-ship-progress';
-                msg.innerHTML = `
-                    <p>Agrega <strong>${formatPrice(remaining)}</strong> mas para envio <strong>GRATIS</strong></p>
-                    <div class="free-ship-bar"><div class="free-ship-fill" style="width:${pct}%"></div></div>
-                `;
-                document.getElementById('summaryShipping').parentElement.after(msg);
-            } else {
-                freeShipMsg.querySelector('p').innerHTML = `Agrega <strong>${formatPrice(remaining)}</strong> mas para envio <strong>GRATIS</strong>`;
-                freeShipMsg.querySelector('.free-ship-fill').style.width = pct + '%';
-            }
-        } else {
-            const freeShipMsg = document.getElementById('freeShipMsg');
-            if (freeShipMsg) freeShipMsg.remove();
-        }
+        document.getElementById('summaryUnits').textContent = getCartCount();
     }
 
     // ── Step navigation ─────────────────────────────────
@@ -247,9 +206,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // ── Submit Order ────────────────────────────────────
     function submitOrder() {
         const items = getCart();
-        const subtotal = getCartTotal();
-        const shipping = subtotal >= 150000 ? 0 : 12000;
-        const total = subtotal + shipping;
         const payMethod = document.querySelector('input[name="payMethod"]:checked')?.value || 'transferencia';
 
         const payMethodNames = {
@@ -277,9 +233,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 notes: document.getElementById('shipNotes').value
             },
             payment: payMethod,
-            subtotal,
-            shippingCost: shipping,
-            total,
             date: new Date().toLocaleString('es-CO')
         };
 
@@ -307,7 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </h4>
                     ${items.map(i => {
                         const p = PRODUCTS[i.id];
-                        return `<p>${i.qty}x ${p.name} (${p.size}) — ${formatPrice(p.price * i.qty)}</p>`;
+                        return `<p>${i.qty}x ${p.name} (${p.size})</p>`;
                     }).join('')}
                 </div>
                 <div class="confirm-card">
@@ -326,8 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         Pago
                     </h4>
                     <p>${payMethodNames[payMethod]}</p>
-                    <p class="confirm-total">Total: <strong>${formatPrice(total)}</strong></p>
-                    ${shipping === 0 ? '<p class="confirm-free">Envio GRATIS</p>' : `<p>Envio: ${formatPrice(shipping)}</p>`}
+                    <p class="confirm-total">Un asesor te confirmara el valor del pedido y del envio.</p>
                 </div>
             </div>
         `;
