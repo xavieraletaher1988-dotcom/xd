@@ -4,24 +4,6 @@
 
     // ── Catálogo de productos ────────────────────────────
     const PRODUCTS = {
-        'refinado-250': {
-            id: 'refinado-250',
-            name: 'Aceite Refinado',
-            desc: 'Aceite de Aguacate Hass Refinado 250ml',
-            price: 26900,
-            image: 'aceite-refinado-bottle.jpeg',
-            size: '250 ml',
-            tag: 'Cocina'
-        },
-        'extravirgen-250': {
-            id: 'extravirgen-250',
-            name: 'Aceite Extra Virgen',
-            desc: 'Aceite de Aguacate Hass Extra Virgen 250ml',
-            price: 31900,
-            image: 'PHOTO-2026-04-01-22-43-53.jpg',
-            size: '250 ml',
-            tag: 'Premium'
-        },
         'industrial-5l': {
             id: 'industrial-5l',
             name: 'Garrafa Industrial',
@@ -34,7 +16,9 @@
     };
 
     // ── Estado del carrito ───────────────────────────────
-    let cart = JSON.parse(localStorage.getItem('berahass_cart') || '[]');
+    // Descarta productos descontinuados que hayan quedado guardados
+    let cart = JSON.parse(localStorage.getItem('berahass_cart') || '[]')
+        .filter(item => PRODUCTS[item.id]);
 
     function saveCart() {
         localStorage.setItem('berahass_cart', JSON.stringify(cart));
