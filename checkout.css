@@ -604,6 +604,12 @@
     color: var(--green);
     padding-top: 0.6rem;
 }
+.summary-note {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: var(--muted);
+    padding: 0.4rem 0;
+}
 .free-shipping {
     color: var(--green);
     font-weight: 700;

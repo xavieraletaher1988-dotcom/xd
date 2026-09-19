@@ -216,6 +216,11 @@
 .prod-detail-price-gold .detail-price-amount {
     color: #a88620;
 }
+.prod-detail-quote {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--green);
+}
 .prod-detail-stock {
     display: flex;
     align-items: center;
